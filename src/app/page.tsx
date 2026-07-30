@@ -4,21 +4,69 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const PROJECTS = [
-  { name: "Cripto Hack", cat: "Fintech / SaaS", desc: "Plataforma de trading algorítmico com ledger financeiro, BullMQ, NestJS, dois frontends Next.js e integração Ethereum.", tech: ["NestJS","Next.js","Redis","PostgreSQL","Ethereum"], color: "#6366f1" },
-  { name: "RelateAI", cat: "IA / SaaS", desc: "Monorepo full-stack: Next.js + NestJS + Expo + PostgreSQL + S3 + OpenAI. Arquitetura escalável do zero ao produto.", tech: ["Next.js","NestJS","Expo","OpenAI","S3"], color: "#a855f7" },
-  { name: "MarketFlow", cat: "Automação / SaaS", desc: "SaaS de automação de afiliados para grupos WhatsApp e Telegram com Node.js, Prisma e Baileys.", tech: ["Node.js","WhatsApp API","Telegram","Prisma"], color: "#06b6d4" },
-  { name: "MyGuard", cat: "Enterprise", desc: "Plataforma multi-tenant de segurança patrimonial: API, app mobile, painel admin e painel empresas.", tech: ["Node.js","React Native","React","Docker"], color: "#f59e0b" },
-  { name: "Digital Wallet", cat: "Mobile", desc: "App de carteira digital em React Native com fluxo completo de transações e UX financeira.", tech: ["React Native","Expo","TypeScript"], color: "#10b981" },
-  { name: "Hermes Chat", cat: "Automação", desc: "Engine de automação WhatsApp Business com injeção de scripts e arquitetura orientada a eventos.", tech: ["Node.js","WhatsApp","Automação"], color: "#ef4444" },
+  {
+    name: "Plataforma Financeira",
+    cat: "Mercado Financeiro",
+    emoji: "🏦",
+    result: "Operações em tempo real, zero intervenção manual",
+    desc: "Desenvolvemos uma plataforma completa de gestão financeira para empresa do setor, com painel de operações em tempo real, relatórios automatizados e fluxo de liquidação. Do zero ao ar em menos de 3 meses.",
+    outcomes: ["Operações automatizadas 24h","Dashboard em tempo real","Relatórios sob demanda"],
+    color: "#6366f1",
+  },
+  {
+    name: "Rede de Clínicas",
+    cat: "Saúde",
+    emoji: "🏥",
+    result: "Sistema unificado para múltiplas unidades",
+    desc: "App mobile e painel administrativo para rede de clínicas com múltiplas unidades. Agendamento online, prontuário digital, gestão de profissionais e financeiro integrado em um único sistema.",
+    outcomes: ["App iOS & Android","Agendamento online","Gestão multi-unidade"],
+    color: "#10b981",
+  },
+  {
+    name: "Empresa de Segurança",
+    cat: "Segurança Patrimonial",
+    emoji: "🔒",
+    result: "Controle em tempo real de toda a operação",
+    desc: "Plataforma enterprise para empresa de segurança patrimonial: app para guardas, painel para clientes empresariais, dashboard de ocorrências e relatórios automáticos de rondas.",
+    outcomes: ["App para equipes de campo","Painel para clientes B2B","Relatório automático de rondas"],
+    color: "#f59e0b",
+  },
+  {
+    name: "Varejo & E-commerce",
+    cat: "Varejo",
+    emoji: "🛒",
+    result: "+3x em pedidos nos primeiros 90 dias",
+    desc: "Loja online integrada com gestão de estoque, atendimento automatizado via WhatsApp Business e relatórios de vendas em tempo real. Crescimento de 3x em pedidos no trimestre de lançamento.",
+    outcomes: ["+3x em pedidos","Atendimento 24h no WhatsApp","Estoque integrado"],
+    color: "#f97316",
+  },
+  {
+    name: "SaaS de Automação",
+    cat: "Startup / SaaS",
+    emoji: "⚙️",
+    result: "500+ clientes ativos na plataforma",
+    desc: "Produto SaaS do zero para automação de marketing e vendas. Plataforma multitenancy com dashboard do cliente, cobrança recorrente e integração com canais de comunicação. Mais de 500 clientes ativos.",
+    outcomes: ["500+ clientes ativos","Cobrança recorrente","Dashboard self-service"],
+    color: "#a855f7",
+  },
+  {
+    name: "App Financeiro",
+    cat: "Fintech / Mobile",
+    emoji: "📱",
+    result: "iOS & Android em 6 semanas",
+    desc: "Aplicativo iOS e Android para fintech brasileira. UX focada em zero burocracia, fluxo de pagamentos simplificado, notificações em tempo real e autenticação segura. Lançado em 6 semanas.",
+    outcomes: ["iOS & Android nativos","Zero burocrança no fluxo","Lançado em 6 semanas"],
+    color: "#06b6d4",
+  },
 ];
 
 const SERVICES = [
-  { icon: "📱", title: "Apps Mobile", desc: "iOS e Android com React Native e Expo. Uma base de código, performance nativa e entrega rápida." },
-  { icon: "🤖", title: "Automações & Bots", desc: "WhatsApp, Telegram, n8n, robôs de trading, scraping — processos sem toque humano 24/7." },
-  { icon: "🌐", title: "Sites & Landing Pages", desc: "Next.js, WordPress e Elementor — rápido, responsivo e pensado para converter visitas em clientes." },
-  { icon: "🔗", title: "Integrações de API", desc: "Mercado Pago, Meta, Stripe, Supabase, Firebase, Evolution API — conectamos qualquer sistema." },
-  { icon: "✨", title: "IA & Agentes Inteligentes", desc: "Chatbots com Claude/OpenAI, pipelines de dados com IA e agentes autônomos para seu negócio." },
-  { icon: "🏗️", title: "SaaS do zero", desc: "Da arquitetura ao deploy: auth, billing, monorepo, CI/CD e escalabilidade desde o primeiro dia." },
+  { icon: "📱", title: "App Mobile", sub: "iOS & Android", desc: "Seu app nas mãos dos clientes em semanas. Mais engajamento, mais retenção e um canal de vendas direto no celular de cada cliente." },
+  { icon: "🤖", title: "Automação & Atendimento", sub: "WhatsApp · 24h · Sem custo adicional", desc: "Atenda, qualifique e converta clientes automaticamente — sem contratar mais. Processos repetitivos eliminados, custo operacional reduzido." },
+  { icon: "🌐", title: "Site & Landing Page", sub: "Que gera leads e vende", desc: "Site profissional que aparece no Google, carrega rápido e converte visitas em clientes. Métricas reais, não só \"páginas bonitas\"." },
+  { icon: "🔗", title: "Integração de Sistemas", sub: "Elimine retrabalho manual", desc: "Seus sistemas conversando entre si automaticamente. Sem planilha manual, sem dado duplicado, sem erro humano no meio do processo." },
+  { icon: "🧠", title: "Inteligência Artificial", sub: "Atendimento e decisão em tempo real", desc: "Atendimento ao cliente 24h, relatórios gerados automaticamente e análise de dados que ajudam você a tomar decisões mais rápidas e precisas." },
+  { icon: "🚀", title: "Produto Digital do Zero", sub: "SaaS · Plataforma · MVP", desc: "Da ideia ao lançamento com cronograma claro, sem surpresas. Seu produto digital pronto para crescer e escalar desde o primeiro cliente." },
 ];
 
 const PROCESS = [
@@ -162,16 +210,33 @@ function Hero() {
   );
 }
 
-function TechBand() {
-  const techs = ["React Native","Next.js","Node.js","TypeScript","NestJS","PostgreSQL","Docker","AWS","Supabase","Firebase","WhatsApp API","Meta API","n8n","Redis","Prisma","OpenAI","Expo","Tailwind"];
+function NichesBand() {
+  const niches = [
+    { icon: "🏦", label: "Mercado Financeiro" },
+    { icon: "🏥", label: "Saúde & Clínicas" },
+    { icon: "🔒", label: "Segurança Patrimonial" },
+    { icon: "🛒", label: "Varejo & E-commerce" },
+    { icon: "🏢", label: "Empresas B2B" },
+    { icon: "📲", label: "Startups & SaaS" },
+    { icon: "⚖️", label: "Jurídico & Compliance" },
+    { icon: "🏨", label: "Hospitalidade & Turismo" },
+    { icon: "🎓", label: "Educação & EdTech" },
+    { icon: "🚚", label: "Logística & Operações" },
+  ];
   return (
-    <div style={{ background: "#f9fafb", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb", padding: "20px 0", overflow: "hidden" }}>
-      <div style={{ display: "flex", gap: 32, animation: "scroll 30s linear infinite", width: "max-content" }}>
-        {[...techs,...techs].map((t,i) => (
-          <span key={i} style={{ fontSize: 14, fontWeight: 600, color: "#6b7280", whiteSpace: "nowrap", padding: "0 8px" }}>
-            <span style={{ color: "#6366f1", marginRight: 6 }}>▸</span>{t}
-          </span>
-        ))}
+    <div style={{ background: "#fff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb", padding: "0" }}>
+      <div style={{ padding: "12px 40px 0", textAlign: "center" }}>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", color: "#9ca3af", textTransform: "uppercase" }}>Segmentos que já atendemos</span>
+      </div>
+      <div style={{ overflow: "hidden", padding: "14px 0" }}>
+        <div style={{ display: "flex", gap: 0, animation: "scroll 35s linear infinite", width: "max-content" }}>
+          {[...niches,...niches].map((n,i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 28px", whiteSpace: "nowrap", borderRight: "1px solid #f3f4f6" }}>
+              <span style={{ fontSize: 16 }}>{n.icon}</span>
+              <span style={{ fontSize: 14, fontWeight: 600, color: "#374151" }}>{n.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
       <style>{`@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
     </div>
@@ -183,8 +248,8 @@ function Services() {
     <section id="serviços" style={{ padding: "100px 40px", maxWidth: 1200, margin: "0 auto" }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 64 }}>
         <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>NOSSOS SERVIÇOS</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Tudo que o seu negócio<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>digital precisa.</span></h2>
-        <p style={{ color: "#6b7280", fontSize: 17, marginTop: 16, maxWidth: 560, margin: "16px auto 0" }}>De apps mobile a plataformas SaaS complexas. Escolha a solução certa para o seu estágio.</p>
+        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Soluções que fazem seu<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>negócio crescer de verdade.</span></h2>
+        <p style={{ color: "#6b7280", fontSize: 17, marginTop: 16, maxWidth: 560, margin: "16px auto 0" }}>Não vendemos tecnologia. Vendemos resultado — mais clientes, menos custo, mais escala.</p>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))", gap: 24 }}>
         {SERVICES.map((s,i) => (
@@ -193,6 +258,7 @@ function Services() {
             onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#6366f1"; el.style.boxShadow = "0 8px 30px rgba(99,102,241,0.12)"; el.style.transform = "translateY(-4px)"; }}
             onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#e5e7eb"; el.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)"; el.style.transform = "translateY(0)"; }}>
             <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg,#ede9fe,#e0e7ff)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>{s.icon}</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "#6366f1", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 6 }}>{s.sub}</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 10, letterSpacing: "-0.5px" }}>{s.title}</h3>
             <p style={{ color: "#6b7280", lineHeight: 1.7, fontSize: 15 }}>{s.desc}</p>
           </motion.div>
@@ -204,54 +270,52 @@ function Services() {
 
 function Projects() {
   const [active, setActive] = useState(0);
+  const p = PROJECTS[active];
   return (
     <section id="projetos" style={{ background: "#f9fafb", padding: "100px 40px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ marginBottom: 56 }}>
           <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>PORTFÓLIO</span>
           <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Projetos que<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entregam resultado.</span></h2>
+          <p style={{ color: "#6b7280", fontSize: 16, marginTop: 16 }}>Clientes de diferentes setores. Resultados reais, entrega dentro do prazo.</p>
         </motion.div>
 
         {/* Tab nav */}
         <div style={{ display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap" }}>
-          {PROJECTS.map((p,i) => (
-            <button key={p.name} onClick={() => setActive(i)} style={{ padding: "8px 20px", borderRadius: 100, border: "none", fontWeight: 600, fontSize: 14, cursor: "pointer", background: active===i ? "#6366f1" : "#fff", color: active===i ? "#fff" : "#6b7280", boxShadow: active===i ? "0 4px 12px rgba(99,102,241,0.3)" : "0 1px 3px rgba(0,0,0,0.08)", transition: "all 0.2s" }}>{p.name}</button>
+          {PROJECTS.map((proj, i) => (
+            <button key={proj.name} onClick={() => setActive(i)} style={{ padding: "8px 18px", borderRadius: 100, border: "none", fontWeight: 600, fontSize: 14, cursor: "pointer", background: active===i ? "#6366f1" : "#fff", color: active===i ? "#fff" : "#6b7280", boxShadow: active===i ? "0 4px 12px rgba(99,102,241,0.3)" : "0 1px 3px rgba(0,0,0,0.08)", transition: "all 0.2s", display: "flex", alignItems: "center", gap: 6 }}>
+              <span>{proj.emoji}</span>{proj.cat}
+            </button>
           ))}
         </div>
 
         <AnimatePresence mode="wait">
           <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, background: "#fff", borderRadius: 24, padding: 48, boxShadow: "0 4px 24px rgba(0,0,0,0.06)", border: "1px solid #e5e7eb" }}>
-            {/* Left */}
+            style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 40, background: "#fff", borderRadius: 24, padding: 48, boxShadow: "0 4px 24px rgba(0,0,0,0.06)", border: "1px solid #e5e7eb" }}>
+            {/* Left — story */}
             <div>
-              <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", color: PROJECTS[active].color, background: PROJECTS[active].color+"18", padding: "4px 12px", borderRadius: 100 }}>{PROJECTS[active].cat}</span>
-              <h3 style={{ fontSize: 36, fontWeight: 900, letterSpacing: "-1.5px", marginTop: 20, marginBottom: 16, lineHeight: 1.1 }}>{PROJECTS[active].name}</h3>
-              <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.8, marginBottom: 28 }}>{PROJECTS[active].desc}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {PROJECTS[active].tech.map(t => (
-                  <span key={t} style={{ fontSize: 13, padding: "6px 14px", borderRadius: 100, background: "#f3f4f6", color: "#374151", fontWeight: 600 }}>{t}</span>
-                ))}
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+                <span style={{ fontSize: 36 }}>{p.emoji}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", color: p.color, background: p.color+"18", padding: "5px 14px", borderRadius: 100 }}>{p.cat}</span>
               </div>
+              <h3 style={{ fontSize: 32, fontWeight: 900, letterSpacing: "-1.5px", marginBottom: 8, lineHeight: 1.1 }}>{p.name}</h3>
+              <div style={{ fontSize: 15, fontWeight: 700, color: p.color, marginBottom: 20 }}>✓ {p.result}</div>
+              <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.8, marginBottom: 0 }}>{p.desc}</p>
             </div>
-            {/* Right — visual */}
-            <div style={{ background: "linear-gradient(135deg,#0f0c29,#302b63)", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 16 }}>
-              <div style={{ display: "flex", gap: 8 }}>
-                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ef4444" }} />
-                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#f59e0b" }} />
-                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }} />
-              </div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
-                {PROJECTS[active].tech.map((t,i) => (
-                  <div key={t} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: `${60+i*8}%`, height: 8, borderRadius: 4, background: `linear-gradient(90deg,${PROJECTS[active].color},${PROJECTS[active].color}88)`, maxWidth: "90%" }} />
-                    <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>{t}</span>
+            {/* Right — outcomes */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16, justifyContent: "center" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#9ca3af", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>O que entregamos</div>
+              {p.outcomes.map((o, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, background: "#f9fafb", border: "1px solid #e5e7eb", borderRadius: 12, padding: "16px 20px" }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: p.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 900 }}>✓</span>
                   </div>
-                ))}
-              </div>
-              <div style={{ marginTop: "auto", padding: 16, background: "rgba(255,255,255,0.05)", borderRadius: 12, border: `1px solid ${PROJECTS[active].color}33` }}>
-                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginBottom: 4 }}>RESULTADO</div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>✅ Entregue em produção</div>
-              </div>
+                  <span style={{ fontWeight: 700, color: "#111", fontSize: 15 }}>{o}</span>
+                </div>
+              ))}
+              <a href="#contato" style={{ marginTop: 8, background: p.color, color: "#fff", padding: "14px 24px", borderRadius: 10, fontWeight: 800, fontSize: 15, textDecoration: "none", textAlign: "center", boxShadow: `0 4px 14px ${p.color}44` }}>
+                Quero algo parecido →
+              </a>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -439,7 +503,7 @@ export default function Home() {
       <Navbar/>
       <main>
         <Hero/>
-        <TechBand/>
+        <NichesBand/>
         <Services/>
         <Projects/>
         <Process/>
