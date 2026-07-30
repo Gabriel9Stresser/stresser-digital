@@ -178,7 +178,7 @@ function Hero() {
             <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ef4444" }} />
             <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#f59e0b" }} />
             <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#10b981" }} />
-            <div style={{ flex: 1, background: "#e5e7eb", borderRadius: 6, padding: "4px 12px", fontSize: 12, color: "#9ca3af", marginLeft: 8 }}>stresserdigital.com</div>
+            <div style={{ flex: 1, background: "#e5e7eb", borderRadius: 6, padding: "4px 12px", fontSize: 12, color: "#9ca3af", marginLeft: 8 }}>stresserdigital.com.br</div>
           </div>
           {/* Content preview */}
           <div style={{ padding: 28, background: "linear-gradient(135deg,#071525,#0B1F3A,#163A5F)", minHeight: 340 }}>

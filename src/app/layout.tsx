@@ -8,7 +8,7 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const siteUrl = "https://stresserdigital.com";
+const siteUrl = "https://stresserdigital.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -67,7 +67,7 @@ export default function OpenGraphImage() {
             }}
           />
           <div style={{ fontSize: 22, fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-            stresserdigital.com
+            stresserdigital.com.br
           </div>
         </div>
       </div>
