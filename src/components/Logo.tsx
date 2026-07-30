@@ -3,6 +3,7 @@ type LogoProps = {
   showWordmark?: boolean;
   /** dark = fundo claro; light = fundo escuro (hero/footer) */
   tone?: "light" | "dark";
+  wordmarkClassName?: string;
 };
 
 /** Marca Stresser Digital — S geométrico + ponto de energia (coral). */
@@ -38,7 +39,12 @@ export function LogoMark({ size = 36 }: { size?: number }) {
   );
 }
 
-export function Logo({ size = 36, showWordmark = true, tone = "dark" }: LogoProps) {
+export function Logo({
+  size = 36,
+  showWordmark = true,
+  tone = "dark",
+  wordmarkClassName,
+}: LogoProps) {
   const primary = tone === "light" ? "#FFFFFF" : "#0B1F3A";
   const secondary = tone === "light" ? "rgba(255,255,255,0.78)" : "#64748B";
 
@@ -55,6 +61,7 @@ export function Logo({ size = 36, showWordmark = true, tone = "dark" }: LogoProp
       <LogoMark size={size} />
       {showWordmark && (
         <span
+          className={wordmarkClassName}
           style={{
             fontWeight: 800,
             fontSize: Math.round(size * 0.5),
