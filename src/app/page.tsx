@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Logo } from "@/components/Logo";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const PROJECTS = [
@@ -11,7 +12,7 @@ const PROJECTS = [
     result: "Plataforma de criação e automação para milhares de clientes",
     desc: "Na Datasales, fui responsável por dois aplicativos React Native (CLI e Expo) e pela plataforma web DS.Marketing e DS.art — ferramentas de criação e automação de conteúdo de marketing. Desenvolvi bots de atendimento com IA, CRUDs com Node.js e integrações serverless na AWS.",
     outcomes: ["2 apps React Native (iOS & Android)","Bots de atendimento com IA","Integrações AWS Serverless"],
-    color: "#6366f1",
+    color: "#2563eb",
     company: "Datasales · 3 anos e meio",
   },
   {
@@ -51,7 +52,7 @@ const PROJECTS = [
     result: "SaaS próprio de automação via WhatsApp e canais digitais",
     desc: "Fundei e construí o ZapFlow do zero como Founder & CTO — plataforma SaaS de automação de marketing para grupos de WhatsApp e Telegram. Backend Node.js com Prisma, integração real com WhatsApp via Baileys e dashboard do cliente em React.",
     outcomes: ["WhatsApp & Telegram integrados","Dashboard self-service","Cobrança recorrente"],
-    color: "#a855f7",
+    color: "#8b5cf6",
     company: "ZapFlow · Founder & CTO",
   },
   {
@@ -101,22 +102,14 @@ function Navbar() {
   }, []);
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, height: 70, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 40px", background: scrolled ? "rgba(255,255,255,0.96)" : "transparent", backdropFilter: scrolled ? "blur(20px)" : "none", boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08)" : "none", transition: "all 0.3s" }}>
-      <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="10" fill="url(#navGrad)"/>
-          <text x="18" y="24" textAnchor="middle" fontFamily="-apple-system,sans-serif" fontWeight="900" fontSize="16" fill="white" letterSpacing="-0.5">SD</text>
-          <defs><linearGradient id="navGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stopColor="#6366f1"/><stop offset="1" stopColor="#a855f7"/></linearGradient></defs>
-        </svg>
-        <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.5px" }}>
-          <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
-          <span style={{ color: scrolled ? "#111" : "#fff" }}> Digital</span>
-        </span>
+      <a href="#" aria-label="Stresser Digital — início" style={{ textDecoration: "none" }}>
+        <Logo size={36} tone={scrolled ? "dark" : "light"} />
       </a>
       <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
         {["Serviços","Projetos","Processo","FAQ"].map(l => (
-          <a key={l} href={`#${l.toLowerCase()}`} style={{ textDecoration: "none", fontSize: 15, fontWeight: 500, color: scrolled ? "#444" : "rgba(255,255,255,0.85)", transition: "color 0.2s" }}
-            onMouseEnter={e => (e.target as HTMLElement).style.color = scrolled ? "#6366f1" : "#fff"}
-            onMouseLeave={e => (e.target as HTMLElement).style.color = scrolled ? "#444" : "rgba(255,255,255,0.85)"}>{l}</a>
+          <a key={l} href={`#${l.toLowerCase()}`} style={{ textDecoration: "none", fontSize: 15, fontWeight: 500, color: scrolled ? "#334155" : "rgba(255,255,255,0.85)", transition: "color 0.2s" }}
+            onMouseEnter={e => (e.target as HTMLElement).style.color = scrolled ? "#0B1F3A" : "#fff"}
+            onMouseLeave={e => (e.target as HTMLElement).style.color = scrolled ? "#334155" : "rgba(255,255,255,0.85)"}>{l}</a>
         ))}
         <a href="#contato" style={{ background: "#f97316", color: "#fff", padding: "10px 24px", borderRadius: 8, fontSize: 15, fontWeight: 700, textDecoration: "none", boxShadow: "0 4px 14px rgba(249,115,22,0.4)" }}>
           Fale conosco
@@ -132,22 +125,20 @@ function Hero() {
   useEffect(() => { const t = setInterval(() => setIdx(i => (i+1)%words.length), 2400); return () => clearInterval(t); }, []);
 
   return (
-    <section style={{ minHeight: "100vh", background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #6366f1 65%, #a855f7 100%)", display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", padding: "100px 40px 60px", gap: 60, position: "relative", overflow: "hidden" }}>
-      {/* BG noise */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 80%, rgba(168,85,247,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(99,102,241,0.4) 0%, transparent 50%)", pointerEvents: "none" }} />
+    <section style={{ minHeight: "100vh", background: "linear-gradient(145deg, #071525 0%, #0B1F3A 38%, #163A5F 72%, #1E4D73 100%)", display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", padding: "100px 40px 60px", gap: 60, position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 18% 78%, rgba(249,115,22,0.18) 0%, transparent 42%), radial-gradient(circle at 82% 18%, rgba(56,189,248,0.16) 0%, transparent 46%)", pointerEvents: "none" }} />
 
-      {/* LEFT */}
       <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }} style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "6px 16px", marginBottom: 28 }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 100, padding: "6px 16px", marginBottom: 28 }}>
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 8px #4ade80" }} />
-          <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 600 }}>Agência Digital</span>
+          <span style={{ color: "rgba(255,255,255,0.92)", fontSize: 13, fontWeight: 600 }}>Agência digital para todo tipo de negócio</span>
         </div>
 
-        <h1 style={{ fontSize: "clamp(36px,4.5vw,58px)", fontWeight: 900, color: "#fff", lineHeight: 1.1, letterSpacing: "-2px", marginBottom: 20 }}>
+        <h1 style={{ fontSize: "clamp(36px,4.5vw,58px)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "-2px", marginBottom: 20 }}>
           Entregamos{" "}
           <span style={{ display: "block" }}>
             <AnimatePresence mode="wait">
-              <motion.span key={idx} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.3 }} style={{ background: "linear-gradient(90deg,#fde68a,#fb923c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", display: "inline-block" }}>
+              <motion.span key={idx} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.3 }} style={{ background: "linear-gradient(90deg,#fdba74,#f97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", display: "inline-block" }}>
                 {words[idx]}
               </motion.span>
             </AnimatePresence>
@@ -155,7 +146,7 @@ function Hero() {
         </h1>
 
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480 }}>
-          Somos uma agência de desenvolvimento especializada em transformar ideias em produtos digitais que funcionam — e que crescem junto com o seu negócio.
+          Transformamos ideias em produtos digitais claros e úteis — para quem está começando e para quem já precisa escalar com segurança.
         </p>
 
         <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 48 }}>
@@ -190,7 +181,7 @@ function Hero() {
             <div style={{ flex: 1, background: "#e5e7eb", borderRadius: 6, padding: "4px 12px", fontSize: 12, color: "#9ca3af", marginLeft: 8 }}>stresserdigital.com</div>
           </div>
           {/* Content preview */}
-          <div style={{ padding: 28, background: "linear-gradient(135deg,#0f0c29,#302b63,#24243e)", minHeight: 340 }}>
+          <div style={{ padding: 28, background: "linear-gradient(135deg,#071525,#0B1F3A,#163A5F)", minHeight: 340 }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               {PROJECTS.slice(0,4).map(p => (
                 <div key={p.name} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: 16, border: `1px solid ${p.color}33` }}>
@@ -200,7 +191,7 @@ function Hero() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 16, height: 6, background: "linear-gradient(90deg,#6366f1,#a855f7,#ec4899)", borderRadius: 3 }} />
+            <div style={{ marginTop: 16, height: 6, background: "linear-gradient(90deg,#0B1F3A,#163A5F,#F97316)", borderRadius: 3 }} />
             <div style={{ marginTop: 8, display: "flex", gap: 8 }}>
               {["React Native","Node.js","NestJS","Next.js"].map(t => (
                 <span key={t} style={{ background: "rgba(99,102,241,0.25)", color: "#a5b4fc", fontSize: 10, padding: "3px 8px", borderRadius: 100 }}>{t}</span>
@@ -260,18 +251,18 @@ function Services() {
   return (
     <section id="serviços" style={{ padding: "100px 40px", maxWidth: 1200, margin: "0 auto" }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 64 }}>
-        <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>NOSSOS SERVIÇOS</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Soluções que fazem seu<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>negócio crescer de verdade.</span></h2>
+        <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>NOSSOS SERVIÇOS</span>
+        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Soluções que fazem seu<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>negócio crescer de verdade.</span></h2>
         <p style={{ color: "#6b7280", fontSize: 17, marginTop: 16, maxWidth: 560, margin: "16px auto 0" }}>Não vendemos tecnologia. Vendemos resultado — mais clientes, menos custo, mais escala.</p>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))", gap: 24 }}>
         {SERVICES.map((s,i) => (
           <motion.div key={s.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1, duration: 0.6 }}
             style={{ background: "#fff", borderRadius: 20, padding: 32, border: "1px solid #e5e7eb", cursor: "default", transition: "all 0.3s", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#6366f1"; el.style.boxShadow = "0 8px 30px rgba(99,102,241,0.12)"; el.style.transform = "translateY(-4px)"; }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#0B1F3A"; el.style.boxShadow = "0 8px 30px rgba(11,31,58,0.10)"; el.style.transform = "translateY(-4px)"; }}
             onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#e5e7eb"; el.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)"; el.style.transform = "translateY(0)"; }}>
-            <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg,#ede9fe,#e0e7ff)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>{s.icon}</div>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "#6366f1", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 6 }}>{s.sub}</div>
+            <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg,#E8EEF5,#D7E3F0)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>{s.icon}</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "#0B1F3A", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 6 }}>{s.sub}</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 10, letterSpacing: "-0.5px" }}>{s.title}</h3>
             <p style={{ color: "#6b7280", lineHeight: 1.7, fontSize: 15 }}>{s.desc}</p>
           </motion.div>
@@ -288,15 +279,15 @@ function Projects() {
     <section id="projetos" style={{ background: "#f9fafb", padding: "100px 40px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ marginBottom: 56 }}>
-          <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>PORTFÓLIO</span>
-          <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Projetos que<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entregam resultado.</span></h2>
+          <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>PORTFÓLIO</span>
+          <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Projetos que<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entregam resultado.</span></h2>
           <p style={{ color: "#6b7280", fontSize: 16, marginTop: 16 }}>Clientes de diferentes setores. Resultados reais, entrega dentro do prazo.</p>
         </motion.div>
 
         {/* Tab nav */}
         <div style={{ display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap" }}>
           {PROJECTS.map((proj, i) => (
-            <button key={proj.name} onClick={() => setActive(i)} style={{ padding: "8px 18px", borderRadius: 100, border: "none", fontWeight: 600, fontSize: 14, cursor: "pointer", background: active===i ? "#6366f1" : "#fff", color: active===i ? "#fff" : "#6b7280", boxShadow: active===i ? "0 4px 12px rgba(99,102,241,0.3)" : "0 1px 3px rgba(0,0,0,0.08)", transition: "all 0.2s", display: "flex", alignItems: "center", gap: 6 }}>
+            <button key={proj.name} onClick={() => setActive(i)} style={{ padding: "8px 18px", borderRadius: 100, border: "none", fontWeight: 600, fontSize: 14, cursor: "pointer", background: active===i ? "#0B1F3A" : "#fff", color: active===i ? "#fff" : "#6b7280", boxShadow: active===i ? "0 4px 12px rgba(11,31,58,0.28)" : "0 1px 3px rgba(0,0,0,0.08)", transition: "all 0.2s", display: "flex", alignItems: "center", gap: 6 }}>
               <span>{proj.emoji}</span>{proj.cat}
             </button>
           ))}
@@ -342,8 +333,8 @@ function Process() {
   return (
     <section id="processo" style={{ padding: "100px 40px", maxWidth: 1200, margin: "0 auto" }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 64 }}>
-        <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>COMO TRABALHAMOS</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Processo transparente,<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entrega garantida.</span></h2>
+        <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>COMO TRABALHAMOS</span>
+        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Processo transparente,<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entrega garantida.</span></h2>
       </motion.div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 2 }}>
         {PROCESS.map((p,i) => (
@@ -363,7 +354,7 @@ function CTA() {
   return (
     <section style={{ padding: "80px 40px" }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-        style={{ maxWidth: 900, margin: "0 auto", background: "linear-gradient(135deg,#1e1b4b,#4338ca,#7c3aed)", borderRadius: 28, padding: "72px 60px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        style={{ maxWidth: 900, margin: "0 auto", background: "linear-gradient(135deg,#071525,#0B1F3A,#163A5F)", borderRadius: 28, padding: "72px 60px", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 30%,rgba(168,85,247,0.4) 0%,transparent 50%)", pointerEvents: "none" }} />
         <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, color: "#fff", letterSpacing: "-1.5px", marginBottom: 20, position: "relative" }}>
           Pronto para transformar<br/>sua ideia em produto?
@@ -389,8 +380,8 @@ function FAQ() {
   return (
     <section id="faq" style={{ padding: "100px 40px", maxWidth: 800, margin: "0 auto" }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 56 }}>
-        <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>DÚVIDAS FREQUENTES</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Perguntas<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>frequentes.</span></h2>
+        <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>DÚVIDAS FREQUENTES</span>
+        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Perguntas<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>frequentes.</span></h2>
       </motion.div>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {FAQS.map((f,i) => (
@@ -398,7 +389,7 @@ function FAQ() {
             style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 14, overflow: "hidden", cursor: "pointer" }} onClick={() => setOpen(open===i?null:i)}>
             <div style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 16 }}>{f.q}</span>
-              <span style={{ fontSize: 20, color: "#6366f1", fontWeight: 300, transform: open===i?"rotate(45deg)":"rotate(0)", transition: "transform 0.2s" }}>+</span>
+              <span style={{ fontSize: 20, color: "#0B1F3A", fontWeight: 300, transform: open===i?"rotate(45deg)":"rotate(0)", transition: "transform 0.2s" }}>+</span>
             </div>
             <AnimatePresence>
               {open===i && (
@@ -423,13 +414,13 @@ function Contact() {
     <section id="contato" style={{ background: "#f9fafb", padding: "100px 40px" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 80, alignItems: "start" }}>
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>CONTATO</span>
-          <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, marginBottom: 20 }}>Vamos construir<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>algo incrível?</span></h2>
+          <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>CONTATO</span>
+          <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, marginBottom: 20 }}>Vamos construir<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>algo incrível?</span></h2>
           <p style={{ color: "#6b7280", fontSize: 16, lineHeight: 1.8, marginBottom: 40 }}>Conte sobre seu projeto. Nossa equipe analisa e retorna com uma proposta em até 24 horas.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {[{icon:"📧",label:"E-mail",val:"gabriel.augusto99@hotmail.com"},{icon:"💬",label:"WhatsApp",val:"+55 (11) 97555-8289"},{icon:"📍",label:"Localização",val:"São Paulo, SP — Brasil"}].map(c=>(
               <div key={c.label} style={{ display: "flex", gap: 16, alignItems: "center" }}>
-                <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#ede9fe,#e0e7ff)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{c.icon}</div>
+                <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#E8EEF5,#D7E3F0)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{c.icon}</div>
                 <div><div style={{ fontSize: 12, color: "#9ca3af", fontWeight: 600 }}>{c.label}</div><div style={{ fontWeight: 700, color: "#111" }}>{c.val}</div></div>
               </div>
             ))}
@@ -446,10 +437,10 @@ function Contact() {
           ) : (
             <form onSubmit={e=>{e.preventDefault();setSent(true);}} style={{ background: "#fff", borderRadius: 20, padding: 40, boxShadow: "0 4px 24px rgba(0,0,0,0.06)", border: "1px solid #e5e7eb", display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                <input required placeholder="Seu nome" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#6366f1")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
-                <input required type="email" placeholder="Seu e-mail" value={form.email} onChange={e=>setForm({...form,email:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#6366f1")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
+                <input required placeholder="Seu nome" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#0B1F3A")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
+                <input required type="email" placeholder="Seu e-mail" value={form.email} onChange={e=>setForm({...form,email:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#0B1F3A")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
               </div>
-              <input placeholder="WhatsApp" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#6366f1")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
+              <input placeholder="WhatsApp" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} style={inp} onFocus={e=>(e.target.style.borderColor="#0B1F3A")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
               <select value={form.service} onChange={e=>setForm({...form,service:e.target.value})} style={{...inp, color: form.service?"#111":"#9ca3af"}}>
                 <option value="">Tipo de projeto</option>
                 <option>App Mobile</option>
@@ -459,8 +450,8 @@ function Contact() {
                 <option>Integração de API</option>
                 <option>Outro</option>
               </select>
-              <textarea required rows={4} placeholder="Descreva seu projeto..." value={form.message} onChange={e=>setForm({...form,message:e.target.value})} style={{...inp,resize:"vertical"}} onFocus={e=>(e.target.style.borderColor="#6366f1")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
-              <button type="submit" style={{ background: "linear-gradient(135deg,#6366f1,#7c3aed)", color: "#fff", border: "none", borderRadius: 12, padding: "16px", fontSize: 16, fontWeight: 800, cursor: "pointer", boxShadow: "0 4px 14px rgba(99,102,241,0.4)" }}>
+              <textarea required rows={4} placeholder="Descreva seu projeto..." value={form.message} onChange={e=>setForm({...form,message:e.target.value})} style={{...inp,resize:"vertical"}} onFocus={e=>(e.target.style.borderColor="#0B1F3A")} onBlur={e=>(e.target.style.borderColor="#e5e7eb")}/>
+              <button type="submit" style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", color: "#fff", border: "none", borderRadius: 12, padding: "16px", fontSize: 16, fontWeight: 800, cursor: "pointer", boxShadow: "0 4px 14px rgba(11,31,58,0.35)" }}>
                 Solicitar proposta gratuita →
               </button>
             </form>
@@ -473,22 +464,14 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer style={{ background: "#0f0c29", color: "#fff", padding: "60px 40px 32px" }}>
+    <footer style={{ background: "#071525", color: "#fff", padding: "60px 40px 32px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="36" height="36" rx="10" fill="url(#footGrad)"/>
-                <text x="18" y="24" textAnchor="middle" fontFamily="-apple-system,sans-serif" fontWeight="900" fontSize="16" fill="white" letterSpacing="-0.5">SD</text>
-                <defs><linearGradient id="footGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stopColor="#818cf8"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
-              </svg>
-              <span style={{ fontWeight: 900, fontSize: 20 }}>
-                <span style={{ background: "linear-gradient(135deg,#818cf8,#c084fc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
-                <span style={{ color: "#fff" }}> Digital</span>
-              </span>
+            <div style={{ marginBottom: 16 }}>
+              <Logo size={36} tone="light" />
             </div>
-            <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: 14, maxWidth: 320 }}>Agência de tecnologia especializada em apps, automações, bots, SaaS e integrações. São Paulo, Brasil.</p>
+            <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: 14, maxWidth: 320 }}>Agência digital especializada em apps, sites, automações, SaaS e integrações. Atendemos negócios de todos os portes — São Paulo, Brasil.</p>
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: 20 }}>SERVIÇOS</div>
@@ -508,7 +491,7 @@ function Footer() {
           <div style={{ display: "flex", gap: 24 }}>
             {["GitHub","LinkedIn","Instagram","WhatsApp"].map(s=>(
               <a key={s} href="#" style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, textDecoration: "none" }}
-                onMouseEnter={e=>((e.target as HTMLElement).style.color="#818cf8")}
+                onMouseEnter={e=>((e.target as HTMLElement).style.color="#F97316")}
                 onMouseLeave={e=>((e.target as HTMLElement).style.color="rgba(255,255,255,0.4)")}>{s}</a>
             ))}
           </div>
