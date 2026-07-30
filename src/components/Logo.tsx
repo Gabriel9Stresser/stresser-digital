@@ -6,7 +6,7 @@ type LogoProps = {
   wordmarkClassName?: string;
 };
 
-/** Marca Stresser Digital — S geométrico + ponto de energia (coral). */
+/** Marca Stresser Digital: S geométrico + ponto de energia (coral). */
 export function LogoMark({ size = 36 }: { size?: number }) {
   const uid = `sd-${size}`;
   return (
@@ -72,7 +72,9 @@ export function Logo({
           }}
         >
           <span style={{ color: primary }}>Stresser</span>
-          <span style={{ color: secondary, fontWeight: 600 }}>Digital</span>
+          <span className="logo-digital" style={{ color: secondary, fontWeight: 600 }}>
+            Digital
+          </span>
         </span>
       )}
     </span>

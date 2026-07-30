@@ -10,33 +10,33 @@ const PROJECTS = [
     cat: "Marketing Digital / SaaS",
     emoji: "📊",
     result: "Plataforma de criação e automação para milhares de clientes",
-    desc: "Na Datasales, fui responsável por dois aplicativos React Native (CLI e Expo) e pela plataforma web DS.Marketing e DS.art — ferramentas de criação e automação de conteúdo de marketing. Desenvolvi bots de atendimento com IA, CRUDs com Node.js e integrações serverless na AWS.",
+    desc: "Na Datasales, fui responsável por dois aplicativos React Native (CLI e Expo) e pela plataforma web DS.Marketing e DS.art, ferramentas de criação e automação de conteúdo de marketing. Desenvolvi bots de atendimento com IA, CRUDs com Node.js e integrações serverless na AWS.",
     outcomes: ["2 apps React Native (iOS & Android)","Bots de atendimento com IA","Integrações AWS Serverless"],
     color: "#2563eb",
     company: "Datasales · 3 anos e meio",
   },
   {
-    name: "Zelo Saúde — Fiocruz",
+    name: "Zelo Saúde / Fiocruz",
     cat: "Saúde",
     emoji: "🏥",
     result: "5 aplicações entregues em um único projeto",
-    desc: "Projeto para a Fiotec/Fiocruz: desenvolvimento da plataforma Zelo Saúde com 5 aplicações integradas — 2 apps React Native, 2 frontends React e 1 API Node.js. Fui responsável pelo planejamento técnico e execução completa do ecossistema.",
+    desc: "Projeto para a Fiotec/Fiocruz: desenvolvimento da plataforma Zelo Saúde com 5 aplicações integradas: 2 apps React Native, 2 frontends React e 1 API Node.js. Fui responsável pelo planejamento técnico e execução completa do ecossistema.",
     outcomes: ["2 apps mobile (React Native)","2 painéis web (React)","API Node.js + PostgreSQL"],
     color: "#10b981",
     company: "Fiotec / Fiocruz",
   },
   {
-    name: "PHAST — Fisioterapia Digital",
+    name: "PHAST Fisioterapia Digital",
     cat: "Saúde / Mobile",
     emoji: "💪",
     result: "App de fisioterapia e monitoramento de pacientes",
-    desc: "App web e mobile para fisioterapia e monitoramento de pacientes — plataforma completa com agendamentos, evolução clínica, comunicação profissional/paciente e gestão de sessões. Stack full-stack: React Native, React e Node.js com MongoDB.",
+    desc: "App web e mobile para fisioterapia e monitoramento de pacientes, com plataforma completa com agendamentos, evolução clínica, comunicação profissional/paciente e gestão de sessões. Stack full-stack: React Native, React e Node.js com MongoDB.",
     outcomes: ["App iOS & Android (React Native)","Painel web para profissionais","Monitoramento e evolução clínica"],
     color: "#f59e0b",
     company: "Freelance · 8 meses",
   },
   {
-    name: "MyGuard — Segurança Patrimonial",
+    name: "MyGuard Segurança Patrimonial",
     cat: "Segurança Patrimonial",
     emoji: "🔒",
     result: "Plataforma multi-tenant para operações de segurança",
@@ -46,17 +46,17 @@ const PROJECTS = [
     company: "GroupMyGuard",
   },
   {
-    name: "ZapFlow — Automação de Marketing",
+    name: "ZapFlow Automação de Marketing",
     cat: "Startup / SaaS",
     emoji: "⚡",
     result: "SaaS próprio de automação via WhatsApp e canais digitais",
-    desc: "Fundei e construí o ZapFlow do zero como Founder & CTO — plataforma SaaS de automação de marketing para grupos de WhatsApp e Telegram. Backend Node.js com Prisma, integração real com WhatsApp via Baileys e dashboard do cliente em React.",
+    desc: "Fundei e construí o ZapFlow do zero como Founder & CTO. Plataforma SaaS de automação de marketing para grupos de WhatsApp e Telegram. Backend Node.js com Prisma, integração real com WhatsApp via Baileys e dashboard do cliente em React.",
     outcomes: ["WhatsApp & Telegram integrados","Dashboard self-service","Cobrança recorrente"],
     color: "#8b5cf6",
     company: "ZapFlow · Founder & CTO",
   },
   {
-    name: "IanApp — Gestão de Estoque",
+    name: "IanApp Gestão de Estoque",
     cat: "Varejo / Mobile",
     emoji: "📦",
     result: "App de inventário para cliente internacional",
@@ -69,7 +69,7 @@ const PROJECTS = [
 
 const SERVICES = [
   { icon: "📱", title: "App Mobile", sub: "iOS & Android", desc: "Seu app nas mãos dos clientes em semanas. Mais engajamento, mais retenção e um canal de vendas direto no celular de cada cliente." },
-  { icon: "🤖", title: "Automação & Atendimento", sub: "WhatsApp · 24h · Sem custo adicional", desc: "Atenda, qualifique e converta clientes automaticamente — sem contratar mais. Processos repetitivos eliminados, custo operacional reduzido." },
+  { icon: "🤖", title: "Automação & Atendimento", sub: "WhatsApp · 24h · Sem custo adicional", desc: "Atenda, qualifique e converta clientes automaticamente, sem contratar mais. Processos repetitivos eliminados, custo operacional reduzido." },
   { icon: "🌐", title: "Site & Landing Page", sub: "Que gera leads e vende", desc: "Site profissional que aparece no Google, carrega rápido e converte visitas em clientes. Métricas reais, não só \"páginas bonitas\"." },
   { icon: "🔗", title: "Integração de Sistemas", sub: "Elimine retrabalho manual", desc: "Seus sistemas conversando entre si automaticamente. Sem planilha manual, sem dado duplicado, sem erro humano no meio do processo." },
   { icon: "🧠", title: "Inteligência Artificial", sub: "Atendimento e decisão em tempo real", desc: "Atendimento ao cliente 24h, relatórios gerados automaticamente e análise de dados que ajudam você a tomar decisões mais rápidas e precisas." },
@@ -113,8 +113,8 @@ function Navbar() {
   return (
     <>
       <nav className={`nav${scrolled || open ? " is-scrolled" : ""}`}>
-        <a href="#" aria-label="Stresser Digital — início" style={{ textDecoration: "none" }} onClick={close}>
-          <Logo size={34} tone={scrolled || open ? "dark" : "light"} wordmarkClassName="logo-wordmark-mobile-hide" />
+        <a href="#" aria-label="Stresser Digital, início" style={{ textDecoration: "none" }} onClick={close}>
+          <Logo size={32} tone={scrolled || open ? "dark" : "light"} />
         </a>
         <div className="nav-links">
           {["Serviços","Projetos","Processo","FAQ"].map(l => (
@@ -155,13 +155,13 @@ function Hero() {
     <section className="hero">
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 18% 78%, rgba(249,115,22,0.18) 0%, transparent 42%), radial-gradient(circle at 82% 18%, rgba(56,189,248,0.16) 0%, transparent 46%)", pointerEvents: "none" }} />
 
-      <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }} style={{ position: "relative", zIndex: 1, minWidth: 0 }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 100, padding: "6px 14px", marginBottom: 24, maxWidth: "100%" }}>
+      <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }} className="hero-copy">
+        <div className="hero-badge">
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 8px #4ade80", flexShrink: 0 }} />
           <span style={{ color: "rgba(255,255,255,0.92)", fontSize: 13, fontWeight: 600, lineHeight: 1.3 }}>Agência digital para todo tipo de negócio</span>
         </div>
 
-        <h1 style={{ fontSize: "clamp(32px,8vw,58px)", fontWeight: 800, color: "#fff", lineHeight: 1.12, letterSpacing: "-1.5px", marginBottom: 18 }}>
+        <h1 className="hero-title">
           Entregamos{" "}
           <span style={{ display: "block" }}>
             <AnimatePresence mode="wait">
@@ -172,15 +172,15 @@ function Hero() {
           </span>
         </h1>
 
-        <p style={{ fontSize: "clamp(15px,3.5vw,18px)", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 28, maxWidth: 480 }}>
-          Transformamos ideias em produtos digitais claros e úteis — para quem está começando e para quem já precisa escalar com segurança.
+        <p className="hero-lead">
+          Transformamos ideias em produtos digitais claros e úteis, para quem está começando e para quem já precisa escalar com segurança.
         </p>
 
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 36 }}>
-          <a href="#contato" style={{ background: "#f97316", color: "#fff", padding: "14px 28px", borderRadius: 10, fontWeight: 800, fontSize: 15, textDecoration: "none", boxShadow: "0 6px 20px rgba(249,115,22,0.5)" }}>
+        <div className="btn-row" style={{ marginBottom: 28 }}>
+          <a href="#contato" style={{ background: "#f97316", color: "#fff", padding: "14px 24px", borderRadius: 10, fontWeight: 800, fontSize: 15, textDecoration: "none", boxShadow: "0 6px 20px rgba(249,115,22,0.5)", display: "inline-block" }}>
             Solicitar orçamento →
           </a>
-          <a href="#projetos" style={{ background: "rgba(255,255,255,0.12)", color: "#fff", padding: "14px 28px", borderRadius: 10, fontWeight: 600, fontSize: 15, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)" }}>
+          <a href="#projetos" style={{ background: "rgba(255,255,255,0.12)", color: "#fff", padding: "14px 24px", borderRadius: 10, fontWeight: 600, fontSize: 15, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)", display: "inline-block" }}>
             Ver projetos
           </a>
         </div>
@@ -188,8 +188,8 @@ function Hero() {
         <div className="hero-stats">
           {[{n:"50+",l:"Projetos entregues"},{n:"8 anos",l:"No mercado"},{n:"20+",l:"Tecnologias"},{n:"100%",l:"Entregues no prazo"}].map(s => (
             <div key={s.l}>
-              <div style={{ fontSize: 22, fontWeight: 900, color: "#fff" }}>{s.n}</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>{s.l}</div>
+              <div className="hero-stat-n">{s.n}</div>
+              <div className="hero-stat-l">{s.l}</div>
             </div>
           ))}
         </div>
@@ -204,7 +204,7 @@ function Hero() {
             <div style={{ flex: 1, minWidth: 0, background: "#e5e7eb", borderRadius: 6, padding: "4px 12px", fontSize: 12, color: "#9ca3af", marginLeft: 8, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>stresserdigital.com.br</div>
           </div>
           <div style={{ padding: "clamp(16px,4vw,28px)", background: "linear-gradient(135deg,#071525,#0B1F3A,#163A5F)" }}>
-            <div className="mock-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div className="mock-grid">
               {PROJECTS.slice(0,4).map(p => (
                 <div key={p.name} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: 14, border: `1px solid ${p.color}33`, minWidth: 0 }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: p.color, marginBottom: 8 }} />
@@ -271,15 +271,15 @@ function NichesBand() {
 function Services() {
   return (
     <section id="serviços" className="section" style={{ maxWidth: 1200, margin: "0 auto" }}>
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 48 }}>
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-head">
         <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>NOSSOS SERVIÇOS</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Soluções que fazem seu<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>negócio crescer de verdade.</span></h2>
-        <p style={{ color: "#6b7280", fontSize: 17, marginTop: 16, maxWidth: 560, margin: "16px auto 0" }}>Não vendemos tecnologia. Vendemos resultado — mais clientes, menos custo, mais escala.</p>
+        <h2 className="h-section">Soluções que fazem seu<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>negócio crescer de verdade.</span></h2>
+        <p className="lead" style={{ maxWidth: 560, margin: "14px auto 0" }}>Não vendemos tecnologia. Vendemos resultado: mais clientes, menos custo, mais escala.</p>
       </motion.div>
       <div className="grid-services">
         {SERVICES.map((s,i) => (
           <motion.div key={s.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1, duration: 0.6 }}
-            style={{ background: "#fff", borderRadius: 20, padding: "clamp(22px,4vw,32px)", border: "1px solid #e5e7eb", cursor: "default", transition: "all 0.3s", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
+            className="service-card" style={{ cursor: "default" }}
             onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#0B1F3A"; el.style.boxShadow = "0 8px 30px rgba(11,31,58,0.10)"; el.style.transform = "translateY(-4px)"; }}
             onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#e5e7eb"; el.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)"; el.style.transform = "translateY(0)"; }}>
             <div style={{ width: 52, height: 52, borderRadius: 14, background: "linear-gradient(135deg,#E8EEF5,#D7E3F0)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>{s.icon}</div>
@@ -299,13 +299,13 @@ function Projects() {
   return (
     <section id="projetos" className="section" style={{ background: "#f9fafb" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ marginBottom: 40 }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-head is-left">
           <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>PORTFÓLIO</span>
-          <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, lineHeight: 1.15 }}>Projetos que<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entregam resultado.</span></h2>
+          <h2 className="h-section">Projetos que<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entregam resultado.</span></h2>
           <p style={{ color: "#6b7280", fontSize: 16, marginTop: 16 }}>Clientes de diferentes setores. Resultados reais, entrega dentro do prazo.</p>
         </motion.div>
 
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
+        <div className="project-tabs">
           {PROJECTS.map((proj, i) => (
             <button key={proj.name} onClick={() => setActive(i)} style={{ padding: "8px 14px", borderRadius: 100, border: "none", fontWeight: 600, fontSize: 13, cursor: "pointer", background: active===i ? "#0B1F3A" : "#fff", color: active===i ? "#fff" : "#6b7280", boxShadow: active===i ? "0 4px 12px rgba(11,31,58,0.28)" : "0 1px 3px rgba(0,0,0,0.08)", transition: "all 0.2s", display: "flex", alignItems: "center", gap: 6 }}>
               <span>{proj.emoji}</span>{proj.cat}
@@ -321,7 +321,7 @@ function Projects() {
                 <span style={{ fontSize: 36 }}>{p.emoji}</span>
                 <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", color: p.color, background: p.color+"18", padding: "5px 14px", borderRadius: 100 }}>{p.cat}</span>
               </div>
-              <h3 style={{ fontSize: "clamp(24px,5vw,32px)", fontWeight: 900, letterSpacing: "-1px", marginBottom: 6, lineHeight: 1.15 }}>{p.name}</h3>
+              <h3 style={{ fontSize: "clamp(1.35rem, 3vw + 0.6rem, 2rem)", fontWeight: 900, letterSpacing: "-0.03em", marginBottom: 6, lineHeight: 1.2 }}>{p.name}</h3>
               {"company" in p && <div style={{ fontSize: 12, fontWeight: 600, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.04em" }}>{(p as typeof p & {company:string}).company}</div>}
               <div style={{ fontSize: 15, fontWeight: 700, color: p.color, marginBottom: 16 }}>✓ {p.result}</div>
               <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.8, marginBottom: 0 }}>{p.desc}</p>
@@ -350,9 +350,9 @@ function Projects() {
 function Process() {
   return (
     <section id="processo" className="section" style={{ maxWidth: 1200, margin: "0 auto" }}>
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 48 }}>
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-head">
         <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>COMO TRABALHAMOS</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Processo transparente,<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entrega garantida.</span></h2>
+        <h2 className="h-section">Processo transparente,<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>entrega garantida.</span></h2>
       </motion.div>
       <div className="grid-process">
         {PROCESS.map((p,i) => (
@@ -375,13 +375,13 @@ function CTA() {
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
         className="cta-box">
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 30%,rgba(56,189,248,0.22) 0%,transparent 50%)", pointerEvents: "none" }} />
-        <h2 style={{ fontSize: "clamp(26px,6vw,48px)", fontWeight: 900, color: "#fff", letterSpacing: "-1.2px", marginBottom: 18, position: "relative", lineHeight: 1.2 }}>
+        <h2 className="h-section" style={{ color: "#fff", marginBottom: 18, position: "relative", marginTop: 0 }}>
           Pronto para transformar<br/>sua ideia em produto?
         </h2>
-        <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "clamp(15px,3.5vw,18px)", marginBottom: 28, position: "relative" }}>
+        <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "clamp(0.95rem, 0.4vw + 0.85rem, 1.125rem)", marginBottom: 28, position: "relative", lineHeight: 1.6 }}>
           Fale com nossa equipe e receba uma proposta em até 24 horas.
         </p>
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", position: "relative" }}>
+        <div className="btn-row" style={{ justifyContent: "center", position: "relative" }}>
           <a href="#contato" style={{ background: "#f97316", color: "#fff", padding: "14px 28px", borderRadius: 12, fontWeight: 800, fontSize: 15, textDecoration: "none", boxShadow: "0 6px 20px rgba(249,115,22,0.5)" }}>
             Solicitar proposta →
           </a>
@@ -398,9 +398,9 @@ function FAQ() {
   const [open, setOpen] = useState<number|null>(null);
   return (
     <section id="faq" className="section" style={{ maxWidth: 800, margin: "0 auto" }}>
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ textAlign: "center", marginBottom: 40 }}>
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="section-head">
         <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>DÚVIDAS FREQUENTES</span>
-        <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12 }}>Perguntas<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>frequentes.</span></h2>
+        <h2 className="h-section">Perguntas<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>frequentes.</span></h2>
       </motion.div>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {FAQS.map((f,i) => (
@@ -434,10 +434,10 @@ function Contact() {
       <div className="grid-2-contact" style={{ maxWidth: 1100, margin: "0 auto" }}>
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em" }}>CONTATO</span>
-          <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, marginBottom: 20 }}>Vamos construir<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>algo incrível?</span></h2>
+          <h2 className="h-section" style={{ marginBottom: 20 }}>Vamos construir<br/><span style={{ background: "linear-gradient(135deg,#0B1F3A,#163A5F)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>algo incrível?</span></h2>
           <p style={{ color: "#6b7280", fontSize: 16, lineHeight: 1.8, marginBottom: 32 }}>Conte sobre seu projeto. Nossa equipe analisa e retorna com uma proposta em até 24 horas.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {[{icon:"📧",label:"E-mail",val:"gabriel.augusto99@hotmail.com"},{icon:"💬",label:"WhatsApp",val:"+55 (11) 97555-8289"},{icon:"📍",label:"Localização",val:"São Paulo, SP — Brasil"}].map(c=>(
+            {[{icon:"📧",label:"E-mail",val:"gabriel.augusto99@hotmail.com"},{icon:"💬",label:"WhatsApp",val:"+55 (11) 97555-8289"},{icon:"📍",label:"Localização",val:"São Paulo, SP"}].map(c=>(
               <div key={c.label} style={{ display: "flex", gap: 14, alignItems: "center", minWidth: 0 }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#E8EEF5,#D7E3F0)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{c.icon}</div>
                 <div style={{ minWidth: 0 }}><div style={{ fontSize: 12, color: "#9ca3af", fontWeight: 600 }}>{c.label}</div><div style={{ fontWeight: 700, color: "#111", wordBreak: "break-word" }}>{c.val}</div></div>
@@ -490,7 +490,7 @@ function Footer() {
             <div style={{ marginBottom: 16 }}>
               <Logo size={36} tone="light" />
             </div>
-            <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: 14, maxWidth: 320 }}>Agência digital especializada em apps, sites, automações, SaaS e integrações. Atendemos negócios de todos os portes — São Paulo, Brasil.</p>
+            <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: 14, maxWidth: 320 }}>Agência digital especializada em apps, sites, automações, SaaS e integrações. Atendemos negócios de todos os portes. São Paulo, Brasil.</p>
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: 20 }}>SERVIÇOS</div>

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Stresser Digital — Agência digital";
+export const alt = "Stresser Digital | Agência digital";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
             Apps, sites e automações que fazem o negócio crescer.
           </div>
           <div style={{ fontSize: 24, color: "rgba(255,255,255,0.72)", lineHeight: 1.4 }}>
-            Do varejo à saúde, de startups a empresas consolidadas — tecnologia sob medida para o seu público.
+            Do varejo à saúde, de startups a empresas consolidadas. Tecnologia sob medida para o seu público.
           </div>
         </div>
 

@@ -13,11 +13,11 @@ const siteUrl = "https://stresserdigital.com.br";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Stresser Digital — Agência digital de apps, sites e automações",
+    default: "Stresser Digital | Agência digital de apps, sites e automações",
     template: "%s · Stresser Digital",
   },
   description:
-    "Agência digital em São Paulo: apps mobile, sites, automações, SaaS e integrações para negócios de todos os portes — do varejo à saúde, de startups a empresas consolidadas.",
+    "Agência digital em São Paulo: apps mobile, sites, automações, SaaS e integrações para negócios de todos os portes: do varejo à saúde, de startups a empresas consolidadas.",
   applicationName: "Stresser Digital",
   authors: [{ name: "Stresser Digital" }],
   creator: "Stresser Digital",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Stresser Digital — Agência digital",
+    title: "Stresser Digital | Agência digital",
     description:
       "Apps, sites e automações que fazem o negócio crescer. Atendemos varejo, saúde, startups e empresas B2B.",
     url: siteUrl,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stresser Digital — Agência digital",
+    title: "Stresser Digital | Agência digital",
     description: "Apps, sites e automações para negócios de todos os portes.",
   },
   robots: {

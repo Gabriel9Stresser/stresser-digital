@@ -71,22 +71,22 @@ export const services = [
   {
     icon: "📱",
     title: "Apps Mobile",
-    description: "React Native e Expo — iOS e Android com uma base de código, performance nativa.",
+    description: "React Native e Expo: iOS e Android com uma base de código, performance nativa.",
   },
   {
     icon: "⚙️",
     title: "Automações & Bots",
-    description: "WhatsApp, Telegram, n8n, scraping, robôs de trading — processo sem toque humano.",
+    description: "WhatsApp, Telegram, n8n, scraping, robôs de trading. Processo sem toque humano.",
   },
   {
     icon: "🌐",
     title: "Sites & Landing Pages",
-    description: "Next.js, WordPress e Elementor — rápido, responsivo e otimizado para conversão.",
+    description: "Next.js, WordPress e Elementor: rápido, responsivo e otimizado para conversão.",
   },
   {
     icon: "🔗",
     title: "Integrações de API",
-    description: "Mercado Pago, Strava, Meta, Stripe, Supabase, Firebase — conectamos tudo.",
+    description: "Mercado Pago, Strava, Meta, Stripe, Supabase, Firebase. Conectamos tudo.",
   },
   {
     icon: "🤖",
@@ -96,7 +96,7 @@ export const services = [
   {
     icon: "🏗️",
     title: "SaaS do zero",
-    description: "Arquitetura escalável, monorepo, auth, billing e deploy — produto completo.",
+    description: "Arquitetura escalável, monorepo, auth, billing e deploy. Produto completo.",
   },
 ];
 
