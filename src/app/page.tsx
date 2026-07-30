@@ -297,7 +297,7 @@ function CTA() {
           <a href="#contato" style={{ background: "#f97316", color: "#fff", padding: "16px 36px", borderRadius: 12, fontWeight: 800, fontSize: 16, textDecoration: "none", boxShadow: "0 6px 20px rgba(249,115,22,0.5)" }}>
             Solicitar proposta →
           </a>
-          <a href="https://wa.me/5511999999999" style={{ background: "rgba(255,255,255,0.12)", color: "#fff", padding: "16px 36px", borderRadius: 12, fontWeight: 600, fontSize: 16, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)" }}>
+          <a href="https://wa.me/5511975558289" style={{ background: "rgba(255,255,255,0.12)", color: "#fff", padding: "16px 36px", borderRadius: 12, fontWeight: 600, fontSize: 16, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)" }}>
             💬 WhatsApp
           </a>
         </div>
@@ -349,7 +349,7 @@ function Contact() {
           <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, letterSpacing: "-1.5px", marginTop: 12, marginBottom: 20 }}>Vamos construir<br/><span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>algo incrível?</span></h2>
           <p style={{ color: "#6b7280", fontSize: 16, lineHeight: 1.8, marginBottom: 40 }}>Conte sobre seu projeto. Nossa equipe analisa e retorna com uma proposta em até 24 horas.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {[{icon:"📧",label:"E-mail",val:"contato@stresserdigital.com"},{icon:"💬",label:"WhatsApp",val:"+55 (11) 9 9999-9999"},{icon:"📍",label:"Localização",val:"São Paulo, SP — Brasil"}].map(c=>(
+            {[{icon:"📧",label:"E-mail",val:"gabriel.augusto99@hotmail.com"},{icon:"💬",label:"WhatsApp",val:"+55 (11) 97555-8289"},{icon:"📍",label:"Localização",val:"São Paulo, SP — Brasil"}].map(c=>(
               <div key={c.label} style={{ display: "flex", gap: 16, alignItems: "center" }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#ede9fe,#e0e7ff)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{c.icon}</div>
                 <div><div style={{ fontSize: 12, color: "#9ca3af", fontWeight: 600 }}>{c.label}</div><div style={{ fontWeight: 700, color: "#111" }}>{c.val}</div></div>
@@ -413,8 +413,8 @@ function Footer() {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: "rgba(255,255,255,0.4)", marginBottom: 20 }}>CONTATO</div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, marginBottom: 10 }}>contato@stresserdigital.com</div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, marginBottom: 10 }}>+55 (11) 9 9999-9999</div>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, marginBottom: 10 }}>gabriel.augusto99@hotmail.com</div>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, marginBottom: 10 }}>+55 (11) 97555-8289</div>
             <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>São Paulo, SP</div>
           </div>
         </div>
