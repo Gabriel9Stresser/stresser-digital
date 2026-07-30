@@ -5,58 +5,64 @@ import { motion, AnimatePresence } from "framer-motion";
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const PROJECTS = [
   {
-    name: "Plataforma Financeira",
-    cat: "Mercado Financeiro",
-    emoji: "🏦",
-    result: "Operações em tempo real, zero intervenção manual",
-    desc: "Desenvolvemos uma plataforma completa de gestão financeira para empresa do setor, com painel de operações em tempo real, relatórios automatizados e fluxo de liquidação. Do zero ao ar em menos de 3 meses.",
-    outcomes: ["Operações automatizadas 24h","Dashboard em tempo real","Relatórios sob demanda"],
+    name: "DS.Marketing & DS.art",
+    cat: "Marketing Digital / SaaS",
+    emoji: "📊",
+    result: "Plataforma de criação e automação para milhares de clientes",
+    desc: "Na Datasales, fui responsável por dois aplicativos React Native (CLI e Expo) e pela plataforma web DS.Marketing e DS.art — ferramentas de criação e automação de conteúdo de marketing. Desenvolvi bots de atendimento com IA, CRUDs com Node.js e integrações serverless na AWS.",
+    outcomes: ["2 apps React Native (iOS & Android)","Bots de atendimento com IA","Integrações AWS Serverless"],
     color: "#6366f1",
+    company: "Datasales · 3 anos e meio",
   },
   {
-    name: "Rede de Clínicas",
+    name: "Zelo Saúde — Fiocruz",
     cat: "Saúde",
     emoji: "🏥",
-    result: "Sistema unificado para múltiplas unidades",
-    desc: "App mobile e painel administrativo para rede de clínicas com múltiplas unidades. Agendamento online, prontuário digital, gestão de profissionais e financeiro integrado em um único sistema.",
-    outcomes: ["App iOS & Android","Agendamento online","Gestão multi-unidade"],
+    result: "5 aplicações entregues em um único projeto",
+    desc: "Projeto para a Fiotec/Fiocruz: desenvolvimento da plataforma Zelo Saúde com 5 aplicações integradas — 2 apps React Native, 2 frontends React e 1 API Node.js. Fui responsável pelo planejamento técnico e execução completa do ecossistema.",
+    outcomes: ["2 apps mobile (React Native)","2 painéis web (React)","API Node.js + PostgreSQL"],
     color: "#10b981",
+    company: "Fiotec / Fiocruz",
   },
   {
-    name: "Empresa de Segurança",
+    name: "PHAST — Fisioterapia Digital",
+    cat: "Saúde / Mobile",
+    emoji: "💪",
+    result: "App de fisioterapia e monitoramento de pacientes",
+    desc: "App web e mobile para fisioterapia e monitoramento de pacientes — plataforma completa com agendamentos, evolução clínica, comunicação profissional/paciente e gestão de sessões. Stack full-stack: React Native, React e Node.js com MongoDB.",
+    outcomes: ["App iOS & Android (React Native)","Painel web para profissionais","Monitoramento e evolução clínica"],
+    color: "#f59e0b",
+    company: "Freelance · 8 meses",
+  },
+  {
+    name: "MyGuard — Segurança Patrimonial",
     cat: "Segurança Patrimonial",
     emoji: "🔒",
-    result: "Controle em tempo real de toda a operação",
-    desc: "Plataforma enterprise para empresa de segurança patrimonial: app para guardas, painel para clientes empresariais, dashboard de ocorrências e relatórios automáticos de rondas.",
-    outcomes: ["App para equipes de campo","Painel para clientes B2B","Relatório automático de rondas"],
-    color: "#f59e0b",
-  },
-  {
-    name: "Varejo & E-commerce",
-    cat: "Varejo",
-    emoji: "🛒",
-    result: "+3x em pedidos nos primeiros 90 dias",
-    desc: "Loja online integrada com gestão de estoque, atendimento automatizado via WhatsApp Business e relatórios de vendas em tempo real. Crescimento de 3x em pedidos no trimestre de lançamento.",
-    outcomes: ["+3x em pedidos","Atendimento 24h no WhatsApp","Estoque integrado"],
+    result: "Plataforma multi-tenant para operações de segurança",
+    desc: "Plataforma completa para o GroupMyGuard: app mobile para equipes de campo, painel administrativo e painel B2B para empresas clientes. Controle de rondas, ocorrências e relatórios em tempo real. Arquitetura multi-tenant escalável com Node.js, React Native e React.",
+    outcomes: ["App para equipes de campo (React Native)","Painel B2B para empresas clientes","Relatórios automáticos de rondas"],
     color: "#f97316",
+    company: "GroupMyGuard",
   },
   {
-    name: "SaaS de Automação",
+    name: "ZapFlow — Automação de Marketing",
     cat: "Startup / SaaS",
-    emoji: "⚙️",
-    result: "500+ clientes ativos na plataforma",
-    desc: "Produto SaaS do zero para automação de marketing e vendas. Plataforma multitenancy com dashboard do cliente, cobrança recorrente e integração com canais de comunicação. Mais de 500 clientes ativos.",
-    outcomes: ["500+ clientes ativos","Cobrança recorrente","Dashboard self-service"],
+    emoji: "⚡",
+    result: "SaaS próprio de automação via WhatsApp e canais digitais",
+    desc: "Fundei e construí o ZapFlow do zero como Founder & CTO — plataforma SaaS de automação de marketing para grupos de WhatsApp e Telegram. Backend Node.js com Prisma, integração real com WhatsApp via Baileys e dashboard do cliente em React.",
+    outcomes: ["WhatsApp & Telegram integrados","Dashboard self-service","Cobrança recorrente"],
     color: "#a855f7",
+    company: "ZapFlow · Founder & CTO",
   },
   {
-    name: "App Financeiro",
-    cat: "Fintech / Mobile",
-    emoji: "📱",
-    result: "iOS & Android em 6 semanas",
-    desc: "Aplicativo iOS e Android para fintech brasileira. UX focada em zero burocracia, fluxo de pagamentos simplificado, notificações em tempo real e autenticação segura. Lançado em 6 semanas.",
-    outcomes: ["iOS & Android nativos","Zero burocrança no fluxo","Lançado em 6 semanas"],
+    name: "IanApp — Gestão de Estoque",
+    cat: "Varejo / Mobile",
+    emoji: "📦",
+    result: "App de inventário para cliente internacional",
+    desc: "Aplicativo mobile de gestão de estoque e inventário desenvolvido para cliente internacional. Fluxo completo de entrada e saída, leitura de código de barras, relatórios e sincronização em tempo real. Entrega em 4 meses com comunicação em inglês.",
+    outcomes: ["App de inventário (React Native)","Leitura de código de barras","Relatórios e sincronização"],
     color: "#06b6d4",
+    company: "Freelance · cliente internacional",
   },
 ];
 
@@ -95,9 +101,16 @@ function Navbar() {
   }, []);
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, height: 70, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 40px", background: scrolled ? "rgba(255,255,255,0.96)" : "transparent", backdropFilter: scrolled ? "blur(20px)" : "none", boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08)" : "none", transition: "all 0.3s" }}>
-      <a href="#" style={{ textDecoration: "none", fontWeight: 800, fontSize: 20, letterSpacing: "-0.5px" }}>
-        <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
-        <span style={{ color: scrolled ? "#111" : "#fff" }}> Digital</span>
+      <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="url(#navGrad)"/>
+          <text x="18" y="24" textAnchor="middle" fontFamily="-apple-system,sans-serif" fontWeight="900" fontSize="16" fill="white" letterSpacing="-0.5">SD</text>
+          <defs><linearGradient id="navGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stopColor="#6366f1"/><stop offset="1" stopColor="#a855f7"/></linearGradient></defs>
+        </svg>
+        <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.5px" }}>
+          <span style={{ background: "linear-gradient(135deg,#6366f1,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
+          <span style={{ color: scrolled ? "#111" : "#fff" }}> Digital</span>
+        </span>
       </a>
       <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
         {["Serviços","Projetos","Processo","FAQ"].map(l => (
@@ -127,7 +140,7 @@ function Hero() {
       <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }} style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "6px 16px", marginBottom: 28 }}>
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 8px #4ade80" }} />
-          <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 600 }}>Agência de tecnologia · São Paulo, BR</span>
+          <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 600 }}>Agência Digital</span>
         </div>
 
         <h1 style={{ fontSize: "clamp(36px,4.5vw,58px)", fontWeight: 900, color: "#fff", lineHeight: 1.1, letterSpacing: "-2px", marginBottom: 20 }}>
@@ -298,7 +311,8 @@ function Projects() {
                 <span style={{ fontSize: 36 }}>{p.emoji}</span>
                 <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", color: p.color, background: p.color+"18", padding: "5px 14px", borderRadius: 100 }}>{p.cat}</span>
               </div>
-              <h3 style={{ fontSize: 32, fontWeight: 900, letterSpacing: "-1.5px", marginBottom: 8, lineHeight: 1.1 }}>{p.name}</h3>
+              <h3 style={{ fontSize: 32, fontWeight: 900, letterSpacing: "-1.5px", marginBottom: 6, lineHeight: 1.1 }}>{p.name}</h3>
+              {"company" in p && <div style={{ fontSize: 12, fontWeight: 600, color: "#9ca3af", marginBottom: 10, letterSpacing: "0.04em" }}>{(p as typeof p & {company:string}).company}</div>}
               <div style={{ fontSize: 15, fontWeight: 700, color: p.color, marginBottom: 20 }}>✓ {p.result}</div>
               <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.8, marginBottom: 0 }}>{p.desc}</p>
             </div>
@@ -463,9 +477,16 @@ function Footer() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
           <div>
-            <div style={{ fontWeight: 900, fontSize: 22, marginBottom: 16 }}>
-              <span style={{ background: "linear-gradient(135deg,#818cf8,#c084fc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
-              <span style={{ color: "#fff" }}> Digital</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="10" fill="url(#footGrad)"/>
+                <text x="18" y="24" textAnchor="middle" fontFamily="-apple-system,sans-serif" fontWeight="900" fontSize="16" fill="white" letterSpacing="-0.5">SD</text>
+                <defs><linearGradient id="footGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stopColor="#818cf8"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+              </svg>
+              <span style={{ fontWeight: 900, fontSize: 20 }}>
+                <span style={{ background: "linear-gradient(135deg,#818cf8,#c084fc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Stresser</span>
+                <span style={{ color: "#fff" }}> Digital</span>
+              </span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: 14, maxWidth: 320 }}>Agência de tecnologia especializada em apps, automações, bots, SaaS e integrações. São Paulo, Brasil.</p>
           </div>
