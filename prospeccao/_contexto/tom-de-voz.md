@@ -5,5 +5,6 @@
 - Nunca usar travessão (—) nos textos de abordagem
 - Evitar palavras de vendedor: "incrível", "revolucionário", "exclusivo", "único"
 - Elogio real e específico primeiro (baseado na nota/avaliações do lead), depois o gap
+- Gap preferencial: site lento no celular, WhatsApp escondido, boa nota no Google que não aparece na página
 - Fechar sempre com pergunta curta e de baixo compromisso ("Topam ver uma prévia?")
 - Mensagens curtas: WhatsApp = até 5-6 linhas

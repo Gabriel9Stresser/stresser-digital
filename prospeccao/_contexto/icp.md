@@ -14,9 +14,15 @@
 | Academias de Ginástica | `leads/academias/` |
 | Escritórios de Advocacia | `leads/advocacia/` |
 | Psicólogos e Clínicas de Psicologia | `leads/psicologia/` |
+| Fisioterapia, RPG e Reabilitação | `leads/fisioterapia/` |
+| Nutricionistas | `leads/nutricao/` |
+| Clínicas Veterinárias | `leads/veterinario/` |
+| Contadores e Escritórios Contábeis | `leads/contabilidade/` |
+| Salões e Barbearias | `leads/saloes/` |
+| Clínicas Médicas | `leads/medicina/` |
 
 ## Sinal de prioridade (abordar primeiro)
-Alta nota + alto volume de avaliações + site visivelmente fraco = maior gap
+Alta nota + alto volume de avaliações + site lento no celular ou sem WhatsApp claro = maior gap
 entre reputação real e presença digital → maior chance de conversão.
 
 ## Fora do ICP (não prospectar)

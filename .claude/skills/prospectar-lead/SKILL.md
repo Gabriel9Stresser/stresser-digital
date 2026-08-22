@@ -22,6 +22,7 @@ e `tom-de-voz.md` antes de gerar qualquer conteúdo.
 ## Tarefa
 
 1. Identifique o nicho do lead (odontologia, estética, academias, advocacia, psicologia,
+   fisioterapia, nutrição, veterinário, contabilidade, salões, medicina,
    ou um novo — ver `prospeccao/leads/`). Se não tiver certeza, pergunte em uma linha.
 2. Verifique se já existe um script para esse nicho em `prospeccao/scripts/abordagem-inicial.md`.
    Se existir, adapte o nome real do lead. Se não existir, gere um script novo seguindo
@@ -38,6 +39,7 @@ e `tom-de-voz.md` antes de gerar qualquer conteúdo.
 - Nunca usar travessão (—) no texto da mensagem
 - Tom de conversa real, nunca "prezado" ou "parceiro"
 - Elogio específico baseado na nota/avaliações reais do lead antes de apontar o gap
+- Gap de performance: site lento no celular, WhatsApp escondido, nota alta no Google vs página fraca
 - Fechar sempre com pergunta curta de baixo compromisso
 - R$ 599 só é mencionado como valor de fechamento, nunca antes da oferta de preview grátis
 - WhatsApp: máximo 5-6 linhas

@@ -41,6 +41,23 @@ Disparam após mover CRM: pediu prévia · material recebido · pediu humano · 
 3. Follow-up D+3/D+7 para quem não responder
 4. Atualizar cards no Trello conforme respostas
 
+## 3ª leva — preparação (performance + novos nichos)
+
+Ângulo: nota alta no Google/Maps mas site lento no celular, WhatsApp escondido, SEO técnico fraco.
+
+| Nicho | Lista | Status |
+|---|---|---|
+| Fisioterapia | `leads/fisioterapia/lista.md` | números parciais verificados |
+| Nutrição | `leads/nutricao/lista.md` | confirmar Doctoralia |
+| Veterinário | `leads/veterinario/lista.md` | números parciais verificados |
+| Contabilidade | `leads/contabilidade/lista.md` | a prospectar (Maps) |
+| Salões | `leads/saloes/lista.md` | a prospectar (Maps) |
+| Medicina | `leads/medicina/lista.md` | a prospectar (Maps) |
+
+Bot atualizado: keywords de performance (`site lento`, `trava no celular`, etc.) → fluxo `ja_tenho` / esclarecimento.
+
+Scripts: `scripts/abordagem-inicial.md` (templates por nicho) · `scripts/objecoes.md` (site lento, já no Google).
+
 ## ZapFlow (oficial apenas)
 - Conexão: **Mente em foco** · `cmrz3oczf001oj14urgnlnu18` · `+55 11 94626-4798`
 - **Proibido** API não-oficial nestes disparos

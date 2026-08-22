@@ -68,6 +68,7 @@ Detalhe com exemplos reais: [`../scripts/analise-respostas-leads.md`](../scripts
 | Aceite | `Pode enviar`, `Quero`, `Sim` | → prévia |
 | Recusa | `Não, obrigada` | → perdido |
 | Dúvida | domínio, Google, “como funciona” | → esclarecimento → prévia |
+| Performance | `site lento`, `trava no celular`, `não aparece no Google` | → já tenho / esclarecimento |
 | Correção | `Não recusei`, `Eu quero` | perdido → prévia |
 | Ruído | menu WB, horário, 1️⃣2️⃣3️⃣ | ignorado (não inicia bot) |
 

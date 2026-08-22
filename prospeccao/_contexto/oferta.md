@@ -10,7 +10,8 @@
 ## Por que funciona
 - Preço de mercado para o mesmo serviço: R$ 2.000–3.000
 - Sem risco para o lead → baixa fricção para dizer "sim, mostra"
-- Prova é visual e imediata, não depende de convencer por texto
+- Prova é visual e imediata: site rápido no celular, comparativo de qualidade na prévia
+- Gap claro: nota 4,8+ no Google + site lento ou confuso no mobile
 
 ## Regras da oferta
 - Nunca cobrar antes da aprovação

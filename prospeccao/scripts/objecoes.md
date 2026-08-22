@@ -2,8 +2,17 @@
 
 ## "Já tenho site"
 ```
-Que bom! Nem toda empresa com boa reputação tem site atualizado, então já é um ponto a seu favor.
-Posso dar uma olhada rápida e te dizer se vale a pena mexer em algo específico, sem compromisso.
+Que bom! Nem toda empresa com boa reputação tem site que funciona bem no celular.
+Muita gente com nota alta no Google perde paciente porque a página trava ou o WhatsApp fica escondido.
+
+Posso montar uma prévia nova, rápida e organizada, sem compromisso. Quer ver?
+```
+
+## "Meu site já aparece no Google"
+```
+Ótimo que já aparece. A questão é o que a pessoa vê quando clica: se trava no celular ou não encontra WhatsApp, ela volta pro Maps e escolhe outro.
+
+A prévia mostra um site rápido e claro, alinhado com a nota que você já tem. Grátis pra comparar.
 ```
 
 ## "Não tenho dinheiro agora"

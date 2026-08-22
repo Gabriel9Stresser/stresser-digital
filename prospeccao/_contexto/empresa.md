@@ -10,8 +10,9 @@ para negócios locais em São Paulo.
 - Foco inicial em aquisição de clientes via prospecção ativa (outbound)
 
 ## Diferencial usado na prospecção
-Modelo "risco zero": construímos o site novo primeiro, o lead só paga se aprovar.
-Isso remove a objeção de preço/confiança logo na primeira mensagem.
+Modelo "risco zero": montamos o site novo primeiro, o lead só paga se aprovar.
+Foco em **site performático no celular**: abre rápido, WhatsApp visível, estrutura que ajuda no Google Maps (SEO técnico, não anúncio grátis).
+Isso remove objeção de preço/confiança e conecta reputação alta no Maps com uma página que não trava.
 
 ## Responsável
 Gabriel Augusto Solér Stresser — gabriel.augusto99@hotmail.com

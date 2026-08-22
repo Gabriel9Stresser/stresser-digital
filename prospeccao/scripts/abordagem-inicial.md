@@ -84,3 +84,69 @@ Se não gostar, não paga nada.
 
 Posso mandar uma prévia?
 ```
+
+## Fisioterapia / RPG / Reabilitação
+```
+Oi! Vi a [Nome da Clínica] no Google e a reputação com pacientes é muito boa 👏
+
+No celular o site demora ou não deixa agendar/WhatsApp de forma clara. Quem busca fisio em Perdizes pode desistir antes de ligar.
+
+Montamos uma prévia nova, rápida no mobile, com contato direto, GRÁTIS. Se aprovar, R$ 599. Se não, fica com vocês.
+
+Topam ver como ficaria?
+```
+
+## Nutrição
+```
+Oi! Encontrei a [Nome] no Google/Dotoralia e as avaliações são ótimas.
+
+O site não transmite isso no celular: carrega lento ou o agendamento fica confuso. Paciente que pesquisa emagrecimento ou esportiva quer resposta rápida.
+
+Posso montar uma prévia grátis, leve e fácil de agendar. R$ 599 só se aprovar.
+
+Posso mandar essa semana?
+```
+
+## Veterinário
+```
+Oi! Vi a [Clínica] no Maps e os tutores avaliam muito bem 🐾
+
+No site, no celular, falta clareza: emergência, horário, WhatsApp. Isso pesa quando o pet precisa de atendimento.
+
+Proposta: prévia nova, rápida, com WhatsApp visível, GRÁTIS. R$ 599 só se gostar do resultado.
+
+Quer ver uma prévia?
+```
+
+## Contabilidade
+```
+Boa tarde! O [Escritório] tem boa reputação no Google.
+
+O site parece de outra década no celular: lento, sem formulário claro para MEI/PJ. Empresário que pesquisa quer confiança visual.
+
+Refazemos a página, rápida e profissional, GRÁTIS pra aprovar. R$ 599 se fechar.
+
+Posso mostrar uma prévia?
+```
+
+## Salões e barbearias
+```
+Oi! As fotos no Instagram da [Nome] são lindas 💇
+
+Mas quem cai no link do Google não agenda fácil: site lento ou só bio genérica. Perde cliente que já estava interessado.
+
+Montamos landing rápida com WhatsApp e serviços, GRÁTIS. R$ 599 se aprovar.
+
+Topam ver?
+```
+
+## Clínicas médicas
+```
+Boa tarde! A [Clínica] tem avaliações muito boas no Google.
+
+No celular o site não ajuda: demora, especialidades confusas, agendamento difícil. Paciente vai pro próximo resultado.
+
+Prévia grátis de um site rápido e claro. R$ 599 só se aprovar.
+
+Posso mandar essa semana?
+```
