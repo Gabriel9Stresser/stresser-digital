@@ -99,6 +99,17 @@ cd zapflow/zapflow-backend && npx tsx scripts/patch-stresser-bot.ts
 ssh hostinger-zapflow 'docker exec hermes-backend npx tsx scripts/patch-stresser-bot.ts'
 ```
 
+**Layout no editor** (5 colunas em `config.ts` → `NODE_POSITIONS`):
+
+| Coluna | Nós |
+|---|---|
+| Perdido (80) | Recusou, handoff |
+| Entrada (400) | Já tem site |
+| Hub (800) | Triagem, Esclarecimento |
+| Prévia (1200) | Pediu prévia → alerta → aguarda → material → alerta → handoff → feedback |
+| Info (1600) | Preço, Quem somos |
+| Fechamento (2000) | Humano, Ganho (+ alertas e handoffs) |
+
 Scripts antigos (`patch-stresser-bot-*.ts`) estão obsoletos — use só `patch-stresser-bot.ts`.
 
 ## Regras do motor (fora do grafo)
