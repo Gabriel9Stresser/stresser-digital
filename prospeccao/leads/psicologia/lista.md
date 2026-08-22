@@ -22,7 +22,7 @@ São Paulo, SP
 | 17 | Luciana Perfetto | (11) 99718-2144 | ⭐4,9 (est.) | Atende Perdizes (base Vila Leopoldina). Landing SEO por bairro | contatado |
 | 18 | Clínica Solange Ferrari Cianfa | (11) 96656-8172 | ⭐4,8 (est.) | R. Cayowaá 580, Perdizes. Diferente da Sol Ferrari item 6 (outro tel.) | contatado |
 | 19 | Psicóloga Christina Queiroz | (11) 99191-6989 | ⭐5,0 (est.) | Planalto Paulista + online. Site Wix, sem agendamento direto | contatado |
-| 20 | Igor Maggioli — Psicólogo Clínico | (11) 93908-2178 | ⭐5,0 (est.) | Av. Antártica 675, Perdizes. Site ok mas captação genérica | contatado |
+| 20 | Igor Maggioli — Psicólogo Clínico | (11) 93908-2178 | ⭐5,0 (est.) | Av. Antártica 675, Perdizes. Site: igorpsicologo.com | preview enviado |
 | 21 | Psicóloga Mariana Takahashi | (11) 96863-2121 | ⭐5,0 (est.) | R. Aimberê 251, Perdizes. Contato via secretária WhatsApp | contatado |
 | 22 | Psicóloga Beatriz (Claro alt.) | (11) 97639-5841 | ⭐5,0 (est.) | Mesma profissional item 16 | pular (duplicado) |
 | 23 | Clínica Sol Ferrari Psiquê (alt.) | (11) 98295-5971 | ⭐4,8 (est.) | Responsável técnica Solange Ferrari, mesma clínica item 18 | pular (duplicado) |
