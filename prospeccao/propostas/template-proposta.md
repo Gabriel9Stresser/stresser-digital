@@ -1,13 +1,15 @@
 # Template — Mensagem de Fechamento (pós-aprovação do preview)
 
 ```
-Que bom que gostou, [Nome]! 🙌
+Que bom que curtiu, [Nome]! 🙌
 
-Pra fechar, é só:
+Antes de fechar, me confirma se está tudo certo no visual e no celular. Qualquer ajuste de texto ou foto, a gente encaixa agora.
+
+Pra seguir com o site no ar:
 1. Confirmar o pagamento de R$ 599 (PIX ou cartão)
-2. Te passo os acessos/domínio pra colocar o site no ar
+2. Te passo os acessos/domínio pra publicar
 
-Qualquer ajuste que quiser antes de finalizar, me fala que a gente encaixa.
+Faz sentido pra você?
 ```
 
 ## Checklist antes de enviar

@@ -13,7 +13,7 @@ Vale muito a pena ver, prometo que vai gostar 🙏
 
 ## Preview enviado, sem resposta após 48h
 ```
-Oi [Nome]! Só confirmando que o link do site chegou certinho pra você.
+Oi [Nome]! Só confirmando que o link da prévia chegou certinho.
 
-Fico no aguardo do seu feedback, qualquer coisa é só me chamar aqui 🙏
+Quando abrir no celular, me conta o que mais gostou e se reparou na velocidade. Se quiser mudar algo no texto ou nas fotos, me fala 🙏
 ```

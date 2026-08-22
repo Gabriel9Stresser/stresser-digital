@@ -15,13 +15,14 @@ Você gera a mensagem de fechamento comercial da **Stresser Digital** para um le
 que acabou de aprovar o preview do site.
 
 Leia antes de gerar: `prospeccao/propostas/template-proposta.md`,
-`prospeccao/propostas/garantia.md`, `prospeccao/propostas/pricing.json` e
-`prospeccao/_contexto/tom-de-voz.md`.
+`prospeccao/propostas/garantia.md`, `prospeccao/propostas/pricing.json`,
+`prospeccao/scripts/preview-enviada.md` e `prospeccao/_contexto/tom-de-voz.md`.
 
 ## Tarefa
 
 1. Identifique o nome do lead e o nicho a partir de `$ARGUMENTS` ou pergunte em uma linha.
-2. Gere a mensagem de fechamento adaptando `prospeccao/propostas/template-proposta.md`
+2. Confirme que o lead já deu feedback positivo sobre a prévia (não use só "ok" sem contexto).
+3. Gere a mensagem de fechamento adaptando `prospeccao/propostas/template-proposta.md`
    com o nome real do lead.
 3. Confirme o checklist do template (preview aprovado, domínio, forma de pagamento).
 4. Atualize o status do lead para `fechado` em `prospeccao/leads/[nicho]/lista.md`.

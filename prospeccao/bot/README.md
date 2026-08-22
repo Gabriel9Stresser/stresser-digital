@@ -40,6 +40,11 @@ flowchart TD
 
   P --> NW1[Alerta prévia] --> W[Aguarda material]
   W --> OK[Material recebido] --> NW2[Alerta material] --> PH[Handoff produzir]
+  PH --> FB[4 · Feedback prévia]
+
+  FB --> G
+  FB --> H
+  FB --> X
 
   H --> NW3[Alerta humano] --> HH[Handoff humano]
   G --> NW4[Alerta ganho] --> GH[Handoff ganho]
@@ -56,6 +61,7 @@ flowchart TD
 | Esclarecimento, Já tenho, Preço, Quem, Humano | Qualificando |
 | Pediu prévia | Pediu prévia |
 | Material recebido | Material recebido |
+| Feedback prévia | Proposta enviada |
 | Ganho | Ganho (WON) |
 | Perdido | Perdido (LOST) |
 
@@ -69,6 +75,7 @@ Detalhe com exemplos reais: [`../scripts/analise-respostas-leads.md`](../scripts
 | Recusa | `Não, obrigada` | → perdido |
 | Dúvida | domínio, Google, “como funciona” | → esclarecimento → prévia |
 | Performance | `site lento`, `trava no celular`, `não aparece no Google` | → já tenho / esclarecimento |
+| Feedback prévia | `gostei`, `quero mudar a foto`, `reparou na velocidade` | → ganho / humano / esclarecimento |
 | Correção | `Não recusei`, `Eu quero` | perdido → prévia |
 | Ruído | menu WB, horário, 1️⃣2️⃣3️⃣ | ignorado (não inicia bot) |
 

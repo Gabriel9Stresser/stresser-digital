@@ -47,6 +47,8 @@ Bot ativo nesta conexão — **documentação completa:** `prospeccao/bot/README
 
 Resumo do fluxo:
 - **Triagem** → 3 botões Meta (prévia / preço / Gabriel) + keywords de texto livre
+- **Material recebido** → Gabriel produz prévia e envia link com `prospeccao/scripts/preview-enviada.md` (feedback + performance, sem pressão de compra)
+- **Feedback prévia** → lead responde o que gostou / quer adaptar → ganho ou humano
 - **Esclarecimento** → domínio, Google, processo (antes da prévia)
 - **Prévia** → pede material → alerta Gabriel → handoff produção
 - **Recusa** → perdido (com recuperação se lead corrige)
@@ -54,7 +56,7 @@ Resumo do fluxo:
 - **Handoff departamento** → só interno, nunca WhatsApp pro lead
 
 CRM pipeline: `Stresser Digital — Prospecção` (`cmt2u2033004wdn0ukxj4hrqg`)
-Lead novo → Qualificando → Pediu prévia → Material recebido → Ganho / Perdido
+Lead novo → Qualificando → Pediu prévia → Material recebido → Proposta enviada (feedback) → Ganho / Perdido
 
 **Manutenção do grafo:** `hermes-chat/zapflow/zapflow-backend/scripts/stresser-bot/config.ts`
 Aplicar: `npx tsx scripts/patch-stresser-bot.ts` (ver README do bot)
