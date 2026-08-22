@@ -2,6 +2,8 @@
 
 Atendimento automático pós-disparo de template. Preview grátis → R$ 599 se aprovar.
 
+**Regras operacionais:** [`../OPERACAO.md`](../OPERACAO.md) · regra Cursor `stresser-prospeccao-operacao.mdc`
+
 ## Referências rápidas
 
 | Item | Valor |

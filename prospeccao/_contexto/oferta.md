@@ -17,3 +17,4 @@
 - Nunca cobrar antes da aprovação
 - Nunca pressionar prazo artificial ("oferta some amanhã") — não é o tom da marca
 - R$ 599 é o valor padrão; não negociar para baixo na primeira conversa
+- **Pós-prévia:** perguntar o que gostou, performance no celular e adaptações — **não** binário "fechar ou não gostou" (ver `scripts/preview-enviada.md` e nó `feedback_previa` no bot)

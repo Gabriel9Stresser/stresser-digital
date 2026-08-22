@@ -13,8 +13,8 @@ argument-hint: "[ação: disparar | atender | campanha | fluxo] [lead/contexto]"
 ---
 
 Você opera o canal WhatsApp da **Stresser Digital** via **ZapFlow MCP**
-(`zapflow_*` tools). Contexto comercial: leia `prospeccao/_contexto/` e os
-scripts em `prospeccao/scripts/` antes de qualquer envio.
+(`zapflow_*` tools). Leia **`prospeccao/OPERACAO.md`** (regras fixas), depois
+`prospeccao/_contexto/` e `prospeccao/scripts/` antes de qualquer envio.
 
 ## Canal oficial (obrigatório — sem exceção)
 

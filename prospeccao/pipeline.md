@@ -1,7 +1,8 @@
 # Pipeline de Prospecção
 
 CRM: [Stresser Digital — Prospecção](https://trello.com/b/oQMaTX3G/stresser-digital-prospec%C3%A7%C3%A3o)  
-Canal: `prospeccao/_contexto/canal-whatsapp.md` + perfil `whatsapp-perfil-stresser.md`
+Canal: `prospeccao/_contexto/canal-whatsapp.md` + perfil `whatsapp-perfil-stresser.md`  
+**Regras operacionais (bot, prévia, oferta):** `prospeccao/OPERACAO.md`
 
 ## Resumo (22/08 — 1º + 2º disparo oficial concluídos)
 

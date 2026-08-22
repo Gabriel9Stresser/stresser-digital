@@ -1,0 +1,44 @@
+---
+description: Operação Stresser — prospecção, bot ZapFlow, prévias, oferta R$599, narrativa performance
+alwaysApply: true
+---
+
+# Stresser Digital — prospecção e bot
+
+Leia **`prospeccao/OPERACAO.md`** antes de mexer em bot, disparos, prévias ou scripts de WhatsApp.
+
+## Oferta (fixa)
+
+- Prévia grátis → **R$ 599 só se aprovar**. Nunca cobrar antes.
+- Ângulo: **site rápido no celular**, WhatsApp visível, nota no Google vs página lenta/confusa.
+- Copy de sites/prévias: **sem travessão (`—`)** — `.cursor/rules/site-copy-copywriting.mdc`
+
+## Bot Stresser (hermes-chat)
+
+- Fonte única: `hermes-chat/zapflow/zapflow-backend/scripts/stresser-bot/config.ts`
+- Aplicar: `npx tsx scripts/patch-stresser-bot.ts` (produção: docker exec hermes-backend)
+- Mapa: `prospeccao/bot/README.md`
+- flowId `cmt2rfch7001ycxpl0d4096g1` · conexão Mente em foco `cmrz3oczf001oj14urgnlnu18`
+
+### Pós-prévia (obrigatório)
+
+- **Não** mensagem binária ("finalizar compra ou não gostou").
+- **Sim** consultativo: o que gostou, reparou na **performance/celular**, quer **adaptar** algo.
+- Enviar link: `prospeccao/scripts/preview-enviada.md`
+- Fechar: skill `fechar-proposta` só após feedback positivo.
+
+### Layout do grafo
+
+Manter grid de 5 colunas em `NODE_POSITIONS` (Perdido → Hub → Prévia vertical → Info → Fechamento). Não reposicionar nós aleatoriamente.
+
+## Prévia no site
+
+- Rota privada `stresserdigital.com.br/{slug}`, noindex, `src/preview/` não vai no entregável final.
+
+## Disparo
+
+- Só API oficial Meta · templates `stresser_*` · validar WhatsApp antes de disparar.
+
+## Paridade mobile ZapFlow
+
+Não aplicável neste repo; bot/prospecção é web + WhatsApp oficial.

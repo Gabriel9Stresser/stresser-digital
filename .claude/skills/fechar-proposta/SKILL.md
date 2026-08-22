@@ -14,7 +14,8 @@ allowed-tools: Read, Edit
 Você gera a mensagem de fechamento comercial da **Stresser Digital** para um lead
 que acabou de aprovar o preview do site.
 
-Leia antes de gerar: `prospeccao/propostas/template-proposta.md`,
+Leia antes de gerar: `prospeccao/OPERACAO.md` (regras fixas),
+`prospeccao/propostas/template-proposta.md`,
 `prospeccao/propostas/garantia.md`, `prospeccao/propostas/pricing.json`,
 `prospeccao/scripts/preview-enviada.md` e `prospeccao/_contexto/tom-de-voz.md`.
 
