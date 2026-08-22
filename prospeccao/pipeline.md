@@ -42,7 +42,30 @@ Disparam após mover CRM: pediu prévia · material recebido · pediu humano · 
 3. Follow-up D+3/D+7 para quem não responder
 4. Atualizar cards no Trello conforme respostas
 
-## 3ª leva — preparação (performance + novos nichos)
+## 3ª leva — concluída (22/08 ~18:25)
+
+| Nicho | Disparados |
+|---|---|
+| Fisioterapia | 5 |
+| Nutrição | 2 |
+| Veterinário | 3 |
+
+**Total 3ª leva:** 10 · **0 falhas** · Log: `prospeccao/scripts/_disparo_leva3_resultado.jsonl`  
+Script: `prospeccao/scripts/disparo_leva3.py`
+
+**Total contatado (1ª + 2ª + 3ª):** 117 leads com template Meta · bot Stresser ativo na triagem.
+
+### Ainda pendente (sem WhatsApp móvel validado)
+
+| Motivo | Qtd |
+|---|---|
+| `(a prospectar)` — falta cadastrar no Maps/Doctoralia | 18 |
+| `confirmar Doctoralia` — sem número público | 2 |
+| Fixo / sem WhatsApp (odontologia, advocacia, vet Perdizes) | 4 |
+
+Próximo: pesquisar Maps e preencher listas vazias antes de nova leva.
+
+## 3ª leva — preparação (referência)
 
 Ângulo: nota alta no Google/Maps mas site lento no celular, WhatsApp escondido, SEO técnico fraco.
 
