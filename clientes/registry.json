@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "organizationId": "cmf04by6q000111a1mtcwe3mi",
+  "crmPipelineId": "cmt2x3nbm004our32furh9jie",
+  "crmPipelineName": "Stresser Digital — Clientes",
+  "ackCooldownSeconds": 10800,
+  "ackMessage": "Recebi sua mensagem, tudo certo. Vou olhar com calma e te retorno em até 3 horas.\n\nSe for demanda nova, o ideal é já estar (ou a gente colocar) no Trello do projeto — assim não se perde e seguimos só o que estiver no board.",
+  "clients": [
+    {
+      "slug": "myguard",
+      "name": "MyGuard",
+      "status": "active",
+      "trelloBoardId": "6a6b632db1d90b41c13f8f6c",
+      "trelloBoardName": "Myguard Connect",
+      "trelloBoardUrl": "https://trello.com/b/n71XOZPh/myguard-connect",
+      "projectPath": "/Users/gabrielstresser/Documents/myguard",
+      "contacts": [
+        {
+          "role": "principal",
+          "name": "Léo",
+          "contactId": "cmsq1vz8j01xjt560opyiwdiw",
+          "phone": "5513978080220"
+        },
+        {
+          "role": "time",
+          "name": "Aysha",
+          "contactId": "cmmxrgutz00z311su9t114ocv",
+          "phone": "5511991364112"
+        },
+        {
+          "role": "time",
+          "name": "Junior Menezes",
+          "contactId": "cmmxpugr20ubfi8s4iztu9c1b",
+          "phone": "5511978612293",
+          "needsConfirm": true
+        }
+      ],
+      "groups": [
+        {
+          "name": "Group Myguar & Shipay",
+          "contactId": "cmt1uzu2y0b7gyiyyjoyqqvq0",
+          "phone": "120363429939948630"
+        },
+        {
+          "name": "Group MyGuard",
+          "contactId": "cmmxpks4e0d8bi8s4f2vcmmza",
+          "phone": "120363314246793290"
+        }
+      ]
+    },
+    {
+      "slug": "mekko",
+      "name": "MEKKO",
+      "status": "active",
+      "trelloBoardId": "6a71223509b3652e53ad8216",
+      "trelloBoardName": "Oficina",
+      "trelloBoardUrl": "https://trello.com/b/6bP06I7B/oficina",
+      "projectPath": "/Users/gabrielstresser/Documents/autopecas",
+      "contacts": [
+        {
+          "role": "principal",
+          "name": "Sergio Fontes",
+          "contactId": "cmsyq5771016w7jnvjhrudvj6",
+          "phone": "5511986245337"
+        },
+        {
+          "role": "time",
+          "name": "Lucas",
+          "contactId": "cmq1jmyh5222r5ujgml0lvglf",
+          "phone": "5511963672435"
+        },
+        {
+          "role": "time",
+          "name": "Gustavo Pereira",
+          "contactId": "cmt2w34id00019q27i99qcalh",
+          "phone": "5511985652069"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Mvp",
+          "contactId": "cmsq1cfwp01vnt560mkhmh1bk",
+          "phone": "120363429498139477"
+        }
+      ]
+    }
+  ]
+}

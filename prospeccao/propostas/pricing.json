@@ -1,0 +1,19 @@
+{
+  "servico": "Redesign de site institucional",
+  "preview": {
+    "custo": 0,
+    "condicao": "sem compromisso, entregue antes de qualquer cobranca"
+  },
+  "pos_aprovacao": {
+    "valor": 599,
+    "moeda": "BRL",
+    "forma_pagamento": ["PIX", "cartao"],
+    "condicao": "cobranca so ocorre apos aprovacao explicita do lead"
+  },
+  "referencia_mercado": {
+    "valor_min": 2000,
+    "valor_max": 3000,
+    "moeda": "BRL"
+  },
+  "negociavel_na_primeira_conversa": false
+}

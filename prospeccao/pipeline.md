@@ -1,0 +1,51 @@
+# Pipeline de Prospecção
+
+CRM: [Stresser Digital — Prospecção](https://trello.com/b/oQMaTX3G/stresser-digital-prospec%C3%A7%C3%A3o)  
+Canal: `prospeccao/_contexto/canal-whatsapp.md` + perfil `whatsapp-perfil-stresser.md`
+
+## Resumo (22/08 — 1º + 2º disparo oficial concluídos)
+
+Templates `stresser_*` **APPROVED**. Abordagem enviada via **Mente em foco** (API oficial Meta).
+
+| Leva | Contatados | Observação |
+|---|---|---|
+| 1ª leva | 55 | 7 retries reenviados hoje (contato ausente na 1ª tentativa) |
+| 2ª leva | 45 | Disparo concluído 22/08 ~08:00 |
+
+**Total contatado:** 107 leads com WhatsApp válido · Templates rotacionados: `stresser_previa`, `stresser_convite_previa`, `stresser_hello_negocio`.
+
+## 2ª leva — concluída (22/08)
+
+| Nicho | Disparados |
+|---|---|
+| Odontologia | 11 novos + 5 retries |
+| Estética | 8 |
+| Academias | 6 |
+| Advocacia | 12 + 1 retry |
+| Psicologia | 8 + 1 retry |
+
+Log: `prospeccao/scripts/_disparo_leva2_resultado.jsonl` (+ retry manual dos 7 da 1ª leva).
+
+## Resumo 1ª leva (referência)
+
+## Alertas WhatsApp → Gabriel
+
+Bot com nós `notify_*` → **5511994194504** (Mente em foco / API oficial).  
+Template Meta: `stresser_alert_gabriel` — ver `prospeccao/_contexto/notificacao-gabriel.md`.
+
+Disparam após mover CRM: pediu prévia · material recebido · pediu humano · ganho.
+
+## Próximos passos
+1. Monitorar respostas no ZapFlow — bot **Stresser Digital — Atendimento Prospecção**
+2. Leads que responderem: skill `responder-lead` ou `fechar-proposta` se aprovar preview
+3. Follow-up D+3/D+7 para quem não responder
+4. Atualizar cards no Trello conforme respostas
+
+## ZapFlow (oficial apenas)
+- Conexão: **Mente em foco** · `cmrz3oczf001oj14urgnlnu18` · `+55 11 94626-4798`
+- **Proibido** API não-oficial nestes disparos
+- Bot: Stresser Digital — Atendimento Prospecção · `cmt2rfch7001ycxpl0d4096g1`
+- CRM pipeline: `Stresser Digital — Prospecção` · `cmt2u2033004wdn0ukxj4hrqg`
+
+## Log do disparo
+Detalhes em `prospeccao/scripts/_disparo_resultado.jsonl` (22/08/2026).
