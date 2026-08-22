@@ -1,0 +1,39 @@
+---
+description: Copy de sites e prévias — tom de especialista, sem travessão (—)
+globs: src/app/**/*.tsx,src/app/**/*.ts,src/preview/**/*.tsx
+alwaysApply: false
+---
+
+# Copy para sites (Stresser Digital)
+
+Textos visíveis ao cliente (headlines, parágrafos, CTAs, FAQ, meta title/description, alt de imagem, JSON-LD) devem parecer escritos por um copywriter ou pelo próprio profissional — nunca por IA genérica.
+
+## Proibido
+
+- **Travessão longo (`—`)** em qualquer copy de site. É padrão de IA e soa artificial em PT-BR.
+- Frases genéricas encadeadas com travessão no meio ("X — Y — Z").
+- Tom de brochure vazio ("soluções inovadoras", "experiência única").
+
+## Use no lugar
+
+| Situação | Alternativa |
+|----------|-------------|
+| Separar ideias | Ponto final. Nova frase. |
+| Título + subtítulo | `\|` em SEO, ou duas frases curtas |
+| Local + serviço | Vírgula: "Perdizes, SP" / "terapia online e presencial em São Paulo" |
+| Nome + cargo | Vírgula ou " · ": "Igor Maggioli, psicólogo clínico" |
+
+## Tom
+
+- Direto, humano, específico ao nicho e à cidade do cliente.
+- Preferir verbos concretos e benefícios reais (sigilo, acolhimento, CRP, bairro).
+- Headlines: uma promessa clara; corpo: frases curtas, ritmo de quem escreveu pensando no paciente/cliente.
+- Reaproveitar linguagem do site original do lead quando existir — adaptar, não inventar do zero.
+
+## Checklist antes de entregar prévia
+
+1. Buscar `—` em `page.tsx`, `data.ts`, `seo.ts`, `layout.tsx` da rota.
+2. Ler em voz alta: soa como psicólogo/advocacia/academia real?
+3. Preview chrome (`src/preview/`) pode manter travessão só em comentários de código, não em UI.
+
+Referência interna: `clientes/_contexto/tom-atendimento.md` (mesma regra para WhatsApp).

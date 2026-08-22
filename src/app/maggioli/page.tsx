@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   FAQ,
@@ -14,6 +14,7 @@ import {
   TREATMENTS,
   WA,
 } from "./data";
+import { PreviewChrome } from "@/preview";
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -29,23 +30,30 @@ const fadeUp = {
 export default function MaggioliPreviewPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    document.documentElement.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
-    <div className="mg-root">
-      <div className="mg-preview-bar">Prévia exclusiva · Stresser Digital · não publicada</div>
+    <div className={`mg-root sd-preview-page${menuOpen ? " mg-menu-open" : ""}`}>
+      <PreviewChrome oldSiteHost="igorpsicologo.com" />
 
       <header className="mg-header">
         <div className="mg-header-inner">
           <button type="button" onClick={() => scrollTo("inicio")} aria-label="Início">
             <Image
               src={SITE.logo}
-              alt={SITE.name}
+              alt={`Logo ${SITE.name}, ${SITE.title}`}
               width={140}
               height={48}
               className="mg-logo"
               unoptimized
             />
           </button>
-          <nav className="mg-nav">
+          <nav className="mg-nav" aria-label="Navegação principal">
             {NAV.map((item) => (
               <button key={item.id} type="button" onClick={() => scrollTo(item.id)}>
                 {item.label}
@@ -58,7 +66,8 @@ export default function MaggioliPreviewPage() {
           <button
             type="button"
             className="mg-menu-btn"
-            aria-label="Menu"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
             onClick={() => setMenuOpen((o) => !o)}
           >
             {menuOpen ? "✕" : "☰"}
@@ -66,7 +75,20 @@ export default function MaggioliPreviewPage() {
         </div>
       </header>
 
-      <nav className={`mg-mobile-nav ${menuOpen ? "open" : ""}`}>
+      {menuOpen && (
+        <button
+          type="button"
+          className="mg-mobile-backdrop"
+          aria-label="Fechar menu"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
+      <nav
+        className={`mg-mobile-nav ${menuOpen ? "open" : ""}`}
+        aria-label="Menu mobile"
+        aria-hidden={!menuOpen}
+      >
         {NAV.map((item) => (
           <button
             key={item.id}
@@ -84,12 +106,13 @@ export default function MaggioliPreviewPage() {
         </a>
       </nav>
 
-      <section id="inicio" className="mg-hero">
+      <main id="inicio">
+      <section className="mg-hero" aria-labelledby="hero-heading">
         <div className="mg-hero-content">
           <motion.div {...fadeUp}>
             <p className="mg-hero-tag mg-display">Psicologia clínica · Perdizes</p>
-            <h1 className="mg-display">
-              Sua jornada de <em>transformação</em> começa aqui
+            <h1 id="hero-heading" className="mg-display">
+              Psicólogo clínico em Perdizes. Sua jornada de <em>transformação</em> começa aqui
             </h1>
             <p className="mg-hero-lead">
               Terapia online e presencial para adultos. Pós-graduado em Saúde Mental. Um espaço
@@ -112,11 +135,11 @@ export default function MaggioliPreviewPage() {
         <div className="mg-hero-visual">
           <Image
             src={SITE.heroPhoto}
-            alt={`${SITE.name} — ${SITE.title}`}
+            alt={`${SITE.name}, psicólogo clínico em Perdizes, terapia online e presencial em São Paulo`}
             fill
             className="mg-hero-photo"
             priority
-            sizes="55vw"
+            sizes="(max-width: 1024px) 100vw, 55vw"
             unoptimized
           />
           <div className="mg-hero-overlay" />
@@ -163,7 +186,7 @@ export default function MaggioliPreviewPage() {
           <motion.div {...fadeUp} className="mg-about-photo-wrap">
             <Image
               src={SITE.aboutPhoto}
-              alt={SITE.name}
+              alt={`${SITE.name}, psicólogo clínico, foto profissional`}
               fill
               className="mg-about-photo"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -193,7 +216,17 @@ export default function MaggioliPreviewPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
                 <div className="mg-service-img-wrap">
-                  <Image src={s.image} alt={s.title} fill className="mg-service-img" unoptimized />
+                  <Image
+                    src={s.image}
+                    alt={
+                      s.title === "Psicoterapia presencial"
+                        ? `Consultório em Perdizes, ${SITE.name}`
+                        : `${s.title}, ${SITE.name}, psicólogo em São Paulo`
+                    }
+                    fill
+                    className="mg-service-img"
+                    unoptimized
+                  />
                 </div>
                 <div className="mg-service-body">
                   <h3 className="mg-display">{s.title}</h3>
@@ -246,7 +279,7 @@ export default function MaggioliPreviewPage() {
           <motion.div {...fadeUp} className="mg-video-wrap">
             <iframe
               src={`https://www.youtube.com/embed/${SITE.videoId}?rel=0`}
-              title="Igor Maggioli — Psicólogo Clínico"
+              title="Igor Maggioli, psicólogo clínico"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -345,6 +378,7 @@ export default function MaggioliPreviewPage() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <footer className="mg-footer">
         <p>

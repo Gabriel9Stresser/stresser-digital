@@ -3,6 +3,11 @@ const BASE = "https://www.igorpsicologo.com";
 export const img = (path: string) =>
   `${BASE}/${path.replace(/^\//, "")}`;
 
+const PHOTOS = {
+  igorPortrait: img("/adm/imagens/b835c32a3577e84d6cf618b6afed9ede.90.webp"),
+  consultorio: img("/adm/imagens/97b44588642d0526bdfae0f4ea32b304.90.webp"),
+};
+
 export const SITE = {
   name: "Igor Maggioli",
   title: "Psicólogo Clínico",
@@ -11,11 +16,11 @@ export const SITE = {
   phoneDisplay: "(11) 93908-2178",
   address: "Av. Antártica, 675",
   addressDetail: "19º e 20º andar · Perdizes",
-  city: "São Paulo — SP",
+  city: "São Paulo, SP",
   siteOriginal: "https://www.igorpsicologo.com",
   logo: img("/adm/imagens/247b89326ec6d080b42de7b4b0558d61.png"),
-  heroPhoto: img("/adm/imagens/b835c32a3577e84d6cf618b6afed9ede.90.webp"),
-  aboutPhoto: img("/adm/imagens/97b44588642d0526bdfae0f4ea32b304.90.webp"),
+  heroPhoto: PHOTOS.igorPortrait,
+  aboutPhoto: PHOTOS.igorPortrait,
   videoId: "J1P609m99Pg",
 };
 
@@ -42,7 +47,7 @@ export const SERVICES = [
   {
     title: "Psicoterapia presencial",
     desc: "Processo terapêutico contínuo em Perdizes, com autoconhecimento e acolhimento em espaço reservado e confortável.",
-    image: img("/adm/imagens/86d0dd0365d16ecc31439fa6a149d99b.90.webp"),
+    image: PHOTOS.consultorio,
     href: WA,
   },
   {

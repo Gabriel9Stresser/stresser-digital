@@ -24,18 +24,9 @@
   font-family: var(--font-oswald), system-ui, sans-serif;
 }
 
-.mg-preview-bar {
-  background: #0b1f3a;
-  color: #94a3b8;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  padding: 7px 16px;
-}
-
 .mg-header {
   position: fixed;
-  top: 28px;
+  top: var(--mg-preview-h);
   left: 0;
   right: 0;
   z-index: 100;
@@ -148,16 +139,38 @@
 .mg-mobile-nav {
   display: none;
   position: fixed;
-  top: 88px;
+  top: calc(var(--mg-preview-h) + 68px);
   left: 16px;
   right: 16px;
   background: white;
   border-radius: var(--mg-radius);
   padding: 12px;
   box-shadow: var(--mg-shadow);
-  z-index: 99;
+  z-index: 101;
   flex-direction: column;
   gap: 4px;
+  max-height: calc(100dvh - var(--mg-preview-h) - 84px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mg-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  border: none;
+  background: rgba(15, 23, 42, 0.45);
+  cursor: pointer;
+  animation: mg-fade-in 0.2s ease;
+}
+
+@keyframes mg-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .mg-mobile-nav.open {
@@ -705,14 +718,20 @@
   line-height: 1.7;
 }
 
+.mg-footer p:last-child {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mg-footer a {
   color: #cbd5e1;
 }
 
 .mg-wa-float {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  right: calc(28px + env(safe-area-inset-right, 0px));
   width: 60px;
   height: 60px;
   background: var(--mg-wa);
@@ -735,11 +754,11 @@
 @media (max-width: 1024px) {
   .mg-hero {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .mg-hero-content {
-    padding-top: 100px;
-    padding-bottom: 48px;
+    padding: calc(var(--mg-preview-h) + 80px) 24px 48px;
   }
 
   .mg-hero-content::after {
@@ -806,6 +825,168 @@
   }
 
   .mg-section {
-    padding: 64px 20px;
+    padding: 56px 20px;
+  }
+
+  .mg-header {
+    padding: 0 12px;
+  }
+
+  .mg-header-inner {
+    padding: 8px 10px 8px 14px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+
+  .mg-logo {
+    height: 34px;
+    max-width: 120px;
+  }
+
+  .mg-mobile-nav {
+    top: calc(var(--mg-preview-h) + 60px);
+    left: 12px;
+    right: 12px;
+  }
+
+  .mg-hero-content {
+    padding: calc(var(--mg-preview-h) + 72px) 20px 36px;
+  }
+
+  .mg-hero h1 {
+    font-size: clamp(26px, 7.5vw, 34px);
+    line-height: 1.12;
+  }
+
+  .mg-hero-lead {
+    font-size: 16px;
+    max-width: none;
+    margin-bottom: 24px;
+  }
+
+  .mg-hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mg-hero-actions .mg-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mg-hero-visual {
+    min-height: 40vh;
+    max-height: 420px;
+  }
+
+  .mg-hero-crp {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 12px;
+    padding: 12px 14px;
+  }
+
+  .mg-google-badge {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .mg-stats-inner {
+    gap: 20px;
+    padding: 32px 0;
+  }
+
+  .mg-stat strong {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .mg-section-head {
+    margin-bottom: 32px;
+  }
+
+  .mg-section-head h2 {
+    font-size: clamp(24px, 6.5vw, 32px);
+  }
+
+  .mg-section-head p {
+    font-size: 16px;
+  }
+
+  .mg-service-body,
+  .mg-review,
+  .mg-contact-card {
+    padding: 24px;
+  }
+
+  .mg-cta {
+    padding: 56px 20px;
+  }
+
+  .mg-cta .mg-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .mg-faq-item summary {
+    font-size: 15px;
+    padding: 20px 0;
+  }
+
+  .mg-contact-phone {
+    font-size: 20px;
+    word-break: break-word;
+  }
+
+  .mg-treatments-grid,
+  .mg-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-section {
+    padding: 56px 20px;
+  }
+
+  .mg-wa-float {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    right: calc(12px + env(safe-area-inset-right, 0px));
+    width: 52px;
+    height: 52px;
+  }
+
+  .mg-wa-float svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mg-footer {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .mg-btn,
+  .mg-mobile-nav button,
+  .mg-menu-btn,
+  .mg-wa-float {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .mg-btn,
+  .mg-mobile-nav button,
+  .mg-menu-btn {
+    min-height: 44px;
+  }
+
+  .mg-menu-btn {
+    min-width: 44px;
+  }
+
+  .mg-btn:hover,
+  .mg-wa-float:hover,
+  .mg-service-card:hover {
+    transform: none;
   }
 }
