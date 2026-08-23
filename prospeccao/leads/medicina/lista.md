@@ -3,9 +3,9 @@ São Paulo (Perdizes, Pompeia, Zona Oeste)
 
 | # | Nome | WhatsApp | Avaliação | Observação | Status |
 |---|------|----------|-----------|------------|--------|
-| 1 | _(a prospectar)_ | | | Maps: clínica médica Perdizes site antigo | não contatado |
-| 2 | _(a prospectar)_ | | | Maps: centro médico Pompeia agendamento confuso | não contatado |
-| 3 | _(a prospectar)_ | | | Doctoralia: dermatologia Perdizes site pesado | não contatado |
-| 4 | _(a prospectar)_ | | | Doctoralia: ginecologia Zona Oeste | não contatado |
+| 1 | Dra. Patricia Bernardi Dermatologia | (11) 94184-7657 | ⭐4,9 (est.) | Av. Francisco Matarazzo 1752. Site institucional | contatado |
+| 2 | Natalia Dermatologia | (11) 97873-2357 | ⭐4,8 (est.) | Av. Alfonso Bovero 1057. Site institucional | contatado |
+| 3 | Clínica Lividi | (11) 98208-1152 | ⭐4,8 (est.) | R. Cayowaá 1071. Multi-especialidade, site denso | contatado |
+| 4 | Suort Clínica Integrada | (11) 97157-4944 | ⭐4,7 (est.) | R. Cayowaá 2066. Ortopedia + fisio, site datado | contatado |
 
 Status: `não contatado` · `contatado` · `respondeu` · `preview enviado` · `fechado` · `recusou`

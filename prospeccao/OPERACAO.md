@@ -73,7 +73,7 @@ Mapa do fluxo: `prospeccao/bot/README.md`
 - Validar WhatsApp no Maps/Doctoralia antes de disparar
 - Listas: `prospeccao/leads/{nicho}/lista.md`
 - Scripts: `prospeccao/scripts/abordagem-inicial.md`, `objecoes.md`, `follow-up.md`
-- Disparo em lote: `prospeccao/scripts/disparo_leva3.py` (3ª leva novos nichos)
+- Disparo em lote: `prospeccao/scripts/disparo_leva3.py`, `disparo_leva4.py` (Meta oficial)
 
 ---
 

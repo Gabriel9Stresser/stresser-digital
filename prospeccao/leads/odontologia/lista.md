@@ -35,5 +35,7 @@ São Paulo, SP
 | 30 | Clínica Odontológica Pion | (11) 96499-7586 | ⭐4,9 (est.) | R. Monte Alegre 212. 40+ anos, site básico | contatado |
 | 31 | Integrata Odontologia (Dra Camila Gallo) | (11) 93087-6814 | ⭐5,0 (est.) | Jardim das Perdizes. Site premium, captação genérica | contatado |
 | 32 | OdontoIntegrada (contato alt.) | (11) 91078-8352 | ⭐4,8 (est.) | Mesma clínica item 28 | pular (duplicado) |
+| 33 | Clínica Larissa Vilanova | (11) 91020-5115 | ⭐4,9 (est.) | R. Bartira 805, Perdizes. Ortodontia, site leve | contatado |
+| 34 | Flori Odontologia (Cayowaá) | (11) 98773-2576 | ⭐5,0 (est.) | Mesmo grupo item 16 — pular se já disparado | pular (duplicado) |
 
 Status possíveis: `não contatado` · `contatado` · `respondeu` · `preview enviado` · `fechado` · `recusou`

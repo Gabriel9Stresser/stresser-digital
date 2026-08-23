@@ -27,5 +27,7 @@ São Paulo, SP
 | 22 | Campelo Empreendimento Esportivo | (11) 96718-4423 | ⭐4,5 (est.) | R. Ernesto Evans 709. Mesmo número 3S item 6 | pular (duplicado) |
 | 23 | Aguiar Sports | — | ⭐4,7 (est.) | Vila Romana. Telefone não confirmado publicamente | sem WhatsApp |
 | 24 | Academia Bio Fitness | — | ⭐4,6 (est.) | R. Domingos Rosolia 145. Sem WhatsApp no cadastro | sem WhatsApp |
+| 25 | Personal Leandro Lima | (11) 94315-6769 | ⭐4,8 (est.) | R. Monte Alegre 791, Perdizes. Sem site próprio | contatado |
+| 26 | Conecta Fitness | (11) 98811-9961 | ⭐4,7 (est.) | Marketplace de personal na região | contatado |
 
 Status possíveis: `não contatado` · `contatado` · `respondeu` · `preview enviado` · `fechado` · `recusou`

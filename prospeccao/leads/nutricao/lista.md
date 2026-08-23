@@ -7,7 +7,7 @@ São Paulo (Perdizes, Pompeia, Pinheiros)
 | 2 | Dra. Jhenyffer Gomes | confirmar Doctoralia | ⭐5,0 (est.) | Perdizes, perfil Doctoralia forte, site básico | não contatado |
 | 3 | Gabriel Coimbra Nutrição | confirmar Doctoralia | ⭐4,9 (34) | Vila Pompeia, esportiva. Doctoralia, site fraco | não contatado |
 | 4 | Dra. Renata Riciati (RR Nutri) | (11) 99919-4876 | ⭐5,0 (14) | Av. Pompéia 634. Site simples | contatado |
-| 5 | _(a prospectar)_ | | | Doctoralia Perdizes: nutri 5 estrelas, site fraco | não contatado |
-| 6 | _(a prospectar)_ | | | Doctoralia Pompeia: nutri esportiva | não contatado |
+| 5 | Camila Ricioli Nutrição | (11) 94750-8450 | ⭐4,9 (est.) | Atende Perdizes/Pinheiros (Livance). Site de agenda | contatado |
+| 6 | Guilherme Jaldin Nutrição | (11) 96523-1234 | ⭐4,8 (est.) | Pinheiros e Perdizes. Site de agendamento | contatado |
 
 Status: `não contatado` · `contatado` · `respondeu` · `preview enviado` · `fechado` · `recusou`

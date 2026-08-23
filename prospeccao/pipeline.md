@@ -55,15 +55,36 @@ Script: `prospeccao/scripts/disparo_leva3.py`
 
 **Total contatado (1ª + 2ª + 3ª):** 117 leads com template Meta · bot Stresser ativo na triagem.
 
-### Ainda pendente (sem WhatsApp móvel validado)
+## 4ª leva — concluída (23/08 ~09:00)
 
-| Motivo | Qtd |
+**31 novos** · **0 falhas** · Log: `prospeccao/scripts/_disparo_leva4_resultado.jsonl`  
+Script: `prospeccao/scripts/disparo_leva4.py`
+
+| Nicho | Disparados |
 |---|---|
-| `(a prospectar)` — falta cadastrar no Maps/Doctoralia | 18 |
-| `confirmar Doctoralia` — sem número público | 2 |
-| Fixo / sem WhatsApp (odontologia, advocacia, vet Perdizes) | 4 |
+| Contabilidade | 4 |
+| Salões / barbearias | 8 |
+| Medicina (dermato / multi) | 4 |
+| Fisioterapia | 3 |
+| Pilates *(novo)* | 3 |
+| Veterinário | 3 |
+| Nutrição | 2 |
+| Odontologia | 1 |
+| Academias / personal | 2 |
+| Podologia *(novo)* | 1 |
 
-Próximo: pesquisar Maps e preencher listas vazias antes de nova leva.
+**Total contatado (1ª–4ª):** **148** leads com template Meta.
+
+Nichos novos cadastrados: `leads/pilates/`, `leads/podologia/`.
+
+## Ainda pendente (sem WhatsApp móvel validado)
+
+| Motivo | Exemplos |
+|---|---|
+| Doctoralia sem número público | Jhenyffer Gomes, Gabriel Coimbra |
+| Fixo / sem WhatsApp | Dra. Eliane Barrella, Clínica Vet. Perdizes (3675) |
+
+Próximo: monitorar respostas no bot + follow-up D+3.
 
 ## 3ª leva — preparação (referência)
 
