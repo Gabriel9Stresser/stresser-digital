@@ -1,6 +1,10 @@
 import type { PreviewCompareData, PreviewCompareOptions, PreviewMetric } from "./types";
 
-/** Métricas padrão: site legado típico vs prévia Next.js (estilo Lighthouse). */
+/**
+ * Métricas padrão ilustrativas (estilo Lighthouse), NÃO medidas automaticamente.
+ * Prefira `PreviewChrome compare={{ metrics, badges, headline }}` por lead quando
+ * o site antigo for 404, muito diferente do baseline, ou houver auditoria real.
+ */
 export const DEFAULT_PREVIEW_METRICS: PreviewMetric[] = [
   { id: "perf", label: "Performance mobile", old: 58, new: 96, unit: "/100" },
   { id: "seo", label: "SEO técnico", old: 52, new: 97, unit: "/100" },
@@ -12,7 +16,7 @@ export const DEFAULT_PREVIEW_BADGES = [
   "Schema.org (Google)",
   "Meta + Open Graph",
   "Mobile-first",
-  "FAQ indexável",
+  "FAQ estruturado",
 ];
 
 function normalizeHost(host: string) {

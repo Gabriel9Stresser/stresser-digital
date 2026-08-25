@@ -5,7 +5,14 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/maggioli", "/maggioli/"],
+      disallow: [
+        "/maggioli",
+        "/maggioli/",
+        "/libela",
+        "/libela/",
+        "/alem-santinho",
+        "/alem-santinho/",
+      ],
     },
     sitemap: "https://stresserdigital.com.br/sitemap.xml",
   };

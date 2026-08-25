@@ -2,37 +2,57 @@
 
 Use quando a prévia estiver no ar (rota privada no stresserdigital.com.br).
 
-**Não** fechar com "se gostou paga, se não desiste". Abrir conversa sobre feedback e performance.
+**Não** fechar com "se gostou paga, se não desiste". Abrir conversa sobre feedback, desempenho e ajustes.
 
 ## Template (copiar e adaptar)
 
 ```
-{nome}, a prévia do site está pronta 🙌
+{nome}, boa tarde!
 
-Link privado (só você acessa):
+Montei uma prévia do site com as informações que consegui extrair da internet (Google, endereço, WhatsApp, o que já existia público).
+
+Link privado (só pra vocês avaliarem):
 {link}
 
-Quando puder, abre no celular e me conta:
-• O que mais gostou do visual?
-• Reparou na diferença de velocidade e no WhatsApp fácil?
-• Tem algo que gostaria de adaptar (texto, foto, cores)?
+Abre no celular e me conta o que achou do visual e da navegação.
 
-Sem pressa. É só pra você comparar com o site atual.
+Tem um botão flutuante de desempenho/SEO no canto. Pode ocultar ele se atrapalhar a visualização. Ocultar não te leva pro site oficial: é só um comparativo pra você ver as melhorias de SEO e presença no Google em relação ao site atual.
+
+Se quiser mudar texto, foto, cor, seção ou adicionar algo, me manda a lista. Ajustamos juntos até ficar do jeito que você precisa.
 ```
 
-## Exemplo (Igor Maggioli)
+## Exemplo (Libela)
 
 ```
-Igor, boa tarde! Montamos a prévia do seu site 🙌
+Libela, boa tarde!
 
-Link privado (só você acessa):
-https://stresserdigital.com.br/maggioli
+Montei uma prévia do site com as informações que consegui extrair da internet (endereço em Santana, WhatsApp, tratamentos e o que ainda estava público).
 
-Usei o conteúdo do igorpsicologo.com e reorganizei com foco em celular e agendamento pelo WhatsApp.
+Link privado (só pra vocês avaliarem):
+https://stresserdigital.com.br/libela
 
-Quando puder, abre no celular e me conta o que mais gostou, se reparou na velocidade, e se quer adaptar algo no texto ou nas fotos.
+Abre no celular e me conta o que achou do visual e da navegação.
 
-Sem pressa. É só pra comparar com o site atual.
+Tem um botão flutuante de desempenho/SEO no canto. Pode ocultar ele se atrapalhar a visualização. Ocultar não te leva pro site oficial: é só um comparativo pra você ver as melhorias de SEO e presença no Google.
+
+Se quiser mudar texto, foto, cor, seção ou adicionar algo, me manda a lista. Ajustamos juntos até ficar do jeito que vocês precisam.
+```
+
+## Exemplo (Alem Santinho)
+
+```
+Dr. Pedro, boa tarde!
+
+Montei uma prévia do site com as informações que consegui extrair da internet (OAB, endereço em Vila Romana, áreas de atuação, nota no Google e o que já estava público).
+
+Link privado (só pra você avaliar):
+https://stresserdigital.com.br/alem-santinho
+
+Abre no celular e me conta o que achou do visual e da navegação.
+
+Tem um botão flutuante de desempenho/SEO no canto. Pode ocultar ele se atrapalhar a visualização. Ocultar não te leva pro site oficial: é só um comparativo pra você ver as melhorias de SEO e presença no Google em relação ao site Jusfy atual.
+
+Se quiser mudar texto, foto, cor, seção ou adicionar algo, me manda a lista. Ajustamos juntos até ficar do jeito que você precisa.
 ```
 
 ## Depois da resposta
