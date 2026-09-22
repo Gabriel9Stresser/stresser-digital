@@ -61,7 +61,9 @@ export const viewport: Viewport = {
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${display.variable} ${sans.variable}`} style={{ fontFamily: "var(--font-rbk-sans), Inter, sans-serif" }}>
+    <div className={`${display.variable} ${sans.variable}`}>
+      {/* CSS original do site, estático (evita PostCSS no build) */}
+      <link rel="stylesheet" href="/doceria-rebeka/styles.css" />
       {children}
     </div>
   );
