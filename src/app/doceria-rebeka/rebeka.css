@@ -428,3 +428,16 @@
   .rbk-clone .lg\:aspect-square { aspect-ratio: 1 / 1; }
   .rbk-clone .lg\:text-7xl { font-size: 4.5rem; line-height: 1; }
 }
+
+.rbk-clone .rbk-faq-item summary::-webkit-details-marker { display: none; }
+.rbk-clone .rbk-faq-item[open] .rbk-faq-plus { transform: rotate(45deg); }
+.rbk-clone .rbk-faq-plus {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}

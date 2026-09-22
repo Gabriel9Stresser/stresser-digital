@@ -1,5 +1,6 @@
 import { Fraunces, Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
+import { RebekaStructuredData } from "./StructuredData";
 import { PREVIEW_URL, SEO } from "./seo";
 import { SITE } from "./data";
 import "./rebeka.css";
@@ -23,13 +24,17 @@ export const metadata: Metadata = {
   title: { absolute: SEO.title },
   description: SEO.description,
   keywords: SEO.keywords,
-  authors: [{ name: SITE.name }],
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.siteOriginal }],
   creator: SITE.name,
-  publisher: "Stresser Digital",
+  publisher: SITE.name,
+  category: "food",
+  classification: "Business",
   alternates: {
     canonical: PREVIEW_URL,
     languages: { "pt-BR": PREVIEW_URL },
   },
+  // Prévia Stresser: noindex até publicar no domínio do cliente
   robots: {
     index: false,
     follow: false,
@@ -42,13 +47,39 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: SEO.title,
     description: SEO.description,
-    images: [{ url: SITE.heroPhoto, width: 667, height: 1000, alt: SITE.name }],
+    images: [
+      {
+        url: SITE.heroPhoto,
+        width: 1200,
+        height: 1800,
+        alt: "Pudim cremoso da Doceria da Rebeka com calda dourada",
+      },
+      {
+        url: SITE.pudimPhoto,
+        width: 1200,
+        height: 800,
+        alt: "Pudim de 120g Doceria da Rebeka",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SEO.title,
     description: SEO.description,
     images: [SITE.heroPhoto],
+  },
+  other: {
+    "geo.region": "BR-SP",
+    "geo.placename": "São José dos Campos",
+    "geo.position": "-23.2237;-45.9009",
+    ICBM: "-23.2237, -45.9009",
+    "business:contact_data:street_address": `${SITE.address}, ${SITE.addressDetail}`,
+    "business:contact_data:locality": "São José dos Campos",
+    "business:contact_data:region": "SP",
+    "business:contact_data:postal_code": SITE.cep,
+    "business:contact_data:country_name": "Brasil",
+    "business:contact_data:email": SITE.email,
+    "business:contact_data:phone_number": `+${SITE.phone}`,
   },
 };
 
@@ -60,5 +91,10 @@ export const viewport: Viewport = {
 };
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
-  return <div className={`${display.variable} ${sans.variable}`}>{children}</div>;
+  return (
+    <div className={`${display.variable} ${sans.variable}`}>
+      <RebekaStructuredData />
+      {children}
+    </div>
+  );
 }

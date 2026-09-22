@@ -99,19 +99,27 @@ export const WHOLESALE = [
 
 export const FAQ = [
   {
-    q: "Vocês vendem no varejo ou só no atacado?",
-    a: "Atendimento exclusivo para mercados, redes varejistas e distribuidores. O foco é atacado B2B.",
+    q: "A Doceria da Rebeka vende no varejo ou só no atacado?",
+    a: "Atendimento exclusivo para mercados, redes varejistas e distribuidores. O foco é atacado B2B em todo o Brasil.",
   },
   {
-    q: "Quais produtos estão disponíveis?",
-    a: "Pudim de 120g (campeão de vendas) e Brigadeirão de 80g, ambos em porção individual.",
+    q: "Quais produtos estão disponíveis no atacado?",
+    a: "Pudim de 120g (campeão de vendas) e Brigadeirão de 80g, ambos em porção individual, prontos para gôndola e vitrine.",
   },
   {
-    q: "Onde fica a fábrica?",
+    q: "Onde fica a fábrica de pudim da Doceria da Rebeka?",
     a: "Rodovia Geraldo Scavone, 2730, Rua 03 Nº 353, Jardim Califórnia, São José dos Campos/SP, CEP 12305-490.",
   },
   {
-    q: "Como falar com o comercial?",
-    a: `WhatsApp ${SITE.phoneDisplay} ou e-mail ${SITE.email}. Resposta rápida para pedido e condições.`,
+    q: "Como falar com o comercial para pedir atacado?",
+    a: `WhatsApp ${SITE.phoneDisplay} ou e-mail ${SITE.email}. O time responde rápido sobre pedido, condições e logística.`,
+  },
+  {
+    q: "Vocês atendem distribuidores fora de São José dos Campos?",
+    a: "Sim. A marca está em mais de 11 mil pontos de venda pelo Brasil e atende mercados e distribuidores em escala nacional.",
+  },
+  {
+    q: "O pudim e o brigadeirão são porções individuais?",
+    a: "Sim. O pudim tem 120g e o brigadeirão 80g, com embalagem prática para consumo individual e alto giro no ponto de venda.",
   },
 ];
