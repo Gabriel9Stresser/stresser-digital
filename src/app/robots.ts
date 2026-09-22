@@ -12,6 +12,8 @@ export default function robots(): MetadataRoute.Robots {
         "/libela/",
         "/alem-santinho",
         "/alem-santinho/",
+        "/doceria-rebeka",
+        "/doceria-rebeka/",
       ],
     },
     sitemap: "https://stresserdigital.com.br/sitemap.xml",
