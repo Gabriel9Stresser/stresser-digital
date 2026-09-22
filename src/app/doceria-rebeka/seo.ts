@@ -152,9 +152,11 @@ export function buildJsonLd() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Início", item: `${PREVIEW_URL}#inicio` },
       { "@type": "ListItem", position: 2, name: "Produtos", item: `${PREVIEW_URL}#produtos` },
-      { "@type": "ListItem", position: 3, name: "Atacado", item: `${PREVIEW_URL}#atacado` },
-      { "@type": "ListItem", position: 4, name: "Contato", item: `${PREVIEW_URL}#contato` },
-      { "@type": "ListItem", position: 5, name: "Dúvidas", item: `${PREVIEW_URL}#duvidas` },
+      { "@type": "ListItem", position: 3, name: "Como comprar", item: `${PREVIEW_URL}#como-comprar` },
+      { "@type": "ListItem", position: 4, name: "Atacado", item: `${PREVIEW_URL}#atacado` },
+      { "@type": "ListItem", position: 5, name: "Contato", item: `${PREVIEW_URL}#contato` },
+      { "@type": "ListItem", position: 6, name: "Dúvidas", item: `${PREVIEW_URL}#duvidas` },
+      { "@type": "ListItem", position: 7, name: "Catálogo", item: `${PREVIEW_URL}/catalogo` },
     ],
   };
 

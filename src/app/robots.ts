@@ -14,6 +14,8 @@ export default function robots(): MetadataRoute.Robots {
         "/alem-santinho/",
         "/doceria-rebeka",
         "/doceria-rebeka/",
+        "/doceria-rebeka/catalogo",
+        "/doceria-rebeka/catalogo/",
       ],
     },
     sitemap: "https://stresserdigital.com.br/sitemap.xml",
