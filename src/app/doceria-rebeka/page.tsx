@@ -1,32 +1,29 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { FAQ, NAV, PRODUCTS, SITE, TRUST, WA, WHOLESALE } from "./data";
-import { PreviewChrome } from "@/preview";
+import { useEffect, useState, type FormEvent } from "react";
 
-function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-}
+const NAV = [
+  { href: "#inicio", label: "Início" },
+  { href: "#historia", label: "Nossa História" },
+  { href: "#produtos", label: "Produtos" },
+  { href: "#atacado", label: "Atacado" },
+  { href: "#galeria", label: "Galeria" },
+  { href: "#contato", label: "Contato" },
+];
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
-};
+const WA =
+  "https://wa.me/5512981285713?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20comercial%20da%20Doceria%20da%20Rebeka%20sobre%20produtos%20para%20atacado.";
 
-function WhatsAppIcon({ size = 28 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 7.008 2.898a9.825 9.825 0 012.893 7.004c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
-  );
-}
-
-export default function DoceriaRebekaPreviewPage() {
+export default function DoceriaRebekaPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.overflow = menuOpen ? "hidden" : "";
@@ -35,344 +32,95 @@ export default function DoceriaRebekaPreviewPage() {
     };
   }, [menuOpen]);
 
-  return (
-    <div className={`rbk-root sd-preview-page${menuOpen ? " rbk-menu-open" : ""}`}>
-      <PreviewChrome
-        oldSiteHost="doceriadarebeka.com.br"
-        compare={{
-          headline: "Mais conversão B2B",
-          headlineSub: "site atual bonito, comercial mais direto",
-          metrics: [
-            { id: "cta", label: "CTA WhatsApp comercial", old: 55, new: 98, unit: "/100" },
-            { id: "mobile", label: "Mobile-first", old: 70, new: 96, unit: "/100" },
-            { id: "seo", label: "SEO técnico + schema", old: 45, new: 96, unit: "/100" },
-            { id: "b2b", label: "Clareza atacado", old: 60, new: 95, unit: "/100" },
-          ],
-          badges: [
-            "Schema.org (FoodEstablishment + FAQ)",
-            "WhatsApp flutuante + sticky",
-            "Copy sem travessão",
-            "Foco mercados e distribuidores",
-          ],
-        }}
-      />
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const nome = String(fd.get("nome") || "").trim();
+    const empresa = String(fd.get("empresa") || "").trim();
+    const email = String(fd.get("email") || "").trim();
+    const whatsapp = String(fd.get("whatsapp") || "").trim();
+    const mensagem = String(fd.get("mensagem") || "").trim();
+    const text = [
+      "Olá, vim pelo site e quero falar com o comercial.",
+      nome && `Nome: ${nome}`,
+      empresa && `Empresa: ${empresa}`,
+      email && `E-mail: ${email}`,
+      whatsapp && `WhatsApp: ${whatsapp}`,
+      mensagem && `Mensagem: ${mensagem}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    window.open(`https://wa.me/5512981285713?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  }
 
-      <header className="rbk-header">
-        <div className="rbk-header-inner">
-          <button type="button" onClick={() => scrollTo("inicio")} aria-label="Início">
-            <Image src={SITE.logo} alt="" width={40} height={40} className="rbk-logo" unoptimized />
-            <span className="rbk-logo-word">
-              <span>São José dos Campos</span>
-              Doceria da Rebeka
-            </span>
-          </button>
-          <nav className="rbk-nav" aria-label="Navegação principal">
+  return (
+    <div className="rbk-clone min-h-screen bg-background">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled || menuOpen ? "bg-background/95 backdrop-blur border-b border-border shadow-sm" : "bg-transparent"
+        }`}
+      >
+        <div className="container-editorial flex h-20 items-center justify-between">
+          <a href="#inicio" className="flex items-center gap-3">
+            <img src="https://doceriadarebeka.com.br/logo.png" alt="Doceria da Rebeka" className="h-14 w-14 object-contain" />
+            <div className="hidden sm:flex flex-col">
+              <span className="font-display text-xl leading-tight text-navy">
+                Doceria
+                <br />
+                <span className="text-primary">da Rebeka</span>
+              </span>
+              <span className="text-sm font-medium text-navy/70 mt-0.5 tracking-wide">
+                A maior fábrica de pudim do mundo é joseense
+              </span>
+            </div>
+          </a>
+          <nav className="hidden lg:flex items-center gap-9">
             {NAV.map((item) => (
-              <button key={item.id} type="button" onClick={() => scrollTo(item.id)}>
+              <a key={item.href} href={item.href} className="text-sm font-medium text-navy/80 hover:text-primary transition-colors">
                 {item.label}
-              </button>
+              </a>
             ))}
           </nav>
-          <a href={WA} className="rbk-btn rbk-btn-primary" target="_blank" rel="noopener noreferrer">
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex btn-primary text-sm">
             Fale com o comercial
           </a>
           <button
             type="button"
-            className="rbk-menu-btn"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy/20 text-navy"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((o) => !o)}
           >
-            {menuOpen ? "✕" : "☰"}
+            <span className="relative block h-3 w-5">
+              <span className={`absolute inset-x-0 top-0 h-0.5 bg-current transition-transform ${menuOpen ? "translate-y-[5px] rotate-45" : ""}`} />
+              <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-current transition-transform ${menuOpen ? "-translate-y-[5px] -rotate-45" : ""}`} />
+            </span>
           </button>
         </div>
+        {menuOpen && (
+          <div className="lg:hidden bg-background border-t border-border">
+            <div className="container-editorial py-6 flex flex-col gap-4">
+              {NAV.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-base font-medium text-navy hover:text-primary"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-primary mt-2 self-start">
+                Fale com o comercial
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
-      {menuOpen && (
-        <button
-          type="button"
-          className="rbk-mobile-backdrop"
-          aria-label="Fechar menu"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
+      <main><section id="inicio" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"><div className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-background"></div><div className="container-editorial grid lg:grid-cols-12 gap-10 lg:gap-16 items-center"><div className="lg:col-span-6 animate-rise"><span className="eyebrow">Feito em São José dos Campos/SP • Desde sempre com amor</span><h1 className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-navy">O doce que <em className="not-italic text-primary">conquista corações</em> em todo o Brasil.</h1><p className="mt-6 text-lg text-muted-foreground max-w-xl">Da nossa produção em São José dos Campos/SP para milhares de pontos de venda, a Doceria da Rebeka une sabor caseiro, qualidade e escala para encantar consumidores todos os dias.</p><div className="mt-9 flex flex-wrap gap-4"><a href="https://wa.me/5512981285713?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20comercial%20da%20Doceria%20da%20Rebeka%20sobre%20produtos%20para%20atacado." target="_blank" rel="noopener noreferrer" className="btn-primary">Fale com o comercial</a><a href="#produtos" className="btn-outline">Conheça nossos produtos</a></div><p className="mt-10 text-sm text-navy/70 max-w-md"><span className="font-semibold text-navy">Pudim e brigadeirão</span> feitos com amor e perfeição — presentes em mais de 11.000 pontos de venda pelo país.</p></div><div className="lg:col-span-6 relative animate-rise" style={{ animationDelay: "150ms" }}><div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(30,43,94,0.35)]"><img src="https://doceriadarebeka.com.br/pudim-hero.jpg" alt="Pudim cremoso da Doceria da Rebeka com calda dourada" className="h-full w-full object-cover" /></div><div className="hidden md:flex absolute -left-8 bottom-10 w-56 flex-col rounded-2xl bg-card p-5 shadow-xl border border-border"><span className="text-3xl font-display text-primary">+11 mil</span><span className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Pontos de venda no Brasil</span></div><div className="hidden md:block absolute -right-6 -top-6 h-32 w-32 rounded-full bg-pudim/60 blur-3xl -z-10"></div></div></div></section><section className="py-24 md:py-32"><div className="container-editorial max-w-3xl text-center"><span className="eyebrow">Nosso propósito</span><h2 className="mt-5 font-display text-3xl md:text-5xl leading-tight">Aqui cada doce é feito com <em className="not-italic text-primary">amor e perfeição</em>.</h2><p className="mt-8 text-lg text-muted-foreground leading-relaxed">Na Doceria da Rebeka, cada receita carrega carinho, tradição e cuidado em cada detalhe. Nosso compromisso é transformar momentos simples em experiências inesquecíveis, levando pudins e brigadeirões de qualidade para grandes mercados e consumidores de todo o Brasil.</p><div className="mt-10 flex justify-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-primary"></span><span className="h-1.5 w-8 rounded-full bg-primary/40"></span><span className="h-1.5 w-1.5 rounded-full bg-primary"></span></div></div></section><section id="historia" className="py-24 md:py-32 bg-cream/60"><div className="container-editorial grid lg:grid-cols-2 gap-14 lg:gap-24 items-center"><div className="relative order-2 lg:order-1"><div className="aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(30,43,94,0.3)]"><img src="https://doceriadarebeka.com.br/historia.jpg" alt="Pudim artesanal da Doceria da Rebeka" className="h-full w-full object-cover" /></div><div className="hidden md:block absolute -bottom-8 -right-8 aspect-square w-52 overflow-hidden rounded-2xl border-8 border-background shadow-xl"><img src="https://doceriadarebeka.com.br/gal1.jpg" alt="Detalhe do pudim" className="h-full w-full object-cover" /></div></div><div className="order-1 lg:order-2"><span className="eyebrow">Nossa história</span><h2 className="mt-5 font-display text-3xl md:text-5xl leading-tight">Uma história feita de sabor, cuidado e confiança.</h2><p className="mt-7 text-lg text-muted-foreground leading-relaxed">A Doceria da Rebeka nasceu com o propósito de entregar doces que despertam memórias afetivas e conquistam pela primeira colherada. Com sede em São José dos Campos/SP, somos especialistas na produção de pudins e brigadeirões, atendendo exclusivamente no atacado com padrão de qualidade, praticidade e consistência.</p><p className="mt-5 text-lg text-muted-foreground leading-relaxed">Mais do que doces, entregamos parceria, confiança e produtos preparados para se destacar nas gôndolas, vitrines e pontos de venda.</p><div className="mt-8 flex items-center gap-4 text-sm text-navy/80"><span className="h-px w-10 bg-primary"></span><span className="font-medium">Sede em São José dos Campos — São Paulo</span></div></div></div></section><section className="py-24 md:py-28 bg-navy text-white"><div className="container-editorial"><div className="max-w-2xl"><span className="eyebrow text-pudim">Autoridade</span><h2 className="mt-4 font-display text-3xl md:text-4xl text-white">Uma marca com presença nacional.</h2></div><div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4"><div className="border-t border-white/15 pt-6"><div className="font-display text-3xl md:text-4xl text-pudim leading-tight">+ de 11.000</div><p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">Pontos de venda pelo Brasil</p></div><div className="border-t border-white/15 pt-6"><div className="font-display text-3xl md:text-4xl text-pudim leading-tight">Maior produtora</div><p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">de pudim do Brasil</p></div><div className="border-t border-white/15 pt-6"><div className="font-display text-3xl md:text-4xl text-pudim leading-tight">Atacado</div><p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">Atendimento exclusivo para mercados e distribuidores</p></div><div className="border-t border-white/15 pt-6"><div className="font-display text-3xl md:text-4xl text-pudim leading-tight">Qualidade</div><p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">Padrão rigoroso em cada receita</p></div></div></div></section><section id="produtos" className="py-24 md:py-32"><div className="container-editorial"><div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 max-w-5xl"><div><span className="eyebrow">Nossos produtos</span><h2 className="mt-4 font-display text-3xl md:text-5xl leading-tight">Receitas que criam memórias, da primeira à última colherada.</h2></div><p className="text-muted-foreground md:max-w-sm">Dois campeões desenvolvidos para performar no ponto de venda e encantar quem prova.</p></div><div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-12"><article className="group flex flex-col rounded-[2rem] bg-card border border-border overflow-hidden shadow-[0_18px_50px_-30px_rgba(30,43,94,0.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(233,30,99,0.35)]"><div className="relative aspect-[5/4] overflow-hidden bg-cream"><img src="https://doceriadarebeka.com.br/pudim-produto.jpg" alt="Pudim de 120g" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105" /><span className="absolute top-5 left-5 rounded-full bg-background/90 backdrop-blur px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">Campeão de vendas</span></div><div className="p-8 md:p-10 flex flex-col grow"><h3 className="font-display text-2xl md:text-3xl">Pudim de 120g</h3><p className="mt-4 text-muted-foreground leading-relaxed">O verdadeiro queridinho dos clientes. Textura cremosa, calda no ponto perfeito e sabor caseiro que conquista à primeira colherada. Ideal para consumo individual e perfeito para grandes mercados que buscam um produto de alta aceitação.</p><ul className="mt-6 flex flex-wrap gap-2"><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Textura cremosa</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Calda no ponto</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Embalagem prática</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Sabor caseiro</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Campeão de vendas</li></ul></div></article><article className="group flex flex-col rounded-[2rem] bg-card border border-border overflow-hidden shadow-[0_18px_50px_-30px_rgba(30,43,94,0.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(233,30,99,0.35)]"><div className="relative aspect-[5/4] overflow-hidden bg-cream"><img src="https://doceriadarebeka.com.br/brigadeirao-produto.png" alt="Brigadeirão de 80g" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105" /><span className="absolute top-5 left-5 rounded-full bg-background/90 backdrop-blur px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">Clássico irresistível</span></div><div className="p-8 md:p-10 flex flex-col grow"><h3 className="font-display text-2xl md:text-3xl">Brigadeirão de 80g</h3><p className="mt-4 text-muted-foreground leading-relaxed">Cremosidade e sabor marcante de chocolate em uma porção individual irresistível. Produzido com cuidado e ingredientes selecionados, é uma opção perfeita para vitrines, gôndolas e consumidores que procuram um doce clássico com qualidade.</p><ul className="mt-6 flex flex-wrap gap-2"><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Chocolate intenso</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Textura cremosa</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Porção individual</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Ideal para vitrines</li><li className="rounded-full bg-cream text-navy text-xs font-medium px-3 py-1.5 border border-border">Alto apelo visual</li></ul></div></article></div></div></section><section id="atacado" className="py-24 md:py-32 bg-gradient-to-br from-cream via-background to-cream"><div className="container-editorial grid lg:grid-cols-12 gap-14 items-start"><div className="lg:col-span-5"><span className="eyebrow">Atendimento B2B</span><h2 className="mt-4 font-display text-3xl md:text-5xl leading-tight">Leve a Doceria da Rebeka para o seu mercado.</h2><p className="mt-6 text-lg text-muted-foreground leading-relaxed">Atendemos mercados, redes varejistas e distribuidores que buscam produtos com excelente aceitação, apresentação atrativa e padrão de qualidade. Nossa produção foi pensada para entregar sabor, escala e confiança para quem precisa vender bem todos os dias.</p><a href="https://wa.me/5512981285713?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20comercial%20da%20Doceria%20da%20Rebeka%20sobre%20produtos%20para%20atacado." target="_blank" rel="noopener noreferrer" className="btn-primary mt-8">Fale com o nosso comercial pelo WhatsApp</a></div><div className="lg:col-span-7"><div className="grid sm:grid-cols-2 gap-4"><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">01</div><span className="font-medium text-navy leading-snug">Produto pronto para venda</span></div><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">02</div><span className="font-medium text-navy leading-snug">Boa aceitação pelo consumidor</span></div><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">03</div><span className="font-medium text-navy leading-snug">Embalagens práticas</span></div><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">04</div><span className="font-medium text-navy leading-snug">Produção em escala</span></div><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">05</div><span className="font-medium text-navy leading-snug">Atendimento comercial próximo</span></div><div className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"><div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">06</div><span className="font-medium text-navy leading-snug">Marca com presença nacional</span></div></div></div></div></section><section id="galeria" className="py-24 md:py-32"><div className="container-editorial"><div className="max-w-3xl"><span className="eyebrow">Galeria</span><h2 className="mt-4 font-display text-3xl md:text-5xl leading-tight">Delícias que conquistam no olhar e no sabor.</h2><p className="mt-5 text-lg text-muted-foreground">Produtos pensados para encantar consumidores desde a vitrine até a última colherada.</p></div><div className="mt-14 grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"><div className="group relative overflow-hidden rounded-2xl bg-cream row-span-2 aspect-[3/5]"><img src="https://doceriadarebeka.com.br/gal2.jpg" alt="Pudim com calda dourada" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div><div className="group relative overflow-hidden rounded-2xl bg-cream aspect-[4/5] lg:aspect-square"><img src="https://doceriadarebeka.com.br/gal1.jpg" alt="Detalhe cremoso" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div><div className="group relative overflow-hidden rounded-2xl bg-cream aspect-[4/5] lg:aspect-square"><img src="https://doceriadarebeka.com.br/gal5.png" alt="Embalagem timbrada Doceria da Rebeka" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div><div className="group relative overflow-hidden rounded-2xl bg-cream row-span-2 aspect-[3/5]"><img src="https://doceriadarebeka.com.br/gal4.png" alt="Composição de doces" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div><div className="group relative overflow-hidden rounded-2xl bg-cream aspect-[4/5] lg:aspect-square"><img src="https://doceriadarebeka.com.br/gal3.jpg" alt="Close do pudim" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div><div className="group relative overflow-hidden rounded-2xl bg-cream aspect-[4/5] lg:aspect-square"><img src="https://doceriadarebeka.com.br/compos.png" alt="Composição de produtos" className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]" loading="lazy" /></div></div></div></section><section className="py-24 md:py-32 bg-navy text-white"><div className="container-editorial grid lg:grid-cols-2 gap-14 items-center"><div><span className="eyebrow text-pudim">Qualidade</span><h2 className="mt-4 font-display text-3xl md:text-5xl leading-tight text-white">Sabor caseiro com padrão profissional.</h2><p className="mt-6 text-lg text-white/75 leading-relaxed">Cada produto da Doceria da Rebeka segue um rigoroso padrão de produção para garantir textura, sabor, conservação e apresentação. O resultado é um doce com aparência irresistível, sabor marcante e qualidade constante para o mercado.</p><div className="mt-10 grid grid-cols-3 gap-6 max-w-md"><div className="border-t border-white/20 pt-3"><div className="text-sm text-white/60">Padrão</div><div className="font-display text-lg text-pudim">Textura</div></div><div className="border-t border-white/20 pt-3"><div className="text-sm text-white/60">Padrão</div><div className="font-display text-lg text-pudim">Sabor</div></div><div className="border-t border-white/20 pt-3"><div className="text-sm text-white/60">Padrão</div><div className="font-display text-lg text-pudim">Conservação</div></div></div></div><div className="relative"><div className="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl"><img src="https://doceriadarebeka.com.br/gal2.jpg" alt="Detalhe da qualidade do pudim" className="h-full w-full object-cover" /></div></div></div></section><section id="contato" className="py-24 md:py-32"><div className="container-editorial grid lg:grid-cols-12 gap-14"><div className="lg:col-span-5"><span className="eyebrow">Contato</span><h2 className="mt-4 font-display text-3xl md:text-5xl leading-tight">Fale com a Doceria da Rebeka.</h2><p className="mt-6 text-lg text-muted-foreground">Quer levar nossos produtos para o seu mercado ou distribuidora? Entre em contato com nosso time comercial.</p><div className="mt-10 space-y-5 text-navy"><a href="tel:+5512981285713" rel="noopener noreferrer" className="block group"><div className="border-l-2 border-primary/40 pl-4 group-hover:border-primary transition-colors"><div className="text-xs uppercase tracking-widest text-primary font-semibold">WhatsApp</div><div className="mt-1 text-navy leading-snug">(12) 98128-5713</div></div></a><a href="mailto:contato@doceriadarebeka.com.br" rel="noopener noreferrer" className="block group"><div className="border-l-2 border-primary/40 pl-4 group-hover:border-primary transition-colors"><div className="text-xs uppercase tracking-widest text-primary font-semibold">E-mail</div><div className="mt-1 text-navy leading-snug">contato@doceriadarebeka.com.br</div></div></a><div className="border-l-2 border-primary/40 pl-4"><div className="text-xs uppercase tracking-widest text-primary font-semibold">Endereço</div><div className="mt-1 text-navy leading-snug">Rodovia Geraldo Scavone, 2730, Rua 03, Nº353, Jardim Califórnia, São José dos Campos/SP, 12305-490</div></div><a href="https://www.instagram.com/doceria.darebeka/" target="_blank" rel="noopener noreferrer" className="block group"><div className="border-l-2 border-primary/40 pl-4 group-hover:border-primary transition-colors"><div className="text-xs uppercase tracking-widest text-primary font-semibold">Instagram</div><div className="mt-1 text-navy leading-snug">@doceria.darebeka</div></div></a><a href="https://www.facebook.com/doceriadaRebeka/?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="block group"><div className="border-l-2 border-primary/40 pl-4 group-hover:border-primary transition-colors"><div className="text-xs uppercase tracking-widest text-primary font-semibold">Facebook</div><div className="mt-1 text-navy leading-snug">Doceria da Rebeka</div></div></a></div></div><div className="lg:col-span-7"><form onSubmit={onSubmit} className="rounded-[2rem] bg-card border border-border p-8 md:p-10 shadow-[0_20px_50px_-30px_rgba(30,43,94,0.2)]"><div className="grid sm:grid-cols-2 gap-5"><div><label className="block text-xs font-semibold uppercase tracking-widest text-navy/70 mb-2">Nome</label><input type="text" required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-navy placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" name="nome" /></div><div><label className="block text-xs font-semibold uppercase tracking-widest text-navy/70 mb-2">Empresa</label><input type="text" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-navy placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" name="empresa" /></div><div><label className="block text-xs font-semibold uppercase tracking-widest text-navy/70 mb-2">E-mail</label><input type="email" required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-navy placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" name="email" /></div><div><label className="block text-xs font-semibold uppercase tracking-widest text-navy/70 mb-2">WhatsApp</label><input type="tel" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-navy placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" name="whatsapp" /></div></div><div className="mt-5"><label className="block text-xs font-semibold uppercase tracking-widest text-navy/70 mb-2">Mensagem</label><textarea name="mensagem" rows={5} required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-navy placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" placeholder="Conte um pouco sobre o seu negócio..."></textarea></div><div className="mt-7 flex flex-wrap gap-3"><button type="submit" className="btn-primary">Enviar mensagem</button><a href="https://wa.me/5512981285713?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20comercial%20da%20Doceria%20da%20Rebeka%20sobre%20produtos%20para%20atacado." target="_blank" rel="noopener noreferrer" className="btn-outline">Chamar no WhatsApp</a></div></form></div></div></section></main>
 
-      <nav className={`rbk-mobile-nav ${menuOpen ? "open" : ""}`} aria-label="Menu mobile" aria-hidden={!menuOpen}>
-        {NAV.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => {
-              setMenuOpen(false);
-              scrollTo(item.id);
-            }}
-          >
-            {item.label}
-          </button>
-        ))}
-        <a href={WA} className="rbk-btn rbk-btn-wa" target="_blank" rel="noopener noreferrer">
-          WhatsApp comercial
-        </a>
-      </nav>
-
-      <main id="inicio">
-        <section className="rbk-hero" aria-labelledby="hero-heading">
-          <div className="rbk-hero-visual">
-            <Image
-              src={SITE.heroPhoto}
-              alt="Pudim cremoso da Doceria da Rebeka com calda dourada"
-              fill
-              className="rbk-hero-photo"
-              priority
-              sizes="100vw"
-              unoptimized
-            />
-            <div className="rbk-hero-overlay" />
-          </div>
-          <div className="rbk-hero-content">
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <p className="rbk-brand rbk-display">
-                <span>{SITE.tagline}</span>
-                Doceria da Rebeka
-              </p>
-              <h1 id="hero-heading" className="rbk-display">
-                O doce que conquista corações em todo o Brasil
-              </h1>
-              <p className="rbk-hero-lead">
-                Pudins e brigadeirões no atacado, da fábrica em São José dos Campos para mais de 11 mil
-                pontos de venda.
-              </p>
-              <div className="rbk-hero-actions">
-                <a href={WA} className="rbk-btn rbk-btn-wa rbk-btn-lg" target="_blank" rel="noopener noreferrer">
-                  Fale com o comercial
-                </a>
-                <button type="button" className="rbk-btn rbk-btn-ghost rbk-btn-lg" onClick={() => scrollTo("produtos")}>
-                  Ver produtos
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <div className="rbk-trust" aria-label="Números da marca">
-          <div className="rbk-trust-inner">
-            {TRUST.map((item) => (
-              <div key={item.label} className="rbk-trust-item">
-                <strong>{item.label}</strong>
-                <span>{item.detail}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <section id="historia" className="rbk-section rbk-section-alt">
-          <div className="rbk-container rbk-about">
-            <motion.div {...fadeUp} className="rbk-about-media">
-              <Image
-                src={SITE.aboutPhoto}
-                alt="Pudim artesanal da Doceria da Rebeka"
-                fill
-                sizes="(max-width: 960px) 100vw, 48vw"
-                unoptimized
-              />
-            </motion.div>
-            <motion.div {...fadeUp} className="rbk-about-copy">
-              <span className="rbk-eyebrow">Nossa história</span>
-              <h2 className="rbk-display">Sabor caseiro com escala de fábrica</h2>
-              <p>
-                A Doceria da Rebeka nasceu para entregar doces que despertam memória afetiva e conquistam
-                na primeira colherada. Com sede em São José dos Campos, produzimos pudins e brigadeirões
-                com padrão de qualidade, praticidade e consistência.
-              </p>
-              <p>
-                Mais do que doce, entregamos parceria para quem precisa performar na gôndola todos os dias:
-                mercados, redes e distribuidores.
-              </p>
-              <div className="rbk-about-note">
-                Aqui cada receita carrega cuidado de verdade. Sabor caseiro com padrão profissional.
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="produtos" className="rbk-section">
-          <div className="rbk-container">
-            <motion.div {...fadeUp} className="rbk-section-head">
-              <span className="rbk-eyebrow">Produtos</span>
-              <h2 className="rbk-display">Dois campeões para a gôndola</h2>
-              <p>Receitas pensadas para vender bem e encantar quem prova.</p>
-            </motion.div>
-            <div className="rbk-products">
-              {PRODUCTS.map((p) => (
-                <motion.article key={p.id} className="rbk-product" {...fadeUp}>
-                  <div className="rbk-product-media">
-                    <Image src={p.image} alt={p.name} fill sizes="(max-width: 960px) 100vw, 50vw" unoptimized />
-                  </div>
-                  <div className="rbk-product-body">
-                    <span className="rbk-product-badge">{p.badge}</span>
-                    <h3 className="rbk-display">{p.name}</h3>
-                    <p>{p.desc}</p>
-                    <ul>
-                      {p.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="atacado" className="rbk-section rbk-section-alt">
-          <div className="rbk-container">
-            <motion.div {...fadeUp} className="rbk-section-head">
-              <span className="rbk-eyebrow">Atacado B2B</span>
-              <h2 className="rbk-display">Leve a Rebeka para o seu mercado</h2>
-              <p>
-                Atendemos mercados, redes varejistas e distribuidores que buscam aceitação, apresentação e
-                padrão constante.
-              </p>
-            </motion.div>
-            <div className="rbk-wholesale">
-              {WHOLESALE.map((s) => (
-                <motion.div key={s.step} {...fadeUp} className="rbk-step">
-                  <span className="rbk-step-num">{s.step}</span>
-                  <h3 className="rbk-display">{s.title}</h3>
-                  <p>{s.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="galeria" className="rbk-section">
-          <div className="rbk-container">
-            <motion.div {...fadeUp} className="rbk-section-head">
-              <span className="rbk-eyebrow">Galeria</span>
-              <h2 className="rbk-display">Do olhar à última colherada</h2>
-              <p>Produtos pensados para conquistar na vitrine e no sabor.</p>
-            </motion.div>
-            <div className="rbk-gallery">
-              {SITE.gallery.map((g) => (
-                <motion.div key={g.src + g.alt} className="rbk-gallery-item" {...fadeUp}>
-                  <Image src={g.src} alt={g.alt} fill sizes="(max-width: 960px) 100vw, 33vw" unoptimized />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="rbk-section rbk-section-alt">
-          <div className="rbk-container rbk-quality">
-            <motion.div {...fadeUp} className="rbk-quality-media">
-              <Image
-                src={SITE.qualityPhoto}
-                alt="Detalhe da qualidade do pudim"
-                fill
-                sizes="(max-width: 960px) 100vw, 50vw"
-                unoptimized
-              />
-            </motion.div>
-            <motion.div {...fadeUp}>
-              <span className="rbk-eyebrow">Qualidade</span>
-              <h2 className="rbk-display">Padrão em textura, sabor e conservação</h2>
-              <p>
-                Cada lote segue rigor de produção para garantir aparência irresistível, sabor marcante e
-                qualidade constante no ponto de venda.
-              </p>
-              <div className="rbk-quality-pills">
-                <span>Padrão textura</span>
-                <span>Padrão sabor</span>
-                <span>Padrão conservação</span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="contato" className="rbk-section rbk-book">
-          <div className="rbk-container rbk-book-inner">
-            <motion.div {...fadeUp}>
-              <h2 className="rbk-display">Fale com o comercial</h2>
-              <p>Quer levar nossos produtos para o seu mercado ou distribuidora? Chame no WhatsApp.</p>
-              <div className="rbk-book-meta">
-                <span>
-                  {SITE.address}, {SITE.addressDetail}
-                </span>
-                <span>
-                  {SITE.city} · CEP {SITE.cep}
-                </span>
-                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-                <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">
-                  Instagram {SITE.instagramHandle}
-                </a>
-              </div>
-              <a href={WA} className="rbk-btn rbk-btn-wa rbk-btn-lg" target="_blank" rel="noopener noreferrer">
-                WhatsApp {SITE.phoneDisplay}
-              </a>
-            </motion.div>
-            <iframe
-              className="rbk-map"
-              title="Mapa da Doceria da Rebeka em São José dos Campos"
-              src={SITE.mapsEmbed}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
-        </section>
-
-        <section id="duvidas" className="rbk-section">
-          <div className="rbk-container rbk-faq-wrap">
-            <motion.div {...fadeUp} className="rbk-section-head">
-              <span className="rbk-eyebrow">Dúvidas</span>
-              <h2 className="rbk-display">Perguntas frequentes</h2>
-            </motion.div>
-            <div className="rbk-faq">
-              {FAQ.map((item) => (
-                <details key={item.q} className="rbk-faq-item">
-                  <summary className="rbk-display">{item.q}</summary>
-                  <p>{item.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="rbk-cta" aria-label="Chamada comercial">
-          <div className="rbk-cta-inner">
-            <motion.div {...fadeUp}>
-              <h2 className="rbk-display">Pronto para repor a gôndola?</h2>
-              <p>Comercial no WhatsApp. São José dos Campos, atendimento nacional no atacado.</p>
-              <a href={WA} className="rbk-btn rbk-btn-wa rbk-btn-lg" target="_blank" rel="noopener noreferrer">
-                Chamar no WhatsApp
-              </a>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="rbk-footer">
-        <div className="rbk-footer-inner">
-          <div>
-            <strong className="rbk-display">{SITE.name}</strong>
-            <p>
-              {SITE.address} · {SITE.city}
-            </p>
-          </div>
-          <a href={WA} target="_blank" rel="noopener noreferrer">
-            {SITE.phoneDisplay}
-          </a>
-        </div>
-      </footer>
-
-      <a href={WA} className="rbk-wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <WhatsAppIcon />
-      </a>
+      <footer className="bg-navy text-white/80"><div className="container-editorial py-16 md:py-20 grid gap-12 md:grid-cols-12"><div className="md:col-span-5"><div className="flex items-center gap-3"><img src="https://doceriadarebeka.com.br/logo.png" alt="Doceria da Rebeka" className="h-14 w-14 object-contain" /><span className="font-display text-xl text-white leading-tight">Doceria<br /><span className="text-pudim">da Rebeka</span></span></div><p className="mt-6 max-w-sm font-display text-lg text-white/90 italic">Aqui cada doce é feito com amor e perfeição!</p></div><div className="md:col-span-3"><div className="text-xs uppercase tracking-widest text-pudim font-semibold">Navegação</div><ul className="mt-5 space-y-3"><li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li><li><a href="#historia" className="hover:text-white transition-colors">Nossa História</a></li><li><a href="#produtos" className="hover:text-white transition-colors">Produtos</a></li><li><a href="#atacado" className="hover:text-white transition-colors">Atacado</a></li><li><a href="#galeria" className="hover:text-white transition-colors">Galeria</a></li><li><a href="#contato" className="hover:text-white transition-colors">Contato</a></li></ul></div><div className="md:col-span-4"><div className="text-xs uppercase tracking-widest text-pudim font-semibold">Contato</div><ul className="mt-5 space-y-3 text-sm leading-relaxed"><li>Rodovia Geraldo Scavone, 2730<br />Rua 03, Nº353, Jardim Califórnia<br />São José dos Campos/SP — 12305-490</li><li><a href="tel:+5512981285713" className="hover:text-white">(12) 98128-5713</a></li><li><a href="mailto:contato@doceriadarebeka.com.br" className="hover:text-white">contato@doceriadarebeka.com.br</a></li></ul><div className="mt-6 flex gap-3"><a href="https://www.instagram.com/doceria.darebeka/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 px-4 py-2 text-xs hover:bg-white hover:text-navy transition">Instagram</a><a href="https://www.facebook.com/doceriadaRebeka/?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 px-4 py-2 text-xs hover:bg-white hover:text-navy transition">Facebook</a></div></div></div><div className="border-t border-white/10"><div className="container-editorial py-6 text-xs text-white/60 flex flex-wrap justify-between gap-2"><span>© 2026 Doceria da Rebeka. Todos os direitos reservados.</span><span>São José dos Campos — São Paulo, Brasil</span></div></div></footer>
     </div>
   );
 }

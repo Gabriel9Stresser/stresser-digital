@@ -1,6 +1,5 @@
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
-import { RebekaStructuredData } from "./StructuredData";
 import { PREVIEW_URL, SEO } from "./seo";
 import { SITE } from "./data";
 import "./rebeka.css";
@@ -12,9 +11,9 @@ const display = Fraunces({
   display: "swap",
 });
 
-const sans = Manrope({
+const sans = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-rbk-sans",
   display: "swap",
 });
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: SEO.title,
     description: SEO.description,
-    images: [{ url: SITE.heroPhoto, width: 1200, height: 630, alt: SITE.name }],
+    images: [{ url: SITE.heroPhoto, width: 667, height: 1000, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
@@ -51,23 +50,18 @@ export const metadata: Metadata = {
     description: SEO.description,
     images: [SITE.heroPhoto],
   },
-  other: {
-    "geo.region": "BR-SP",
-    "geo.placename": "São José dos Campos",
-  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#1a100c",
+  themeColor: "#1e2b5e",
 };
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${display.variable} ${sans.variable}`}>
-      <RebekaStructuredData />
+    <div className={`${display.variable} ${sans.variable}`} style={{ fontFamily: "var(--font-rbk-sans), Inter, sans-serif" }}>
       {children}
     </div>
   );
