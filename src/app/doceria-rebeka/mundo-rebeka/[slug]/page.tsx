@@ -39,7 +39,6 @@ export default async function ArtigoPage({ params }: Props) {
   return (
     <>
       <PageHero
-        eyebrow={article.category}
         title={article.title}
         description={article.excerpt}
         breadcrumb={[
@@ -60,14 +59,12 @@ export default async function ArtigoPage({ params }: Props) {
         </div>
       </div>
 
-      <section className="rbk-cta-band">
-        <div className="rbk-cta-band-inner">
-          <div>
-            <h2>Quer levar esses produtos ao seu mercado?</h2>
-            <p>Fale com o comercial no WhatsApp {SITE.phoneDisplay}.</p>
-          </div>
-          <div className="rbk-cta-band-actions">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-on-brand">
+      <section className="cm-newsletter">
+        <div className="cm-container cm-center">
+          <h2>Quer levar esses produtos ao seu mercado?</h2>
+          <p>Fale com o comercial no WhatsApp {SITE.phoneDisplay}.</p>
+          <div className="cm-nl-actions">
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="cm-btn-dark">
               Chamar no WhatsApp
             </a>
           </div>

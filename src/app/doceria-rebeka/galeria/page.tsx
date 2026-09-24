@@ -23,7 +23,7 @@ export default function GaleriaPage() {
           { label: "Galeria" },
         ]}
       >
-        <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
+        <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="cm-btn-dark">
           Ver no Instagram
         </a>
       </PageHero>

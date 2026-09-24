@@ -38,7 +38,6 @@ export default async function ProdutoPage({ params }: Props) {
   return (
     <>
       <PageHero
-        eyebrow={product.badge}
         title={product.name}
         description={product.longDesc}
         breadcrumb={[
@@ -47,10 +46,10 @@ export default async function ProdutoPage({ params }: Props) {
           { label: product.shortName },
         ]}
       >
-        <a href={waLink(product.waText)} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
+        <a href={waLink(product.waText)} target="_blank" rel="noopener noreferrer" className="cm-btn-dark">
           Pedir no WhatsApp
         </a>
-        <Link href={`${BASE}/produtos`} className="rbk-btn-ghost">
+        <Link href={`${BASE}/produtos`} className="cm-btn-outline-on-brand">
           Todos os produtos
         </Link>
       </PageHero>

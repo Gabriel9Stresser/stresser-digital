@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ARTICLES, BASE, PRODUCTS, PROOF, SITE, VIDEOS, WA, WA_CATALOG, WHOLESALE } from "./data";
+import { HeroSlider } from "./components/HeroSlider";
+import { ProductQuickLinks, ProductSlider } from "./components/ProductSlider";
+import { ARTICLES, BASE, SITE, VIDEOS, WA, WA_CATALOG } from "./data";
 
 const DIFFS = [
   {
@@ -20,218 +22,188 @@ const DIFFS = [
   },
 ];
 
+const MARQUEE = [
+  "Produto pronto para a gôndola",
+  "Alta aceitação no ponto de venda",
+  "Fábrica em São José dos Campos",
+  "Atacado nacional",
+  "Pudim campeão de vendas",
+  "Brigadeirão de alto apelo visual",
+];
+
 export default function DoceriaRebekaHome() {
   return (
     <>
-      {/* Hero full-bleed estilo Cimed */}
-      <section className="rbk-hero-bleed">
-        <img src={SITE.heroPhoto} alt="" className="rbk-hero-bleed-img" fetchPriority="high" />
-        <div className="rbk-hero-bleed-veil" />
-        <div className="rbk-hero-bleed-content">
-          <p className="rbk-hero-kicker">São José dos Campos · Atacado nacional</p>
-          <h1>
-            O doce que conquista
-            <br />
-            corações em todo o Brasil
-          </h1>
-          <p className="rbk-hero-lead">
-            Pudim e brigadeirão feitos com amor e perfeição. Da fábrica joseense para milhares de pontos de venda.
-          </p>
-          <div className="rbk-hero-ctas">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
-              Fale com o comercial
-            </a>
-            <Link href={`${BASE}/produtos`} className="rbk-btn-ghost">
-              Nossos produtos
-            </Link>
+      <HeroSlider />
+
+      {/* Presença / partners */}
+      <section className="cm-section cm-section--white">
+        <div className="cm-container cm-center">
+          <h2 className="cm-h2">A Rebeka está presente no caminho do consumidor</h2>
+          <div className="cm-presence-row">
+            <div>
+              <strong>+11 mil</strong>
+              <span>PDVs no Brasil</span>
+            </div>
+            <div>
+              <strong>SJC</strong>
+              <span>Fábrica joseense</span>
+            </div>
+            <div>
+              <strong>B2B</strong>
+              <span>Só atacado</span>
+            </div>
+            <div>
+              <strong>2</strong>
+              <span>Campeões de giro</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Faixa marquee / prova */}
-      <div className="rbk-marquee" aria-hidden>
-        <div className="rbk-marquee-track">
-          {[...PROOF, ...PROOF].map((item, i) => (
-            <span key={`${item.title}-${i}`}>
-              <strong>{item.title}</strong> {item.desc}
-            </span>
+      {/* Notícias / Instagram style */}
+      <section className="cm-section cm-section--muted">
+        <div className="cm-container cm-center">
+          <h2 className="cm-h2">Notícias Rebeka</h2>
+          <p className="cm-sub">Acompanhe bastidores, lançamentos e a marca no Instagram.</p>
+          <div className="cm-ig-row">
+            {VIDEOS.map((v) => (
+              <a key={v.id} href={v.ctaHref} target="_blank" rel="noopener noreferrer" className="cm-ig-card">
+                <img src={v.thumb} alt="" />
+                <span className="cm-ig-play">▶</span>
+                <span className="cm-ig-cap">{v.title}</span>
+              </a>
+            ))}
+            {SITE.gallery.slice(0, 3).map((g) => (
+              <a key={g.src} href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="cm-ig-card">
+                <img src={g.src} alt={g.alt} />
+                <span className="cm-ig-cap">{g.alt}</span>
+              </a>
+            ))}
+          </div>
+          <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="cm-text-link">
+            Siga a Doceria da Rebeka no Instagram ›
+          </a>
+        </div>
+      </section>
+
+      {/* Busca */}
+      <section className="cm-section cm-section--white">
+        <div className="cm-container cm-center">
+          <ProductQuickLinks />
+        </div>
+      </section>
+
+      {/* Marquee */}
+      <section className="cm-marquee" aria-hidden>
+        <div className="cm-marquee-track">
+          {[...MARQUEE, ...MARQUEE].map((t, i) => (
+            <span key={`${t}-${i}`}>{t}</span>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Produtos */}
-      <section className="rbk-section">
-        <div className="rbk-section-head">
-          <div>
-            <p className="rbk-kicker">Nossos produtos</p>
-            <h2>Linha pronta para a gôndola</h2>
-            <p className="rbk-section-sub">Conheça os campeões de giro da Doceria da Rebeka.</p>
-          </div>
-          <Link href={`${BASE}/produtos`} className="rbk-link-arrow">
-            Ver todos os produtos ›
+      <section className="cm-section cm-section--soft">
+        <div className="cm-container cm-center">
+          <h2 className="cm-h2">Nossos Produtos</h2>
+          <p className="cm-sub">Conheça nossa linha completa para o atacado</p>
+          <ProductSlider />
+          <Link href={`${BASE}/produtos`} className="cm-text-link">
+            Ver Todos os Produtos ›
           </Link>
-        </div>
-        <div className="rbk-product-grid">
-          {PRODUCTS.map((p) => (
-            <article key={p.id} className="rbk-product-card">
-              <Link href={`${BASE}/produtos/${p.slug}`} className="rbk-product-card-media">
-                <img src={p.image} alt={p.name} loading="lazy" />
-                <span className="rbk-product-badge">{p.badge}</span>
-              </Link>
-              <div className="rbk-product-card-body">
-                <h3>
-                  <Link href={`${BASE}/produtos/${p.slug}`}>{p.name}</Link>
-                </h3>
-                <p>{p.desc}</p>
-                <Link href={`${BASE}/produtos/${p.slug}`} className="rbk-link-more">
-                  Saiba mais
-                </Link>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
       {/* Diferenciais */}
-      <section className="rbk-section rbk-section--cream">
-        <div className="rbk-section-head rbk-section-head--center">
-          <p className="rbk-kicker">O que nos torna diferentes</p>
-          <h2>Expertise e compromisso com o varejo</h2>
-          <p className="rbk-section-sub">Sabor de casa, produção em escala e parceria comercial de verdade.</p>
-        </div>
-        <div className="rbk-diff-grid">
-          {DIFFS.map((d, i) => (
-            <div key={d.title} className="rbk-diff-card">
-              <span className="rbk-diff-num">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{d.title}</h3>
-              <p>{d.desc}</p>
-            </div>
-          ))}
+      <section className="cm-section cm-section--muted">
+        <div className="cm-container cm-center">
+          <h2 className="cm-h2">O que nos torna diferentes</h2>
+          <p className="cm-sub">Nossa expertise e compromisso com o varejo brasileiro</p>
+          <div className="cm-diff-grid">
+            {DIFFS.map((d, i) => (
+              <div key={d.title} className="cm-diff-card">
+                <div className="cm-diff-icon" aria-hidden>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3>{d.title}</h3>
+                <p>{d.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Compromisso + números */}
-      <section className="rbk-commit">
-        <div className="rbk-commit-copy">
-          <p className="rbk-kicker rbk-kicker--on-dark">Nosso compromisso</p>
-          <h2>Aqui cada doce é feito com amor e perfeição</h2>
+      {/* Compromisso - faixa brand full width */}
+      <section className="cm-compromisso">
+        <div className="cm-container cm-center">
+          <h2>Nosso compromisso é com você</h2>
           <p>
-            Na Doceria da Rebeka, cada receita carrega carinho, tradição e cuidado. Levamos pudins e brigadeirões de
-            qualidade para mercados e distribuidores de todo o Brasil, com padrão de fábrica e atendimento próximo.
+            Acreditamos que um doce bem feito transforma a gôndola e o dia a dia de quem compra. Por isso trabalhamos
+            todos os dias para unir sabor caseiro, qualidade e escala. Levando pudim e brigadeirão para milhares de
+            famílias brasileiras, nossa missão é fazer parte da jornada do seu mercado.
           </p>
-          <Link href={`${BASE}/quem-somos`} className="rbk-btn-solid rbk-btn-solid--rose">
-            Conheça nossa história
-          </Link>
-        </div>
-        <div className="rbk-commit-stats">
-          <div>
-            <strong>+11 mil</strong>
-            <span>pontos de venda no Brasil</span>
-          </div>
-          <div>
-            <strong>100%</strong>
-            <span>foco em atacado B2B</span>
-          </div>
-          <div>
-            <strong>SJC</strong>
-            <span>fábrica em São José dos Campos</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Atacado teaser */}
-      <section className="rbk-section">
-        <div className="rbk-section-head">
-          <div>
-            <p className="rbk-kicker">Atacado</p>
-            <h2>Leve a Rebeka para o seu mercado</h2>
-            <p className="rbk-section-sub">Seis motivos para abastecer com a gente.</p>
-          </div>
-          <Link href={`${BASE}/atacado`} className="rbk-link-arrow">
-            Como comprar ›
-          </Link>
-        </div>
-        <div className="rbk-wholesale-grid">
-          {WHOLESALE.slice(0, 6).map((s) => (
-            <div key={s.step} className="rbk-wholesale-item">
-              <span>{s.step}</span>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
+          <div className="cm-stats">
+            <div>
+              <strong>11 mil+</strong>
+              <span>pontos de venda no Brasil</span>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Vídeos */}
-      <section className="rbk-section rbk-section--cream">
-        <div className="rbk-section-head">
-          <div>
-            <p className="rbk-kicker">Assista</p>
-            <h2>Bastidores e produto em movimento</h2>
-            <p className="rbk-section-sub">Em breve no YouTube. Por enquanto, no Instagram.</p>
+            <div>
+              <strong>100%</strong>
+              <span>foco em atacado B2B</span>
+            </div>
+            <div>
+              <strong>SJC</strong>
+              <span>produção em São José dos Campos</span>
+            </div>
           </div>
-          <Link href={`${BASE}/galeria`} className="rbk-link-arrow">
-            Galeria e vídeos ›
+          <Link href={`${BASE}/quem-somos`} className="cm-btn-dark">
+            Conheça Nossa História
           </Link>
         </div>
-        <div className="rbk-video-grid">
-          {VIDEOS.map((v) => (
-            <a key={v.id} href={v.ctaHref} target="_blank" rel="noopener noreferrer" className="rbk-video-card">
-              <div className="rbk-video-thumb">
-                <img src={v.thumb} alt="" />
-                <span className="rbk-play">▶</span>
-                <span className="rbk-video-tag">Em breve</span>
-              </div>
-              <h3>{v.title}</h3>
-              <p>{v.desc}</p>
-            </a>
-          ))}
-        </div>
       </section>
 
-      {/* Mundo Rebeka / Notícias */}
-      <section className="rbk-section">
-        <div className="rbk-section-head">
-          <div>
-            <p className="rbk-kicker">Mundo Rebeka</p>
-            <h2>Últimas novidades e conhecimento</h2>
-            <p className="rbk-section-sub">Dicas de gôndola, mix e bastidores da fábrica.</p>
+      {/* Últimas novidades */}
+      <section className="cm-section cm-section--white">
+        <div className="cm-container cm-center">
+          <h2 className="cm-h2">Últimas Novidades</h2>
+          <p className="cm-sub">Conhecimento e bastidores no Mundo Rebeka</p>
+          <div className="cm-news-grid">
+            {ARTICLES.slice(0, 3).map((a) => (
+              <Link key={a.slug} href={`${BASE}/mundo-rebeka/${a.slug}`} className="cm-news-card">
+                <img src={a.cover} alt="" />
+                <div>
+                  <span>{a.category}</span>
+                  <h3>{a.title}</h3>
+                </div>
+              </Link>
+            ))}
           </div>
-          <Link href={`${BASE}/mundo-rebeka`} className="rbk-link-arrow">
-            Ver todos ›
+          <Link href={`${BASE}/mundo-rebeka`} className="cm-text-link">
+            Ver Mundo Rebeka ›
           </Link>
         </div>
-        <div className="rbk-news-grid">
-          {ARTICLES.slice(0, 3).map((a) => (
-            <Link key={a.slug} href={`${BASE}/mundo-rebeka/${a.slug}`} className="rbk-news-card">
-              <div className="rbk-news-media">
-                <img src={a.cover} alt="" loading="lazy" />
-              </div>
-              <div className="rbk-news-body">
-                <span>{a.category}</span>
-                <h3>{a.title}</h3>
-                <p>{a.excerpt}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
       </section>
 
-      {/* CTA faixa estilo newsletter Cimed */}
-      <section className="rbk-cta-band">
-        <div className="rbk-cta-band-inner">
-          <div>
-            <h2>Pronto para abastecer?</h2>
-            <p>Fale com o comercial ou peça o catálogo. Atendimento de segunda a sexta, 8h às 18h.</p>
+      {/* Newsletter band */}
+      <section className="cm-newsletter">
+        <div className="cm-container cm-center">
+          <div className="cm-nl-icon" aria-hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
           </div>
-          <div className="rbk-cta-band-actions">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-on-brand">
+          <h2>Fique por dentro das novidades</h2>
+          <p>Fale com o comercial ou peça o catálogo. Atendimento de segunda a sexta, 8h às 18h.</p>
+          <div className="cm-nl-actions">
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="cm-btn-dark">
               WhatsApp comercial
             </a>
-            <a href={WA_CATALOG} target="_blank" rel="noopener noreferrer" className="rbk-btn-on-brand-outline">
+            <a href={WA_CATALOG} target="_blank" rel="noopener noreferrer" className="cm-btn-outline-dark">
               Pedir catálogo
             </a>
-            <Link href={`${BASE}/contato`} className="rbk-btn-on-brand-outline">
+            <Link href={`${BASE}/contato`} className="cm-btn-outline-dark">
               Formulário
             </Link>
           </div>

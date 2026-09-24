@@ -3,74 +3,65 @@ import { FOOTER_INSTITUCIONAL, FOOTER_SUPORTE, PRODUCTS, SITE, WA, BASE } from "
 
 export function SiteFooter() {
   return (
-    <footer className="rbk-footer">
-      <div className="rbk-footer-grid">
-        <div className="rbk-footer-brand">
-          <Link href={BASE} className="rbk-brand rbk-brand--footer">
-            <img src={SITE.logo} alt="" className="rbk-brand-logo" />
-            <span className="rbk-brand-text">
-              Doceria <strong>da Rebeka</strong>
-            </span>
-          </Link>
-          <p className="rbk-footer-tagline">
-            Aqui cada doce é feito com amor e perfeição. Fábrica em {SITE.cityShort}, presença em todo o Brasil.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="rbk-footer-heading">Produtos</h4>
-          <ul className="rbk-footer-list">
-            {PRODUCTS.map((p) => (
-              <li key={p.id}>
-                <Link href={`${BASE}/produtos/${p.slug}`}>{p.name}</Link>
+    <footer className="cm-footer">
+      <div className="cm-footer-top">
+        <div className="cm-container cm-footer-grid">
+          <div>
+            <Link href={BASE} className="cm-logo cm-logo--footer">
+              <img src={SITE.logo} alt="" />
+              <span>
+                Doceria <em>da Rebeka</em>
+              </span>
+            </Link>
+            <p className="cm-footer-about">
+              Cuidando do sabor na gôndola com pudim e brigadeirão de qualidade. Fábrica em {SITE.cityShort}, atendimento
+              nacional no atacado.
+            </p>
+          </div>
+          <div>
+            <h4>Produtos</h4>
+            <ul>
+              {PRODUCTS.map((p) => (
+                <li key={p.id}>
+                  <Link href={`${BASE}/produtos/${p.slug}`}>{p.name}</Link>
+                </li>
+              ))}
+              <li>
+                <Link href={`${BASE}/produtos`}>Ver Todos</Link>
               </li>
-            ))}
-            <li>
-              <Link href={SITE.catalogPath}>Catálogo PDF</Link>
-            </li>
-            <li>
-              <Link href={`${BASE}/produtos`}>Ver todos</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="rbk-footer-heading">Institucional</h4>
-          <ul className="rbk-footer-list">
-            {FOOTER_INSTITUCIONAL.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
+            </ul>
+          </div>
+          <div>
+            <h4>Institucional</h4>
+            <ul>
+              {FOOTER_INSTITUCIONAL.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4>Suporte</h4>
+            <ul>
+              {FOOTER_SUPORTE.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
+              <li>
+                <a href={WA}>{SITE.phoneDisplay}</a>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="rbk-footer-heading">Suporte</h4>
-          <ul className="rbk-footer-list">
-            {FOOTER_SUPORTE.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
-              </li>
-            ))}
-            <li>
-              <a href={WA}>{SITE.phoneDisplay}</a>
-            </li>
-            <li className="rbk-footer-muted">{SITE.hours}</li>
-          </ul>
-          <div className="rbk-footer-social">
-            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
+              <li className="cm-footer-hours">{SITE.hours}</li>
+            </ul>
           </div>
         </div>
       </div>
-      <div className="rbk-footer-bottom">
-        <span>© {new Date().getFullYear()} Doceria da Rebeka. Todos os direitos reservados.</span>
-        <span>São José dos Campos, SP</span>
+      <div className="cm-footer-bottom">
+        <div className="cm-container">
+          <span>© {new Date().getFullYear()} Doceria da Rebeka</span>
+          <span>São José dos Campos, SP</span>
+        </div>
       </div>
     </footer>
   );

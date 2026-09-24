@@ -24,10 +24,10 @@ export default function AtacadoPage() {
           { label: "Atacado" },
         ]}
       >
-        <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="cm-btn-dark">
           Começar pelo WhatsApp
         </a>
-        <Link href={SITE.catalogPath} className="rbk-btn-ghost">
+        <Link href={SITE.catalogPath} className="cm-btn-outline-on-brand">
           Ver catálogo
         </Link>
       </PageHero>
