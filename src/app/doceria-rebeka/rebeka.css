@@ -1640,8 +1640,9 @@
 
 /* ========== Clone estrutural Cimed (navy = amarelo da marca) ========== */
 .rbk-clone {
-  --cm-brand: var(--navy);
-  --cm-brand-ink: #fff;
+  /* rose = papel do amarelo Cimed; navy = papel do preto */
+  --cm-brand: var(--rose);
+  --cm-brand-ink: var(--navy);
   --cm-ink: #1a1a1a;
   --cm-muted-bg: #f5f5f5;
   --cm-soft-bg: #fafafa;
@@ -1658,7 +1659,7 @@
 }
 .rbk-clone .cm-center { text-align: center; }
 
-/* Header: barra brand, logo L, tools R */
+/* Header: barra brand, logo L, tools R — clone Cimed */
 .rbk-clone .cm-header {
   position: sticky;
   top: 0;
@@ -1668,6 +1669,7 @@
   color: var(--cm-brand-ink);
 }
 .rbk-clone .cm-header-inner {
+  position: relative;
   height: 64px;
   max-width: 1280px;
   margin: 0 auto;
@@ -1675,120 +1677,164 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 .rbk-clone .cm-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: inherit;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  z-index: 2;
 }
 .rbk-clone .cm-logo img {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
+  display: block;
+}
+.rbk-clone .cm-logo--footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+.rbk-clone .cm-logo--footer img {
+  width: 40px;
+  height: 40px;
   background: #fff;
   border-radius: 999px;
   padding: 2px;
 }
-.rbk-clone .cm-logo em {
+.rbk-clone .cm-logo--footer span em {
   font-style: normal;
   color: var(--pudim);
-  font-weight: 700;
 }
-.rbk-clone .cm-logo--footer { color: #fff; }
-.rbk-clone .cm-header-tools { display: flex; gap: 10px; align-items: center; }
+.rbk-clone .cm-header-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 3;
+  margin-left: auto;
+}
+.rbk-clone .cm-header-tools.is-hidden { display: none; }
+
 .rbk-clone .cm-tool-btn {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
-  border: 1.5px solid rgb(255 255 255 / 0.55);
+  border: 2px solid var(--cm-brand-ink);
   background: transparent;
-  color: #fff;
+  color: var(--cm-brand-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
 }
-.rbk-clone .cm-tool-btn--square { border-radius: 10px; }
-.rbk-clone .cm-tool-btn:hover { background: rgb(255 255 255 / 0.12); }
+.rbk-clone .cm-tool-btn--circle { border-radius: 9999px; }
+.rbk-clone .cm-tool-btn--square { border-radius: 8px; }
+.rbk-clone .cm-tool-btn--ghost {
+  border-color: transparent;
+  width: 32px;
+  height: 32px;
+}
+.rbk-clone .cm-tool-btn:hover { background: rgb(0 0 0 / 0.06); }
 
-.rbk-clone .cm-menu-overlay,
-.rbk-clone .cm-search-overlay {
-  position: fixed;
-  inset: 64px 0 0;
-  z-index: 99;
-  background: var(--cm-brand);
-  color: #fff;
-  overflow: auto;
-  padding: 40px 20px 60px;
-}
-.rbk-clone .cm-menu-nav {
-  max-width: 560px;
+/* Busca inline no header */
+.rbk-clone .cm-header-search {
+  display: none;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  max-width: 720px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
-.rbk-clone .cm-menu-nav a {
+.rbk-clone .cm-header-search.is-open { display: flex; }
+.rbk-clone .cm-header-search input {
+  flex: 1;
+  height: 40px;
+  border: 2px solid var(--cm-brand-ink);
+  border-radius: 9999px;
+  padding: 0 16px;
+  font-size: 15px;
   font-family: var(--font-sans);
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.3;
-  padding: 14px 0;
-  border-bottom: 1px solid rgb(255 255 255 / 0.12);
-  color: #fff;
-}
-.rbk-clone .cm-menu-nav a:hover { color: var(--pudim); }
-.rbk-clone .cm-menu-cta {
-  display: inline-flex;
-  margin: 28px auto 0;
-  background: var(--rose);
-  color: #fff;
-  font-weight: 700;
-  padding: 14px 22px;
-  border-radius: 999px;
-}
-.rbk-clone .cm-search-box { max-width: 640px; margin: 0 auto; }
-.rbk-clone .cm-search-box h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 20px;
-  text-align: center;
-}
-.rbk-clone .cm-search-input {
-  width: 100%;
-  border: 0;
-  border-radius: 999px;
-  padding: 16px 22px;
-  font-size: 16px;
+  background: #fff;
+  color: var(--cm-ink);
   outline: none;
 }
-.rbk-clone .cm-search-results {
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-}
-.rbk-clone .cm-search-results a {
-  display: block;
-  padding: 14px 8px;
-  border-bottom: 1px solid rgb(255 255 255 / 0.15);
-  color: #fff;
-  font-weight: 600;
-}
-.rbk-clone .cm-search-close {
+.rbk-clone .cm-search-dropdown {
   position: absolute;
-  top: 16px;
-  right: 20px;
+  left: 0; right: 0; top: 64px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.08);
+  z-index: 101;
+}
+.rbk-clone .cm-search-dropdown ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 8px 0;
+  max-width: 1280px;
+}
+.rbk-clone .cm-search-dropdown a {
+  display: block;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: var(--cm-ink);
+}
+.rbk-clone .cm-search-dropdown a:hover { background: #f5f5f5; }
+.rbk-clone .cm-search-empty {
+  padding: 14px 20px;
+  color: #888;
+}
+
+/* Menu painel branco (Cimed .primary-nav.is-open) */
+.rbk-clone .cm-primary-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(690px, 100vw);
+  max-height: 100vh;
+  overflow: auto;
+  background: #fff;
+  color: #333;
+  z-index: 102;
+  padding: 72px 24px 32px;
+  box-shadow: -8px 0 30px rgb(0 0 0 / 0.08);
+}
+.rbk-clone .cm-primary-nav.is-open { display: flex; }
+.rbk-clone .cm-nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.rbk-clone .cm-nav-menu li {
+  border-bottom: 1px solid #e8e8e8;
+}
+.rbk-clone .cm-nav-menu a {
+  display: block;
+  padding: 16px 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+.rbk-clone .cm-nav-menu a:hover { color: var(--rose); }
+.rbk-clone .cm-menu-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
   border: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 32px;
+  background: rgb(0 0 0 / 0.25);
   cursor: pointer;
-  line-height: 1;
+}
+.rbk-clone .cm-header.is-menu .cm-tool-btn--square {
+  position: relative;
+  z-index: 103;
+  background: #eee;
 }
 
 /* Hero slider */
@@ -2163,7 +2209,7 @@
   margin: 0 auto 16px;
   border-radius: 999px;
   background: var(--cm-brand);
-  color: var(--pudim);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2275,7 +2321,7 @@
   margin: 0 auto 16px;
   border-radius: 999px;
   background: #fff;
-  color: var(--cm-brand);
+  color: var(--navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2350,7 +2396,7 @@
 .rbk-clone .cm-page-rule {
   width: 48px;
   height: 4px;
-  background: #111;
+  background: var(--navy);
   margin: 20px auto 0;
   border-radius: 2px;
 }
