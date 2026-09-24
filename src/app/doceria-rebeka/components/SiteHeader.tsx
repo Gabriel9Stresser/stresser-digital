@@ -49,6 +49,29 @@ export function SiteHeader() {
             <img src={SITE.logo} alt={SITE.name} />
           </Link>
 
+          {/* Menu: horizontal no desktop; painel branco no mobile */}
+          <nav className={`cm-primary-nav${menuOpen ? " is-open" : ""}`} aria-label="Menu principal">
+            <ul className="cm-nav-menu">
+              {NAV.filter((i) => i.href !== BASE).map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} onClick={() => setMenuOpen(false)}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href={`${BASE}/duvidas`} onClick={() => setMenuOpen(false)}>
+                  Dúvidas frequentes
+                </Link>
+              </li>
+              <li>
+                <Link href={SITE.catalogPath} onClick={() => setMenuOpen(false)}>
+                  Catálogo
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           {/* Busca expandida no header, padrão Cimed */}
           <div className={`cm-header-search${searchOpen ? " is-open" : ""}`}>
             <input
@@ -97,7 +120,7 @@ export function SiteHeader() {
             </button>
             <button
               type="button"
-              className="cm-tool-btn cm-tool-btn--square"
+              className="cm-tool-btn cm-tool-btn--square cm-tool-btn--menu"
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               onClick={() => {
@@ -116,29 +139,6 @@ export function SiteHeader() {
               )}
             </button>
           </div>
-
-          {/* Menu painel branco, padrão Cimed */}
-          <nav className={`cm-primary-nav${menuOpen ? " is-open" : ""}`} aria-label="Menu principal">
-            <ul className="cm-nav-menu">
-              {NAV.filter((i) => i.href !== BASE).map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} onClick={() => setMenuOpen(false)}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href={`${BASE}/duvidas`} onClick={() => setMenuOpen(false)}>
-                  Dúvidas frequentes
-                </Link>
-              </li>
-              <li>
-                <Link href={SITE.catalogPath} onClick={() => setMenuOpen(false)}>
-                  Catálogo
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
 
         {searchOpen && q.trim() && (

@@ -106,8 +106,8 @@ export default function DoceriaRebekaHome() {
       {/* Produtos */}
       <section className="cm-section cm-section--soft">
         <div className="cm-container cm-center">
-          <h2 className="cm-h2">Nossos Produtos</h2>
-          <p className="cm-sub">Conheça nossa linha completa para o atacado</p>
+          <h2 className="cm-h2 cm-h2--lg">Nossos Produtos</h2>
+          <p className="cm-sub cm-sub--lg">Conheça nossa linha completa para o atacado</p>
           <ProductSlider />
           <Link href={`${BASE}/produtos`} className="cm-text-link">
             Ver Todos os Produtos ›
@@ -118,8 +118,8 @@ export default function DoceriaRebekaHome() {
       {/* Diferenciais */}
       <section className="cm-section cm-section--muted">
         <div className="cm-container cm-center">
-          <h2 className="cm-h2">O que nos torna diferentes</h2>
-          <p className="cm-sub">Nossa expertise e compromisso com o varejo brasileiro</p>
+          <h2 className="cm-h2 cm-h2--lg">O que nos torna diferentes</h2>
+          <p className="cm-sub cm-sub--lg">Nossa expertise e compromisso com o varejo brasileiro</p>
           <div className="cm-diff-grid">
             {DIFFS.map((d, i) => (
               <div key={d.title} className="cm-diff-card">
