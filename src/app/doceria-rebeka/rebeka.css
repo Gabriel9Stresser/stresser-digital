@@ -2,25 +2,28 @@
 
 .rbk-clone {
   --radius: 0.75rem;
-  --cream: oklch(97.5% 0.018 85);
-  --caramel: oklch(78% 0.11 65);
-  --chocolate: oklch(32% 0.06 45);
-  --pudim: oklch(86% 0.13 85);
-  --sky-soft: oklch(92% 0.04 235);
-  --rose: oklch(64% 0.22 5);
-  --navy: oklch(28% 0.09 265);
-  --background: oklch(98.5% 0.012 85);
+  /* Paleta com contraste WCAG: blush claro = faixas; rose escuro = acento; navy = tinta */
+  --cream: #fff8f4;
+  --caramel: #c9893a;
+  --chocolate: #2a1c16;
+  --pudim: #f0c56a;
+  --sky-soft: #eef3f8;
+  --rose: #c21845;
+  --rose-soft: #ffc2d4;
+  --rose-mid: #e84a6f;
+  --navy: #1a2454;
+  --background: #ffffff;
   --foreground: var(--chocolate);
-  --card: oklch(100% 0 0);
+  --card: #ffffff;
   --card-foreground: var(--chocolate);
   --primary: var(--rose);
-  --primary-foreground: oklch(100% 0 0);
+  --primary-foreground: #ffffff;
   --secondary: var(--navy);
-  --muted: oklch(94% 0.02 80);
-  --muted-foreground: oklch(45% 0.04 50);
+  --muted: #f4f1ef;
+  --muted-foreground: #5c534e;
   --accent: var(--caramel);
-  --border: oklch(90% 0.02 70);
-  --input: oklch(92% 0.02 70);
+  --border: #e8e0db;
+  --input: #efe8e3;
   --font-display: var(--font-rbk-sans), Inter, -apple-system, system-ui, "Segoe UI", sans-serif;
   --font-sans: var(--font-rbk-sans), Inter, -apple-system, system-ui, "Segoe UI", sans-serif;
 
@@ -81,7 +84,7 @@
   background: var(--rose);
   color: #fff;
   letter-spacing: 0.01em;
-  box-shadow: 0 8px 24px -8px var(--rose);
+  box-shadow: 0 8px 24px -8px rgb(194 24 69 / 0.55);
   border-radius: 999px;
   justify-content: center;
   align-items: center;
@@ -96,7 +99,7 @@
 }
 
 .rbk-clone .btn-primary:hover {
-  background: color-mix(in oklab, var(--rose) 88%, black);
+  background: #a01438;
 }
 
 .rbk-clone .btn-outline {
@@ -1640,11 +1643,16 @@
 
 /* ========== Clone estrutural Cimed (medidas desktop 1440) ========== */
 .rbk-clone {
-  /* rose = papel do amarelo Cimed; navy = papel do preto */
-  --cm-brand: var(--rose);
+  /*
+    Cimed: amarelo claro + preto.
+    Rebeka: blush claro (--rose-soft) nas faixas + navy na tinta;
+    rosa forte (--rose) só em botões, links e destaques.
+  */
+  --cm-brand: var(--rose-soft);
   --cm-brand-ink: var(--navy);
+  --cm-accent: var(--rose);
   --cm-ink: #1a1a1a;
-  --cm-text: #333;
+  --cm-text: #333333;
   --cm-muted-bg: #f5f5f5;
   --cm-soft-bg: #fafafa;
   --cm-white: #fff;
@@ -1716,7 +1724,7 @@
 }
 .rbk-clone .cm-logo--footer span em {
   font-style: normal;
-  color: var(--pudim);
+  color: #ffb6c8;
 }
 .rbk-clone .cm-header-tools {
   display: flex;
@@ -1850,7 +1858,7 @@
   letter-spacing: -0.01em;
   border-radius: 8px;
 }
-.rbk-clone .cm-nav-menu a:hover { color: var(--rose); }
+.rbk-clone .cm-nav-menu a:hover { color: var(--cm-accent); }
 .rbk-clone .cm-menu-scrim {
   position: fixed;
   inset: 0;
@@ -1898,7 +1906,10 @@
     font-weight: 600;
     color: var(--cm-text);
   }
-  .rbk-clone .cm-nav-menu a:hover { color: var(--cm-brand-ink); background: rgb(0 0 0 / 0.06); }
+  .rbk-clone .cm-nav-menu a:hover {
+    color: var(--cm-brand-ink);
+    background: rgb(26 36 84 / 0.08);
+  }
   .rbk-clone .cm-menu-scrim { display: none; }
 }
 
@@ -1928,7 +1939,9 @@
 .rbk-clone .cm-hero-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(0 0 0 / 0.15), rgb(20 28 61 / 0.78));
+  background:
+    linear-gradient(90deg, rgb(10 14 40 / 0.45) 0%, rgb(10 14 40 / 0.15) 55%, transparent 100%),
+    linear-gradient(180deg, rgb(10 14 40 / 0.25) 0%, rgb(10 14 40 / 0.35) 40%, rgb(10 14 40 / 0.88) 100%);
 }
 .rbk-clone .cm-hero-copy {
   position: absolute;
@@ -1945,7 +1958,7 @@
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--pudim);
+  color: #ffd0db;
   margin: 0 0 10px;
 }
 .rbk-clone .cm-hero-copy h1 {
@@ -2052,7 +2065,7 @@
   font-size: 14px;
   color: var(--cm-ink);
 }
-.rbk-clone .cm-text-link:hover { color: var(--rose); }
+.rbk-clone .cm-text-link:hover { color: var(--cm-accent); }
 
 .rbk-clone .cm-presence-row {
   margin-top: 36px;
@@ -2072,7 +2085,7 @@
   display: block;
   font-size: 28px;
   font-weight: 800;
-  color: var(--cm-brand);
+  color: var(--cm-accent);
   letter-spacing: -0.03em;
 }
 .rbk-clone .cm-presence-row span {
@@ -2156,7 +2169,7 @@
   padding: 0 18px;
   font-weight: 700;
   font-size: 14px;
-  color: var(--cm-brand);
+  color: var(--cm-accent);
   background: var(--cm-muted-bg);
 }
 .rbk-clone .cm-chip-row {
@@ -2176,14 +2189,14 @@
   background: #fff;
 }
 .rbk-clone .cm-chip-row a:hover {
-  border-color: var(--cm-brand);
-  color: var(--cm-brand);
+  border-color: var(--cm-accent);
+  color: var(--cm-accent);
 }
 
-/* Marquee */
+/* Marquee — blush claro + navy (como amarelo Cimed) */
 .rbk-clone .cm-marquee {
   background: var(--cm-brand);
-  color: #fff;
+  color: var(--cm-brand-ink);
   overflow: hidden;
   padding: 30px 0;
 }
@@ -2260,19 +2273,19 @@
 .rbk-clone .cm-saiba {
   font-size: 13px;
   font-weight: 700;
-  color: var(--rose);
+  color: var(--cm-accent);
 }
 .rbk-clone .cm-saiba:hover { text-decoration: underline; }
 .rbk-clone .cm-p-card--cta {
   display: flex;
   align-items: center;
-  background: var(--cm-brand);
+  background: var(--cm-accent);
   color: #fff;
   border-color: transparent;
 }
 .rbk-clone .cm-p-cta-inner h3 { color: #fff; margin: 0 0 8px; font-size: 20px; }
-.rbk-clone .cm-p-cta-inner p { margin: 0 0 14px; color: rgb(255 255 255 / 0.8); font-size: 14px; }
-.rbk-clone .cm-p-card--cta .cm-saiba { color: var(--pudim); }
+.rbk-clone .cm-p-cta-inner p { margin: 0 0 14px; color: rgb(255 255 255 / 0.9); font-size: 14px; }
+.rbk-clone .cm-p-card--cta .cm-saiba { color: #ffe0e8; }
 
 /* Diffs */
 .rbk-clone .cm-diff-grid {
@@ -2304,17 +2317,17 @@
   .rbk-clone .cm-diff-card { padding: 40px 30px; }
 }
 .rbk-clone .cm-diff-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto 16px;
-  border-radius: 0;
-  background: transparent;
-  color: var(--cm-brand);
+  border-radius: 999px;
+  background: var(--cm-brand);
+  color: var(--cm-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 14px;
 }
 .rbk-clone .cm-diff-card h3 {
   margin: 0 0 16px;
@@ -2331,11 +2344,11 @@
   color: #666;
 }
 
-/* Compromisso + newsletter = brand fill */
+/* Compromisso + newsletter = faixa brand clara + tinta navy */
 .rbk-clone .cm-compromisso,
 .rbk-clone .cm-newsletter {
   background: var(--cm-brand);
-  color: #fff;
+  color: var(--cm-brand-ink);
   padding: 60px 0;
 }
 @media (min-width: 769px) {
@@ -2350,9 +2363,10 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
+  color: var(--cm-brand-ink);
 }
 @media (min-width: 769px) {
-  .rbk-clone .cm-compromisso h2 { font-size: 56px; line-height: 1.6; }
+  .rbk-clone .cm-compromisso h2 { font-size: 56px; line-height: 1.2; }
   .rbk-clone .cm-newsletter h2 { font-size: 48px; }
 }
 @media (max-width: 640px) {
@@ -2364,8 +2378,8 @@
   margin: 0 auto 60px;
   max-width: 800px;
   font-size: 18px;
-  line-height: 1.4;
-  color: rgb(255 255 255 / 0.92);
+  line-height: 1.5;
+  color: #2a2450;
   white-space: pre-line;
 }
 .rbk-clone .cm-stats {
@@ -2384,44 +2398,51 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--cm-accent);
 }
 .rbk-clone .cm-stats span {
   display: block;
   margin-top: 8px;
   font-size: 13px;
-  color: rgb(255 255 255 / 0.75);
+  color: #4a4570;
 }
 .rbk-clone .cm-btn-dark {
   display: inline-flex;
   margin-top: 28px;
-  background: #111;
+  background: var(--navy);
   color: #fff;
   font-weight: 700;
   font-size: 14px;
   padding: 14px 22px;
   border-radius: 999px;
 }
-.rbk-clone .cm-btn-dark:hover { background: #000; }
+.rbk-clone .cm-btn-dark:hover { background: #0f1638; }
 .rbk-clone .cm-btn-outline-dark {
   display: inline-flex;
   margin-top: 28px;
-  border: 1.5px solid rgb(255 255 255 / 0.7);
-  color: #fff;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
   font-weight: 700;
   font-size: 14px;
   padding: 13px 20px;
   border-radius: 999px;
 }
-.rbk-clone .cm-btn-outline-dark:hover { background: #fff; color: var(--cm-brand); }
+.rbk-clone .cm-btn-outline-dark:hover {
+  background: var(--navy);
+  color: #fff;
+}
 .rbk-clone .cm-btn-outline-on-brand {
   display: inline-flex;
-  border: 1.5px solid rgb(255 255 255 / 0.7);
-  color: #fff;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
   font-weight: 700;
   font-size: 14px;
   padding: 13px 20px;
   border-radius: 999px;
+}
+.rbk-clone .cm-btn-outline-on-brand:hover {
+  background: var(--navy);
+  color: #fff;
 }
 .rbk-clone .cm-nl-icon {
   width: 56px;
@@ -2429,10 +2450,11 @@
   margin: 0 auto 16px;
   border-radius: 999px;
   background: #fff;
-  color: var(--navy);
+  color: var(--cm-accent);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 10px rgb(26 36 84 / 0.08);
 }
 .rbk-clone .cm-nl-actions {
   display: flex;
@@ -2469,7 +2491,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--cm-accent);
 }
 .rbk-clone .cm-news-card h3 {
   margin: 6px 0 0;
@@ -2479,20 +2501,20 @@
   line-height: 1.3;
 }
 
-/* Page hero (Quem Somos style) */
+/* Page hero (Quem Somos style) — blush + navy */
 .rbk-clone .cm-page-hero {
   background: var(--cm-brand);
-  color: #fff;
+  color: var(--cm-brand-ink);
   padding: calc(var(--cm-header-h) + 40px) 0 64px;
   margin-top: 0;
 }
 .rbk-clone .cm-breadcrumb {
   font-size: 13px;
   font-weight: 600;
-  color: rgb(255 255 255 / 0.7);
+  color: rgb(26 36 84 / 0.65);
   margin-bottom: 28px;
 }
-.rbk-clone .cm-breadcrumb a:hover { color: #fff; text-decoration: underline; }
+.rbk-clone .cm-breadcrumb a:hover { color: var(--cm-brand-ink); text-decoration: underline; }
 .rbk-clone .cm-bc-sep { margin: 0 6px; opacity: 0.5; }
 .rbk-clone .cm-page-title {
   margin: 0;
@@ -2501,11 +2523,12 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  color: var(--cm-brand-ink);
 }
 .rbk-clone .cm-page-rule {
   width: 48px;
   height: 4px;
-  background: var(--navy);
+  background: var(--cm-accent);
   margin: 20px auto 0;
   border-radius: 2px;
 }
@@ -2514,7 +2537,7 @@
   max-width: 640px;
   font-size: 16px;
   line-height: 1.65;
-  color: rgb(255 255 255 / 0.9);
+  color: #2a2450;
 }
 .rbk-clone .cm-page-actions {
   margin-top: 28px;
@@ -2541,7 +2564,7 @@
 .rbk-clone .cm-about-photo img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Footer */
-.rbk-clone .cm-footer { background: #111; color: rgb(255 255 255 / 0.75); }
+.rbk-clone .cm-footer { background: var(--navy); color: rgb(255 255 255 / 0.78); }
 .rbk-clone .cm-footer-top { padding: 56px 0 40px; }
 .rbk-clone .cm-footer-grid {
   display: grid;
@@ -2562,7 +2585,7 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--pudim);
+  color: #ffb6c8;
 }
 .rbk-clone .cm-footer ul {
   list-style: none;

@@ -82,7 +82,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#1e2b5e",
+  themeColor: "#c21845",
 };
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
