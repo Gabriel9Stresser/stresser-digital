@@ -21,14 +21,17 @@
   --accent: var(--caramel);
   --border: oklch(90% 0.02 70);
   --input: oklch(92% 0.02 70);
-  --font-display: var(--font-rbk-display), Fraunces, ui-serif, Georgia, serif;
-  --font-sans: var(--font-rbk-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-rbk-sans), Inter, -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-sans: var(--font-rbk-sans), Inter, -apple-system, system-ui, "Segoe UI", sans-serif;
 
   font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--foreground);
-  background: var(--background);
+  background: #fff;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 .rbk-clone *,
@@ -54,7 +57,9 @@
 }
 
 .rbk-clone .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .rbk-clone .container-editorial {
@@ -1609,7 +1614,7 @@
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
 }
-.rbk-catalog h1 { font-family: var(--font-rbk-display), Fraunces, serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--navy, #1e2b5e); }
+.rbk-catalog h1 { font-family: var(--font-rbk-sans), Inter, sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em; color: var(--navy, #1e2b5e); }
 .rbk-catalog .rbk-catalog-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
 @media print {
   .rbk-catalog-actions, .rbk-wa-float, header, footer, .rbk-topbar { display: none !important; }
@@ -1676,6 +1681,7 @@
   align-items: center;
   gap: 10px;
   color: inherit;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.01em;
@@ -1728,9 +1734,11 @@
   gap: 4px;
 }
 .rbk-clone .cm-menu-nav a {
+  font-family: var(--font-sans);
   font-size: 28px;
-  font-weight: 700;
-  padding: 12px 0;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 14px 0;
   border-bottom: 1px solid rgb(255 255 255 / 0.12);
   color: #fff;
 }
@@ -1822,11 +1830,12 @@
 }
 .rbk-clone .cm-hero-copy h1 {
   margin: 0;
-  font-size: clamp(28px, 5vw, 48px);
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 5vw, 44px);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  max-width: 14ch;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  max-width: 16ch;
 }
 .rbk-clone .cm-hero-copy p {
   margin: 12px 0 0;
@@ -1881,18 +1890,24 @@
 .rbk-clone .cm-section--soft { background: var(--cm-soft-bg); }
 .rbk-clone .cm-h2 {
   margin: 0;
+  font-family: var(--font-sans);
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.35;
   color: var(--cm-ink);
+}
+.rbk-clone h1, .rbk-clone h2, .rbk-clone h3, .rbk-clone h4 {
+  font-family: var(--font-sans);
 }
 .rbk-clone .cm-h2--left { text-align: left; }
 .rbk-clone .cm-sub {
   margin: 10px auto 0;
   max-width: 520px;
   color: #666;
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 .rbk-clone .cm-body {
   margin: 0 0 16px;
@@ -2101,9 +2116,10 @@
 .rbk-clone .cm-p-body { margin-top: 14px; }
 .rbk-clone .cm-p-body h3 {
   margin: 0 0 10px;
-  font-size: 16px;
+  font-family: var(--font-sans);
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 .rbk-clone .cm-p-body h3 a { color: var(--cm-ink); }
 .rbk-clone .cm-saiba {
@@ -2156,8 +2172,10 @@
 }
 .rbk-clone .cm-diff-card h3 {
   margin: 0 0 8px;
-  font-size: 17px;
+  font-family: var(--font-sans);
+  font-size: 18px;
   font-weight: 700;
+  line-height: 1.35;
   color: var(--cm-ink);
 }
 .rbk-clone .cm-diff-card p {
@@ -2177,9 +2195,15 @@
 .rbk-clone .cm-compromisso h2,
 .rbk-clone .cm-newsletter h2 {
   margin: 0;
-  font-size: clamp(26px, 4vw, 32px);
+  font-family: var(--font-sans);
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+@media (max-width: 640px) {
+  .rbk-clone .cm-compromisso h2,
+  .rbk-clone .cm-newsletter h2 { font-size: 26px; }
 }
 .rbk-clone .cm-compromisso > .cm-container > p,
 .rbk-clone .cm-newsletter > .cm-container > p {
@@ -2201,8 +2225,9 @@
 }
 .rbk-clone .cm-stats strong {
   display: block;
-  font-size: clamp(36px, 6vw, 52px);
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 6vw, 56px);
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
   color: #fff;
@@ -2316,10 +2341,11 @@
 .rbk-clone .cm-bc-sep { margin: 0 6px; opacity: 0.5; }
 .rbk-clone .cm-page-title {
   margin: 0;
-  font-size: clamp(36px, 7vw, 56px);
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 .rbk-clone .cm-page-rule {
   width: 48px;

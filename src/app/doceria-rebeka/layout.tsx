@@ -1,4 +1,4 @@
-import { Fraunces, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { RebekaStructuredData } from "./StructuredData";
 import { SiteHeader } from "./components/SiteHeader";
@@ -8,16 +8,9 @@ import { PREVIEW_URL, SEO } from "./seo";
 import { SITE } from "./data";
 import "./rebeka.css";
 
-const display = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-rbk-display",
-  display: "swap",
-});
-
 const sans = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-rbk-sans",
   display: "swap",
 });
@@ -94,7 +87,7 @@ export const viewport: Viewport = {
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${display.variable} ${sans.variable} rbk-clone min-h-screen bg-background`}>
+    <div className={`${sans.variable} rbk-clone min-h-screen`}>
       <RebekaStructuredData />
       <SiteHeader />
       <main>{children}</main>
