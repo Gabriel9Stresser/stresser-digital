@@ -17,100 +17,72 @@ export default function AtacadoPage() {
   return (
     <>
       <PageHero
-        eyebrow="Atacado B2B"
-        title={
-          <>
-            Leve a Doceria da Rebeka para o <em className="not-italic text-primary">seu mercado</em>.
-          </>
-        }
-        description="Atendemos mercados, redes varejistas e distribuidores que buscam produtos com excelente aceitação, apresentação atrativa e padrão de qualidade."
+        title="Atacado"
+        description="Leve a Doceria da Rebeka para o seu mercado. Atendimento B2B para redes, mercados e distribuidores em todo o Brasil."
+        breadcrumb={[
+          { label: "Home", href: BASE },
+          { label: "Atacado" },
+        ]}
       >
-        <div className="flex flex-wrap gap-3">
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Começar pelo WhatsApp
-          </a>
-          <Link href={SITE.catalogPath} className="btn-outline">
-            Ver catálogo
-          </Link>
-          <a href={WA_CATALOG} target="_blank" rel="noopener noreferrer" className="btn-outline">
-            Pedir catálogo
-          </a>
-        </div>
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
+          Começar pelo WhatsApp
+        </a>
+        <Link href={SITE.catalogPath} className="rbk-btn-ghost">
+          Ver catálogo
+        </Link>
       </PageHero>
 
-      <section className="pb-16 md:pb-20">
-        <div className="container-editorial">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Como comprar</span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-navy">
-              Do contato ao abastecimento em 3 passos
-            </h2>
-          </div>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {BUY_STEPS.map((s) => (
-              <div key={s.step} className="rounded-2xl bg-card border border-border p-6 md:p-8">
-                <div className="font-display text-3xl text-primary">{s.step}</div>
-                <h3 className="mt-4 font-display text-xl text-navy">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+      <div className="rbk-content">
+        <div className="rbk-section-head rbk-section-head--center" style={{ marginBottom: "2.5rem" }}>
+          <p className="rbk-kicker">Como comprar</p>
+          <h2>Do contato ao abastecimento em 3 passos</h2>
         </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-cream/60">
-        <div className="container-editorial grid lg:grid-cols-12 gap-14 items-start">
-          <div className="lg:col-span-5">
-            <span className="eyebrow">Por que comprar conosco</span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-navy">
-              Benefícios pensados para o varejo.
-            </h2>
-            <div className="mt-6 space-y-2 text-sm text-navy/80">
-              <p>
-                <strong className="text-navy">Horário:</strong> {SITE.hours}
-              </p>
-              <p>
-                <strong className="text-navy">Abrangência:</strong> {SITE.serviceArea}
-              </p>
+        <div className="rbk-diff-grid" style={{ marginBottom: "4rem" }}>
+          {BUY_STEPS.map((s) => (
+            <div key={s.step} className="rbk-diff-card">
+              <span className="rbk-diff-num">{s.step}</span>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
             </div>
-            <Link href={`${BASE}/contato`} className="btn-outline mt-8 inline-flex">
-              Ir para o formulário
-            </Link>
-          </div>
-          <div className="lg:col-span-7">
-            <div className="grid sm:grid-cols-2 gap-4">
-              {WHOLESALE.map((s) => (
-                <div
-                  key={s.step}
-                  className="group rounded-2xl bg-card border border-border p-6 flex items-start gap-4 transition-all hover:border-primary/40 hover:shadow-md"
-                >
-                  <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display text-sm">
-                    {s.step}
-                  </div>
-                  <div>
-                    <span className="font-medium text-navy leading-snug block">{s.title}</span>
-                    <span className="mt-1 block text-sm text-muted-foreground">{s.desc}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
 
-      <section className="py-20 md:py-28">
-        <div className="container-editorial grid lg:grid-cols-12 gap-14">
-          <div className="lg:col-span-5">
-            <span className="eyebrow">Fale com o comercial</span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-navy">
-              Conte sobre o seu negócio.
-            </h2>
-            <p className="mt-5 text-lg text-muted-foreground">
-              Prefere WhatsApp? Chame no {SITE.phoneDisplay}. Ou envie o formulário e abrimos a conversa com seus dados.
+        <div className="rbk-section-head">
+          <div>
+            <p className="rbk-kicker">Por que comprar conosco</p>
+            <h2>Benefícios pensados para o varejo</h2>
+            <p className="rbk-section-sub">
+              Horário: {SITE.hours}. Abrangência: {SITE.serviceArea}.
             </p>
           </div>
-          <div className="lg:col-span-7">
-            <LeadForm />
+        </div>
+        <div className="rbk-wholesale-grid">
+          {WHOLESALE.map((s) => (
+            <div key={s.step} className="rbk-wholesale-item">
+              <span>{s.step}</span>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="rbk-section rbk-section--cream">
+        <div style={{ maxWidth: "84rem", margin: "0 auto", padding: "0 1.25rem" }}>
+          <div className="grid lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-5">
+              <p className="rbk-kicker">Fale com o comercial</p>
+              <h2 className="font-display text-3xl text-navy mt-3">Conte sobre o seu negócio</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Prefere WhatsApp? Chame no {SITE.phoneDisplay}. Ou envie o formulário.
+              </p>
+              <a href={WA_CATALOG} target="_blank" rel="noopener noreferrer" className="btn-outline mt-6 inline-flex">
+                Pedir catálogo
+              </a>
+            </div>
+            <div className="lg:col-span-7">
+              <LeadForm />
+            </div>
           </div>
         </div>
       </section>

@@ -16,104 +16,93 @@ export default function QuemSomosPage() {
   return (
     <>
       <PageHero
-        eyebrow="Quem somos"
-        title={
-          <>
-            Uma história feita de sabor, <em className="not-italic text-primary">cuidado e confiança</em>.
-          </>
-        }
-        description="A Doceria da Rebeka nasceu para entregar doces que despertam memórias afetivas e conquistam pela primeira colherada. Sede em São José dos Campos, foco 100% no atacado."
+        title="Quem somos"
+        description="Somos a Doceria da Rebeka: fábrica joseense de pudim e brigadeirão no atacado, com sabor de casa e escala para abastecer o Brasil."
+        breadcrumb={[
+          { label: "Home", href: BASE },
+          { label: "Quem somos" },
+        ]}
       />
 
-      <section className="pb-20 md:pb-28">
-        <div className="container-editorial grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
-          <div className="relative">
-            <div className="aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(30,43,94,0.3)]">
-              <img
-                src={SITE.aboutPhoto}
-                alt="Pudim artesanal da Doceria da Rebeka"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                width={1200}
-                height={1500}
-              />
-            </div>
-            <div className="hidden md:block absolute -bottom-8 -right-8 aspect-square w-52 overflow-hidden rounded-2xl border-8 border-background shadow-xl">
-              <img src={SITE.gallery[1].src} alt={SITE.gallery[1].alt} className="h-full w-full object-cover" loading="lazy" />
-            </div>
+      <div className="rbk-content">
+        <div className="rbk-prose" style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <p>
+            A Doceria da Rebeka nasceu com o propósito de entregar doces que despertam memórias afetivas e conquistam pela
+            primeira colherada. Com sede em São José dos Campos/SP, somos especialistas na produção de pudins e
+            brigadeirões, atendendo exclusivamente no atacado.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" style={{ marginBottom: "4rem" }}>
+          <div className="aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+            <img src={SITE.aboutPhoto} alt="Pudim artesanal da Doceria da Rebeka" className="h-full w-full object-cover" />
           </div>
           <div>
-            <span className="eyebrow">Nossa história</span>
-            <h2 className="mt-5 font-display text-3xl md:text-4xl leading-tight text-navy">
-              Especialistas em pudim e brigadeirão para o varejo.
+            <p className="rbk-kicker">A fábrica</p>
+            <h2 className="font-display text-3xl md:text-4xl text-navy mt-3 leading-tight">
+              Produção em São José dos Campos, alcance nacional
             </h2>
-            <p className="mt-7 text-lg text-muted-foreground leading-relaxed">
-              Com fábrica na Rodovia Geraldo Scavone, em São José dos Campos/SP, produzimos em escala com padrão de
-              qualidade, praticidade e consistência. Atendemos mercados, redes varejistas e distribuidores em todo o
-              Brasil.
+            <p className="mt-5 text-muted-foreground leading-relaxed text-lg">
+              Na Rodovia Geraldo Scavone produzimos em escala com padrão de textura, calda, conservação e apresentação.
+              O resultado chega pronto para gôndolas e vitrines de mercados e distribuidores em todo o país.
             </p>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              Mais do que doces, entregamos parceria e produtos preparados para se destacar nas gôndolas, vitrines e
-              pontos de venda.
+            <p className="mt-4 text-muted-foreground leading-relaxed text-lg">
+              Mais do que doces, entregamos parceria comercial e produtos preparados para girar no ponto de venda.
             </p>
-            <div className="mt-8 flex items-center gap-4 text-sm text-navy/80">
-              <span className="h-px w-10 bg-primary" />
-              <span className="font-medium">Sede em São José dos Campos, São Paulo</span>
-            </div>
           </div>
+        </div>
+      </div>
+
+      <section className="rbk-commit">
+        <div className="rbk-commit-copy">
+          <p className="rbk-kicker rbk-kicker--on-dark">Presença</p>
+          <h2>Uma marca com escala e proximidade</h2>
+          <p>
+            Estamos em mais de 11 mil pontos de venda. Atendemos só B2B: mercados, redes e distribuidores. Horário
+            comercial de segunda a sexta, das 8h às 18h.
+          </p>
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid rbk-btn-solid--rose">
+            Falar com o comercial
+          </a>
+        </div>
+        <div className="rbk-commit-stats">
+          {PROOF.map((item) => (
+            <div key={item.title}>
+              <strong>{item.title}</strong>
+              <span>{item.desc}</span>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-navy text-white">
-        <div className="container-editorial">
-          <div className="max-w-2xl">
-            <span className="eyebrow text-pudim">Presença nacional</span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl text-white">Números que contam a nossa escala.</h2>
-          </div>
-          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {PROOF.map((item) => (
-              <div key={item.title} className="border-t border-white/15 pt-6">
-                <div className="font-display text-2xl md:text-3xl text-pudim leading-tight">{item.title}</div>
-                <p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="container-editorial grid lg:grid-cols-2 gap-12 items-center">
+      <div className="rbk-content">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="eyebrow">Qualidade</span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-navy">
-              Sabor caseiro com padrão profissional.
+            <p className="rbk-kicker">Qualidade</p>
+            <h2 className="font-display text-3xl md:text-4xl text-navy mt-3 leading-tight">
+              Sabor caseiro com padrão profissional
             </h2>
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              Cada produto segue padrão de produção para garantir textura, sabor, conservação e apresentação constante no
-              ponto de venda. O consumidor sente na colherada. O varejista sente no giro.
+              Cada lote segue o mesmo cuidado: textura, sabor e apresentação constantes. O consumidor sente na
+              colherada. O varejista sente no giro.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
               {["Textura", "Sabor", "Conservação"].map((label) => (
-                <div key={label} className="border-t-2 border-primary/30 pt-3">
+                <div key={label} className="border-t-2 border-primary/40 pt-3">
                   <div className="text-xs text-muted-foreground">Padrão</div>
                   <div className="font-display text-lg text-navy">{label}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Fale com o comercial
-              </a>
-              <Link href={`${BASE}/produtos`} className="btn-outline">
-                Ver produtos
-              </Link>
-            </div>
+            <Link href={`${BASE}/produtos`} className="btn-outline mt-8 inline-flex">
+              Ver produtos
+            </Link>
           </div>
-          <div className="relative aspect-[4/5] max-h-[480px] overflow-hidden rounded-[2rem] shadow-2xl mx-auto w-full max-w-md">
-            <img src={SITE.qualityPhoto} alt="Detalhe da qualidade do pudim" className="h-full w-full object-cover" loading="lazy" />
+          <div className="aspect-[4/5] max-h-[480px] overflow-hidden rounded-[1.5rem] mx-auto w-full max-w-md">
+            <img src={SITE.qualityPhoto} alt="Detalhe da qualidade do pudim" className="h-full w-full object-cover" />
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

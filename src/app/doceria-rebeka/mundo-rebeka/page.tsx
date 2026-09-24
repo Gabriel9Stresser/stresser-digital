@@ -16,49 +16,32 @@ export default function MundoRebekaPage() {
   return (
     <>
       <PageHero
-        eyebrow="Mundo Rebeka"
-        title={
-          <>
-            Conhecimento para quem vende <em className="not-italic text-primary">doce no atacado</em>.
-          </>
-        }
-        description="Dicas de ponto de venda, mix de produtos e bastidores da fábrica joseense. Conteúdo para mercados e distribuidores."
+        title="Mundo Rebeka"
+        description="Conhecimento para quem vende doce no atacado. Dicas de gôndola, mix e bastidores da fábrica joseense."
+        breadcrumb={[
+          { label: "Home", href: BASE },
+          { label: "Mundo Rebeka" },
+        ]}
       />
 
-      <section className="pb-20 md:pb-28">
-        <div className="container-editorial grid md:grid-cols-2 gap-8">
+      <div className="rbk-content">
+        <div className="rbk-news-grid">
           {ARTICLES.map((a) => (
-            <Link
-              key={a.slug}
-              href={`${BASE}/mundo-rebeka/${a.slug}`}
-              className="group rounded-[1.5rem] border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors shadow-[0_12px_40px_-28px_rgba(30,43,94,0.3)]"
-            >
-              <div className="aspect-[16/10] overflow-hidden bg-cream">
-                <img
-                  src={a.cover}
-                  alt=""
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+            <Link key={a.slug} href={`${BASE}/mundo-rebeka/${a.slug}`} className="rbk-news-card">
+              <div className="rbk-news-media">
+                <img src={a.cover} alt="" loading="lazy" />
               </div>
-              <div className="p-6 md:p-8">
-                <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest">
-                  <span className="text-primary">{a.category}</span>
-                  <span className="text-navy/40">·</span>
-                  <time className="text-navy/50" dateTime={a.date}>
-                    {a.dateLabel}
-                  </time>
-                </div>
-                <h2 className="mt-3 font-display text-2xl text-navy leading-snug group-hover:text-primary transition-colors">
-                  {a.title}
-                </h2>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{a.excerpt}</p>
-                <span className="mt-5 inline-block text-sm font-semibold text-primary">Ler artigo</span>
+              <div className="rbk-news-body">
+                <span>
+                  {a.category} · {a.dateLabel}
+                </span>
+                <h3>{a.title}</h3>
+                <p>{a.excerpt}</p>
               </div>
             </Link>
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 }

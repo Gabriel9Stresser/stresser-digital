@@ -1,21 +1,47 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
+import { BASE } from "../data";
 
 type PageHeroProps = {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   description?: string;
+  breadcrumb?: { label: string; href?: string }[];
   children?: ReactNode;
+  /** solid = faixa navy full-bleed estilo Cimed Quem Somos */
+  variant?: "solid" | "light";
 };
 
-export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  description,
+  breadcrumb,
+  children,
+  variant = "solid",
+}: PageHeroProps) {
+  const crumbs = breadcrumb ?? [{ label: "Home", href: BASE }, { label: typeof title === "string" ? title : "Página" }];
+
   return (
-    <section className="relative pt-32 pb-14 md:pt-40 md:pb-20 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-background" />
-      <div className="container-editorial max-w-3xl">
-        <span className="eyebrow">{eyebrow}</span>
-        <h1 className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-navy">{title}</h1>
-        {description && <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">{description}</p>}
-        {children && <div className="mt-8">{children}</div>}
+    <section className={variant === "solid" ? "rbk-page-banner" : "rbk-page-banner rbk-page-banner--light"}>
+      <div className="rbk-page-banner-inner">
+        <nav className="rbk-breadcrumb" aria-label="Breadcrumb">
+          {crumbs.map((c, i) => (
+            <span key={`${c.label}-${i}`}>
+              {i > 0 && <span className="rbk-breadcrumb-sep">›</span>}
+              {c.href ? (
+                <Link href={c.href}>{c.label}</Link>
+              ) : (
+                <span aria-current="page">{c.label}</span>
+              )}
+            </span>
+          ))}
+        </nav>
+        {eyebrow && <p className="rbk-page-eyebrow">{eyebrow}</p>}
+        <h1 className="rbk-page-title">{title}</h1>
+        <div className="rbk-page-rule" aria-hidden />
+        {description && <p className="rbk-page-desc">{description}</p>}
+        {children && <div className="rbk-page-actions">{children}</div>}
       </div>
     </section>
   );

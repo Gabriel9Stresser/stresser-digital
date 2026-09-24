@@ -41,22 +41,25 @@ export default async function ProdutoPage({ params }: Props) {
         eyebrow={product.badge}
         title={product.name}
         description={product.longDesc}
+        breadcrumb={[
+          { label: "Home", href: BASE },
+          { label: "Produtos", href: `${BASE}/produtos` },
+          { label: product.shortName },
+        ]}
       >
-        <div className="flex flex-wrap gap-3">
-          <a href={waLink(product.waText)} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Pedir {product.shortName} no WhatsApp
-          </a>
-          <Link href={`${BASE}/produtos`} className="btn-outline">
-            Todos os produtos
-          </Link>
-        </div>
+        <a href={waLink(product.waText)} target="_blank" rel="noopener noreferrer" className="rbk-btn-solid">
+          Pedir no WhatsApp
+        </a>
+        <Link href={`${BASE}/produtos`} className="rbk-btn-ghost">
+          Todos os produtos
+        </Link>
       </PageHero>
 
-      <section className="pb-16 md:pb-24">
-        <div className="container-editorial grid lg:grid-cols-12 gap-12 items-start">
+      <div className="rbk-content">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6">
-            <div className="aspect-[5/4] overflow-hidden rounded-[2rem] bg-cream border border-border shadow-[0_30px_60px_-30px_rgba(30,43,94,0.25)]">
-              <img src={product.image} alt={product.name} className="h-full w-full object-cover" width={1200} height={960} />
+            <div className="aspect-[5/4] overflow-hidden rounded-[1.5rem] bg-cream border border-border">
+              <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
             </div>
           </div>
           <div className="lg:col-span-6">
@@ -77,33 +80,36 @@ export default async function ProdutoPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-muted-foreground leading-relaxed">
-              Atendimento exclusivo no atacado para mercados, redes e distribuidores. Fábrica em {SITE.cityShort}.
-            </p>
           </div>
         </div>
-      </section>
+      </div>
 
       {other.length > 0 && (
-        <section className="py-16 md:py-20 bg-cream/60">
-          <div className="container-editorial">
-            <h2 className="font-display text-2xl md:text-3xl text-navy">Também no mix</h2>
-            <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-3xl">
-              {other.map((p) => (
-                <Link
-                  key={p.id}
-                  href={`${BASE}/produtos/${p.slug}`}
-                  className="flex gap-4 rounded-2xl border border-border bg-card p-4 hover:border-primary/40 transition-colors"
-                >
-                  <img src={p.image} alt="" className="h-24 w-24 rounded-xl object-cover shrink-0" />
-                  <div>
-                    <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">{p.badge}</span>
-                    <h3 className="mt-1 font-display text-lg text-navy">{p.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{p.desc}</p>
-                  </div>
-                </Link>
-              ))}
+        <section className="rbk-section rbk-section--cream">
+          <div className="rbk-section-head" style={{ maxWidth: "84rem", margin: "0 auto 2rem", padding: "0 1.25rem" }}>
+            <div>
+              <p className="rbk-kicker">Também no mix</p>
+              <h2>Complete a gôndola</h2>
             </div>
+          </div>
+          <div className="rbk-product-grid" style={{ maxWidth: "84rem", margin: "0 auto", padding: "0 1.25rem" }}>
+            {other.map((p) => (
+              <article key={p.id} className="rbk-product-card">
+                <Link href={`${BASE}/produtos/${p.slug}`} className="rbk-product-card-media">
+                  <img src={p.image} alt={p.name} />
+                  <span className="rbk-product-badge">{p.badge}</span>
+                </Link>
+                <div className="rbk-product-card-body">
+                  <h3>
+                    <Link href={`${BASE}/produtos/${p.slug}`}>{p.name}</Link>
+                  </h3>
+                  <p>{p.desc}</p>
+                  <Link href={`${BASE}/produtos/${p.slug}`} className="rbk-link-more">
+                    Saiba mais
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       )}
