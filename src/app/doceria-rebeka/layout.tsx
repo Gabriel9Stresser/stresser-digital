@@ -1,6 +1,9 @@
 import { Fraunces, Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { RebekaStructuredData } from "./StructuredData";
+import { SiteHeader } from "./components/SiteHeader";
+import { SiteFooter } from "./components/SiteFooter";
+import { WhatsAppFab } from "./components/WhatsAppFab";
 import { PREVIEW_URL, SEO } from "./seo";
 import { SITE } from "./data";
 import "./rebeka.css";
@@ -34,7 +37,6 @@ export const metadata: Metadata = {
     canonical: PREVIEW_URL,
     languages: { "pt-BR": PREVIEW_URL },
   },
-  // Prévia Stresser: noindex até publicar no domínio do cliente
   robots: {
     index: false,
     follow: false,
@@ -92,9 +94,12 @@ export const viewport: Viewport = {
 
 export default function RebekaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${display.variable} ${sans.variable}`}>
+    <div className={`${display.variable} ${sans.variable} rbk-clone min-h-screen bg-background`}>
       <RebekaStructuredData />
-      {children}
+      <SiteHeader />
+      <main>{children}</main>
+      <SiteFooter />
+      <WhatsAppFab />
     </div>
   );
 }

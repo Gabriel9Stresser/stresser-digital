@@ -585,7 +585,7 @@
 .rbk-catalog h1 { font-family: var(--font-rbk-display), Fraunces, serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--navy, #1e2b5e); }
 .rbk-catalog .rbk-catalog-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
 @media print {
-  .rbk-catalog-actions, .rbk-wa-float, header { display: none !important; }
+  .rbk-catalog-actions, .rbk-wa-float, header, footer { display: none !important; }
   .rbk-catalog { padding: 0; }
 }
 .rbk-clone .min-w-0 { min-width: 0; }
